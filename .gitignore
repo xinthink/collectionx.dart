@@ -45,3 +45,8 @@ kt/
 .pub-cache/
 .pub/
 build/
+
+# Coverage
+coverage/
+test/.test_coverage.dart
+coverage_badge.svg
