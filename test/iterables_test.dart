@@ -74,4 +74,9 @@ void main() {
     result = [].nonNull;
     expect(result, isEmpty);
   });
+
+  test('transform a collection with index', () {
+    expect([3, 2, 1].mapIndexed((i, x) => '$i$x'), equals(['03', '12', '21']));
+    expect([].mapIndexed((i, _) => i), isEmpty);
+  });
 }

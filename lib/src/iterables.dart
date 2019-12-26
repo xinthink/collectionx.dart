@@ -40,6 +40,12 @@ extension IteratorExt<E> on Iterable<E> {
     return acc;
   }
 
+  /// Transform each element to another object with the type of [T], with the transformer [f].
+  Iterable<T> mapIndexed<T>(T Function(int index, E) f) {
+    var i = 0;
+    return map((e) => f(i++, e));
+  }
+
   /// Returns a new lazy [Iterable] with all `non-null` elements.
   ///
   /// See [Iterable.where]
