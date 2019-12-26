@@ -8,7 +8,7 @@ Extenstion functions for [Dart] collections.
 
 [Dart]: https://dart.dev
 [github-runs]: https://github.com/xinthink/dart_collection_ext/actions
-[check-badge]: https://github.com/xinthink/dart_collection_ext/workflows/Check/badge.svg
+[check-badge]: https://github.com/xinthink/dart_collection_ext/workflows/check/badge.svg
 [codecov-badge]: https://codecov.io/gh/xinthink/dart_collection_ext/branch/master/graph/badge.svg
 [codecov]: https://codecov.io/gh/xinthink/dart_collection_ext
 [license-badge]: https://img.shields.io/github/license/xinthink/dart_collection_ext
