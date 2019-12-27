@@ -1,4 +1,4 @@
-/// Extensions to [Iterable]
+/// Extensions to [Iterable]s
 extension IteratorExt<E> on Iterable<E> {
   /// Applies the function [f] on each element, providing sequential index of the element.
   void forEachIndexed(void Function(int index, E) f) {
@@ -40,10 +40,39 @@ extension IteratorExt<E> on Iterable<E> {
     return acc;
   }
 
-  /// Transform each element to another object of type [T], by applying the transformer [f].
+  /// Transforms each element to another object of type [T], by applying the transformer [f],
+  /// providing sequential index of the element.
   Iterable<T> mapIndexed<T>(T Function(int index, E) f) {
     var i = 0;
     return map((e) => f(i++, e));
+  }
+
+  /// Transforms elements to objects of type [T] with the transformer [f],
+  /// and appends the result to the given [destination].
+  List<T> mapToList<T>(List<T> destination, T Function(E) f) {
+    forEach((e) => destination.add(f(e)));
+    return destination;
+  }
+
+  /// Transforms elements to objects of type [T] with the transformer [f],
+  /// providing sequential index of the element, and appends the result to the given [destination].
+  List<T> mapToListIndexed<T>(List<T> destination, T Function(int index, E) f) {
+    forEachIndexed((i, e) => destination.add(f(i, e)));
+    return destination;
+  }
+
+  /// Transforms elements to objects of type [T] with the transformer [f],
+  /// and appends the result to the given [destination].
+  Set<T> mapToSet<T>(Set<T> destination, T Function(E) f) {
+    forEach((e) => destination.add(f(e)));
+    return destination;
+  }
+
+  /// Transforms elements to objects of type [T] with the transformer [f],
+  /// providing sequential index of the element, and appends the result to the given [destination].
+  Set<T> mapToSetIndexed<T>(Set<T> destination, T Function(int index, E) f) {
+    forEachIndexed((i, e) => destination.add(f(i, e)));
+    return destination;
   }
 
   /// Returns a new lazy [Iterable] with all `non-null` elements.

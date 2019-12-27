@@ -6,11 +6,10 @@
 
 A set of extension functions for [Dart] collections, designed in the purpose of making it easier to write functional-style, concise dart codes.
 
-Working on `Iterable` for example, with `collection_ext`, we can write:
+Working on an `Iterable` for example, with `collection_ext`, we can write:
 
 ```dart
-iterable
-  .forEachIndexed((i, x) => /* use index i & element x */)
+iterable.forEachIndexed((i, x) => /* use index i & element x */)
 ```
 
 instead of:
