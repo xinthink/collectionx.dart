@@ -23,8 +23,6 @@ for (var x in iterable) {
 }
 ```
 
-:point_right: See [API Docs] for more details
-
 ## Usage
 
 Import all extension functions at once:
@@ -51,6 +49,8 @@ final sum = [2, 4, 6].foldRight(0, (acc, x) => acc + x);
 ## Available Modules
 
 - Extensions to [Iterables]
+
+:point_right: See [API Docs] for more details
 
 I'm working on more useful extensions, PRs are welcome! :beers:🖖
 

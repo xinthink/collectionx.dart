@@ -1,3 +1,1 @@
-## [0.0.1] - TODO: Add release date.
-
-* TODO: Describe initial release.
+:point_right: [Release History](https://github.com/xinthink/dart_collection_ext/releases)
