@@ -61,11 +61,21 @@
     
         <li class="section-title"><a href="iterables/IteratorExt.html#instance-methods">Methods</a></li>
         <li><a href="iterables/IteratorExt/asList.html">asList</a></li>
+        <li><a href="iterables/IteratorExt/chunked.html">chunked</a></li>
         <li><a href="iterables/IteratorExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IteratorExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IteratorExt/foldRightIndexed.html">foldRightIndexed</a></li>
         <li><a href="iterables/IteratorExt/forEachIndexed.html">forEachIndexed</a></li>
         <li><a href="iterables/IteratorExt/mapIndexed.html">mapIndexed</a></li>
+        <li><a href="iterables/IteratorExt/mapToList.html">mapToList</a></li>
+        <li><a href="iterables/IteratorExt/mapToListIndexed.html">mapToListIndexed</a></li>
+        <li><a href="iterables/IteratorExt/mapToSet.html">mapToSet</a></li>
+        <li><a href="iterables/IteratorExt/mapToSetIndexed.html">mapToSetIndexed</a></li>
+        <li><a href="iterables/IteratorExt/partition.html">partition</a></li>
+        <li><a href="iterables/IteratorExt/partitionIndexed.html">partitionIndexed</a></li>
+        <li><a href="iterables/IteratorExt/whereIndexed.html">whereIndexed</a></li>
+        <li><a href="iterables/IteratorExt/whereNot.html">whereNot</a></li>
+        <li><a href="iterables/IteratorExt/whereNotIndexed.html">whereNotIndexed</a></li>
     
     
     
@@ -81,10 +91,7 @@
       <span class="returntype">S</span>
             <span class="name ">foldRight</span>
 &lt;<wbr><span class="type-parameter">S</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="foldRight-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span></li>
-<li><span class="parameter" id="foldRight-param-f"><span class="type-annotation">S</span> <span class="parameter-name">f</span>(<ol class="parameter-list"><li><span class="parameter" id="param-acc"><span class="type-annotation">S</span> <span class="parameter-name">acc</span>, </span></li>
-<li><span class="parameter" id="param-"><span class="type-annotation">E</span></span></li>
-</ol>
-)</span></li>
+<li><span class="parameter" id="foldRight-param-f"><span class="type-annotation"><a href="iterables/Accumulate.html">Accumulate</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
@@ -98,7 +105,7 @@ with the combinator <code>f</code> in a reversed order.</p>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">S foldRight&lt;S&gt;(S initial, S Function(S acc, E) f) =&gt;
+      <pre class="language-dart"><code class="language-dart">S foldRight&lt;S&gt;(S initial, Accumulate&lt;S, E&gt; f) =&gt;
   asList().reversed.fold(initial, f);</code></pre>
     </section>
 

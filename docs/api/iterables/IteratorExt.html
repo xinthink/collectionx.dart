@@ -60,6 +60,15 @@
     
     
     
+      <li class="section-title"><a href="iterables/iterables-library.html#typedefs">Typedefs</a></li>
+      <li><a href="iterables/Accumulate.html">Accumulate</a></li>
+      <li><a href="iterables/Action.html">Action</a></li>
+      <li><a href="iterables/IndexedAccumulate.html">IndexedAccumulate</a></li>
+      <li><a href="iterables/IndexedAction.html">IndexedAction</a></li>
+      <li><a href="iterables/IndexedPredicate.html">IndexedPredicate</a></li>
+      <li><a href="iterables/IndexedTransform.html">IndexedTransform</a></li>
+      <li><a href="iterables/Predicate.html">Predicate</a></li>
+      <li><a href="iterables/Transform.html">Transform</a></li>
     
     </ol>
 </div>
@@ -68,7 +77,7 @@
     <div><h1><span class="kind-class">IteratorExt&lt;<wbr><span class="type-parameter">E</span>&gt;</span> extension </h1></div>
 
     <section class="desc markdown">
-      <p>Extensions to <code>Iterable</code></p>
+      <p>Extensions to <code>Iterable</code>s</p>
     </section>
         <section>
         <dl class="dl-horizontal">
@@ -108,8 +117,17 @@
               Creates a fixed-length <code>List</code> containing the elements of this <code>Iterable</code>. <a href="iterables/IteratorExt/asList.html">[...]</a>
                           
 </dd>
+            <dt id="chunked" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/chunked.html">chunked</a></span><span class="signature">(<wbr><span class="parameter" id="chunked-param-size"><span class="type-annotation">int</span> <span class="parameter-name">size</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Return a new lazy iterable contains chunks of this collection each not exceeding the given <code>size</code>.
+                          
+</dd>
             <dt id="foldIndexed" class="callable">
-              <span class="name"><a href="iterables/IteratorExt/foldIndexed.html">foldIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldIndexed-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldIndexed-param-f"><span class="type-annotation">S</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="param-acc"><span class="type-annotation">S</span> <span class="parameter-name">acc</span>, </span><wbr><span class="parameter" id="param-"><span class="type-annotation">E</span></span><wbr>)</span><wbr>)
+              <span class="name"><a href="iterables/IteratorExt/foldIndexed.html">foldIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldIndexed-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldIndexed-param-f"><span class="type-annotation"><a href="iterables/IndexedAccumulate.html">IndexedAccumulate</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; S</span>
               </span>
                           </dt>
@@ -120,7 +138,7 @@ with the combinator <code>f</code>, providing sequential index of the element.
                           
 </dd>
             <dt id="foldRight" class="callable">
-              <span class="name"><a href="iterables/IteratorExt/foldRight.html">foldRight</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldRight-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldRight-param-f"><span class="type-annotation">S</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-acc"><span class="type-annotation">S</span> <span class="parameter-name">acc</span>, </span><wbr><span class="parameter" id="param-"><span class="type-annotation">E</span></span><wbr>)</span><wbr>)
+              <span class="name"><a href="iterables/IteratorExt/foldRight.html">foldRight</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldRight-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldRight-param-f"><span class="type-annotation"><a href="iterables/Accumulate.html">Accumulate</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; S</span>
               </span>
                           </dt>
@@ -131,7 +149,7 @@ with the combinator <code>f</code> in a reversed order. <a href="iterables/Itera
                           
 </dd>
             <dt id="foldRightIndexed" class="callable">
-              <span class="name"><a href="iterables/IteratorExt/foldRightIndexed.html">foldRightIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldRightIndexed-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldRightIndexed-param-f"><span class="type-annotation">S</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="param-acc"><span class="type-annotation">S</span> <span class="parameter-name">acc</span>, </span><wbr><span class="parameter" id="param-"><span class="type-annotation">E</span></span><wbr>)</span><wbr>)
+              <span class="name"><a href="iterables/IteratorExt/foldRightIndexed.html">foldRightIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldRightIndexed-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldRightIndexed-param-f"><span class="type-annotation"><a href="iterables/IndexedAccumulate.html">IndexedAccumulate</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; S</span>
               </span>
                           </dt>
@@ -142,21 +160,114 @@ with the combinator <code>f</code> in a reversed order, providing sequential ind
                           
 </dd>
             <dt id="forEachIndexed" class="callable">
-              <span class="name"><a href="iterables/IteratorExt/forEachIndexed.html">forEachIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="forEachIndexed-param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="param-"><span class="type-annotation">E</span></span><wbr>)</span><wbr>)
+              <span class="name"><a href="iterables/IteratorExt/forEachIndexed.html">forEachIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="forEachIndexed-param-f"><span class="type-annotation"><a href="iterables/IndexedAction.html">IndexedAction</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; void</span>
               </span>
                           </dt>
             <dd>
-              Applies the function <code>f</code> on each element, providing sequential index of the element.
+              Applies the action <code>f</code> on each element, providing sequential index of the element.
                           
 </dd>
             <dt id="mapIndexed" class="callable">
-              <span class="name"><a href="iterables/IteratorExt/mapIndexed.html">mapIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapIndexed-param-f"><span class="type-annotation">T</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="param-"><span class="type-annotation">E</span></span><wbr>)</span><wbr>)
+              <span class="name"><a href="iterables/IteratorExt/mapIndexed.html">mapIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapIndexed-param-f"><span class="type-annotation"><a href="iterables/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
             <dd>
-              Transform each element to another object of type <code>T</code>, by applying the transformer <code>f</code>.
+              Transforms each element to another object of type <code>T</code>, by applying the transformer <code>f</code>,
+providing sequential index of the element.
+                          
+</dd>
+            <dt id="mapToList" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/mapToList.html">mapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToList-param-f"><span class="type-annotation"><a href="iterables/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Transforms elements to objects of type <code>T</code> with the transformer <code>f</code>,
+and appends the result to the given <code>destination</code>.
+                          
+</dd>
+            <dt id="mapToListIndexed" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/mapToListIndexed.html">mapToListIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToListIndexed-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToListIndexed-param-f"><span class="type-annotation"><a href="iterables/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Transforms elements to objects of type <code>T</code> with the transformer <code>f</code>,
+providing sequential index of the element, and appends the result to the given <code>destination</code>.
+                          
+</dd>
+            <dt id="mapToSet" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/mapToSet.html">mapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToSet-param-f"><span class="type-annotation"><a href="iterables/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Transforms elements to objects of type <code>T</code> with the transformer <code>f</code>,
+and appends the result to the given <code>destination</code>.
+                          
+</dd>
+            <dt id="mapToSetIndexed" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/mapToSetIndexed.html">mapToSetIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToSetIndexed-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToSetIndexed-param-f"><span class="type-annotation"><a href="iterables/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Transforms elements to objects of type <code>T</code> with the transformer <code>f</code>,
+providing sequential index of the element, and appends the result to the given <code>destination</code>.
+                          
+</dd>
+            <dt id="partition" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/partition.html">partition</a></span><span class="signature">(<wbr><span class="parameter" id="partition-param-test"><span class="type-annotation"><a href="iterables/Predicate.html">Predicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Splits this collection into pair of lazy iterables,
+where the <em>first</em> one contains elements for which <code>test</code> yields <code>true</code>,
+while the <em>second</em> one contains elements for which <code>test</code> yields <code>false</code>.
+                          
+</dd>
+            <dt id="partitionIndexed" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/partitionIndexed.html">partitionIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="partitionIndexed-param-test"><span class="type-annotation"><a href="iterables/IndexedPredicate.html">IndexedPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Splits this collection into pair of lazy iterables,
+where the <em>first</em> one contains elements for which <code>test</code> yields <code>true</code>,
+while the <em>second</em> one contains elements for which <code>test</code> yields <code>false</code>,
+comparing to <code>partition</code>, <code>test</code> will has access to the sequential index of each element.
+                          
+</dd>
+            <dt id="whereIndexed" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/whereIndexed.html">whereIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="whereIndexed-param-test"><span class="type-annotation"><a href="iterables/IndexedPredicate.html">IndexedPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Returns a new lazy <code>Iterable</code> with all elements that satisfy the predicate <code>test</code>,
+providing sequential index of the element.
+                          
+</dd>
+            <dt id="whereNot" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/whereNot.html">whereNot</a></span><span class="signature">(<wbr><span class="parameter" id="whereNot-param-test"><span class="type-annotation"><a href="iterables/Predicate.html">Predicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Returns a new lazy <code>Iterable</code> with all elements that does <strong>NOT</strong> satisfy the predicate <code>test</code>.
+                          
+</dd>
+            <dt id="whereNotIndexed" class="callable">
+              <span class="name"><a href="iterables/IteratorExt/whereNotIndexed.html">whereNotIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="whereNotIndexed-param-test"><span class="type-annotation"><a href="iterables/IndexedPredicate.html">IndexedPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Returns a new lazy <code>Iterable</code> with all elements that does <strong>NOT</strong> satisfy the predicate <code>test</code>,
+providing sequential index of the element.
                           
 </dd>
         </dl>
@@ -177,11 +288,21 @@ with the combinator <code>f</code> in a reversed order, providing sequential ind
     
         <li class="section-title"><a href="iterables/IteratorExt.html#instance-methods">Methods</a></li>
         <li><a href="iterables/IteratorExt/asList.html">asList</a></li>
+        <li><a href="iterables/IteratorExt/chunked.html">chunked</a></li>
         <li><a href="iterables/IteratorExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IteratorExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IteratorExt/foldRightIndexed.html">foldRightIndexed</a></li>
         <li><a href="iterables/IteratorExt/forEachIndexed.html">forEachIndexed</a></li>
         <li><a href="iterables/IteratorExt/mapIndexed.html">mapIndexed</a></li>
+        <li><a href="iterables/IteratorExt/mapToList.html">mapToList</a></li>
+        <li><a href="iterables/IteratorExt/mapToListIndexed.html">mapToListIndexed</a></li>
+        <li><a href="iterables/IteratorExt/mapToSet.html">mapToSet</a></li>
+        <li><a href="iterables/IteratorExt/mapToSetIndexed.html">mapToSetIndexed</a></li>
+        <li><a href="iterables/IteratorExt/partition.html">partition</a></li>
+        <li><a href="iterables/IteratorExt/partitionIndexed.html">partitionIndexed</a></li>
+        <li><a href="iterables/IteratorExt/whereIndexed.html">whereIndexed</a></li>
+        <li><a href="iterables/IteratorExt/whereNot.html">whereNot</a></li>
+        <li><a href="iterables/IteratorExt/whereNotIndexed.html">whereNotIndexed</a></li>
     
     
     

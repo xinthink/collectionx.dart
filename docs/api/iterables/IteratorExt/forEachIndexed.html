@@ -61,11 +61,21 @@
     
         <li class="section-title"><a href="iterables/IteratorExt.html#instance-methods">Methods</a></li>
         <li><a href="iterables/IteratorExt/asList.html">asList</a></li>
+        <li><a href="iterables/IteratorExt/chunked.html">chunked</a></li>
         <li><a href="iterables/IteratorExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IteratorExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IteratorExt/foldRightIndexed.html">foldRightIndexed</a></li>
         <li><a href="iterables/IteratorExt/forEachIndexed.html">forEachIndexed</a></li>
         <li><a href="iterables/IteratorExt/mapIndexed.html">mapIndexed</a></li>
+        <li><a href="iterables/IteratorExt/mapToList.html">mapToList</a></li>
+        <li><a href="iterables/IteratorExt/mapToListIndexed.html">mapToListIndexed</a></li>
+        <li><a href="iterables/IteratorExt/mapToSet.html">mapToSet</a></li>
+        <li><a href="iterables/IteratorExt/mapToSetIndexed.html">mapToSetIndexed</a></li>
+        <li><a href="iterables/IteratorExt/partition.html">partition</a></li>
+        <li><a href="iterables/IteratorExt/partitionIndexed.html">partitionIndexed</a></li>
+        <li><a href="iterables/IteratorExt/whereIndexed.html">whereIndexed</a></li>
+        <li><a href="iterables/IteratorExt/whereNot.html">whereNot</a></li>
+        <li><a href="iterables/IteratorExt/whereNotIndexed.html">whereNotIndexed</a></li>
     
     
     
@@ -80,20 +90,17 @@
     <section class="multi-line-signature">
       <span class="returntype">void</span>
             <span class="name ">forEachIndexed</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="forEachIndexed-param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>(<ol class="parameter-list"><li><span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="param-"><span class="type-annotation">E</span></span></li>
-</ol>
-)</span></li>
+(<wbr><ol class="parameter-list"><li><span class="parameter" id="forEachIndexed-param-f"><span class="type-annotation"><a href="iterables/IndexedAction.html">IndexedAction</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
     <section class="desc markdown">
-      <p>Applies the function <code>f</code> on each element, providing sequential index of the element.</p>
+      <p>Applies the action <code>f</code> on each element, providing sequential index of the element.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">void forEachIndexed(void Function(int index, E) f) {
+      <pre class="language-dart"><code class="language-dart">void forEachIndexed(IndexedAction&lt;E&gt; f) {
   var i = 0;
   forEach((e) =&gt; f(i++, e));
 }</code></pre>
