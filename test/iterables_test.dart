@@ -2,6 +2,21 @@ import 'package:collection_ext/iterables.dart';
 import 'package:test/test.dart';
 
 void main() {
+  test('filter a collection with index', () {
+    final isEven = (i, _) => i % 2 == 0;
+    expect([5, 19, 2].whereIndexed(isEven), equals([5, 2]));
+  });
+
+  test('filter a collection with false predicate', () {
+    final isEven = (x) => x % 2 == 0;
+    expect([3, 2, 19, 100].whereNot(isEven), equals([3, 19]));
+  });
+
+  test('filter a collection with false predicate and index', () {
+    final isEven = (i, _) => i % 2 == 0;
+    expect([3, 2, 19, 100].whereNotIndexed(isEven), equals([2, 100]));
+  });
+
   test('forEach with index', () {
     final indexes = <int>[];
     [5, 19, 2].forEachIndexed((i, _) => indexes.add(i));
@@ -109,5 +124,19 @@ void main() {
     final list = [3, 2, 1].asList();
     expect(list, hasLength(3));
     expect(() => list.add(4), throwsUnsupportedError);
+  });
+
+  test('partition a collection', () {
+    final isEven = (x) => x % 2 == 0;
+    final parts = [3, 2, 8, 19, 10, 0].partition(isEven);
+    expect(parts.item1, equals([2, 8, 10, 0]));
+    expect(parts.item2, equals([3, 19]));
+  });
+
+  test('partition a collection with index', () {
+    final isEven = (i, _) => i % 2 == 0;
+    final parts = [3, 2, 9, 8, 19, 11, 10, 0, 7].partitionIndexed(isEven);
+    expect(parts.item1, equals([3, 9, 19, 10, 7]));
+    expect(parts.item2, equals([2, 8, 11, 0]));
   });
 }
