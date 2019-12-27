@@ -1,5 +1,17 @@
+part '_chunked_iterable.dart';
+
 /// Extensions to [Iterable]s
 extension IteratorExt<E> on Iterable<E> {
+  /// Returns a new lazy [Iterable] with all `non-null` elements.
+  ///
+  /// See [Iterable.where]
+  Iterable<E> get nonNull => where((e) => e != null);
+
+  /// Creates a fixed-length [List] containing the elements of this [Iterable].
+  ///
+  /// See [Iterable.toList]
+  List<E> asList() => toList(growable: false);
+
   /// Applies the function [f] on each element, providing sequential index of the element.
   void forEachIndexed(void Function(int index, E) f) {
     var i = 0;
@@ -75,13 +87,7 @@ extension IteratorExt<E> on Iterable<E> {
     return destination;
   }
 
-  /// Returns a new lazy [Iterable] with all `non-null` elements.
-  ///
-  /// See [Iterable.where]
-  Iterable<E> get nonNull => where((e) => e != null);
-
-  /// Creates a fixed-length [List] containing the elements of this [Iterable].
-  ///
-  /// See [Iterable.toList]
-  List<E> asList() => toList(growable: false);
+  /// Return a new lazy iterable contains chunks of this collection each not exceeding the given [size].
+  Iterable<Iterable<E>> chunked(int size) =>
+    size != null && size > 0 ? _ChunkedIterable(this, size) : [];
 }
