@@ -82,28 +82,28 @@ extension IterableExt<E> on Iterable<E> {
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
   List<T> mapToList<T>(List<T> destination, Transform<T, E> f) {
-    forEach((e) => destination.add(f(e)));
+    map(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// providing sequential index of the element, and appends the result to the given [destination].
   List<T> mapToListIndexed<T>(List<T> destination, IndexedTransform<T, E> f) {
-    forEachIndexed((i, e) => destination.add(f(i, e)));
+    mapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
   Set<T> mapToSet<T>(Set<T> destination, Transform<T, E> f) {
-    forEach((e) => destination.add(f(e)));
+    map(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// providing sequential index of the element, and appends the result to the given [destination].
   Set<T> mapToSetIndexed<T>(Set<T> destination, IndexedTransform<T, E> f) {
-    forEachIndexed((i, e) => destination.add(f(i, e)));
+    mapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
 
