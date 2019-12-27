@@ -4,7 +4,7 @@
 [![Code Coverage][codecov-badge]][codecov]
 [![MIT][license-badge]][license]
 
-A set of extension functions for [Dart] collections, designed in the purpose of making it easier to write functional-style, concise dart codes. 
+A set of extension functions for [Dart] collections, designed in the purpose of making it easier to write functional-style, concise dart codes.
 
 Working on `Iterable` for example, with `collection_ext`, we can write:
 
@@ -36,7 +36,7 @@ Column(
   children: getItems()
     .nonNull
     .mapIndexed((i, item) => Text("#$i ${item.title}"))
-    .toFixedList(),
+    .asList(),
 )
 ```
 

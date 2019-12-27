@@ -22,7 +22,7 @@ extension IteratorExt<E> on Iterable<E> {
   ///
   /// See also: [List.reversed]
   S foldRight<S>(S initial, S Function(S acc, E) f) =>
-    toFixedList().reversed.fold(initial, f);
+    asList().reversed.fold(initial, f);
 
   /// Accumulates a collection to a single value, which starts from an [initial] value,
   /// by combining each element with the current accumulator value,
@@ -32,7 +32,7 @@ extension IteratorExt<E> on Iterable<E> {
   ///
   /// See also: [List.reversed]
   S foldRightIndexed<S>(S initial, S Function(int index, S acc, E) f) {
-    final list = toFixedList();
+    final list = asList();
     var acc = initial;
     for (var i = list.length - 1; i >= 0; i--) {
       acc = f(i, acc, list[i]);
@@ -40,7 +40,7 @@ extension IteratorExt<E> on Iterable<E> {
     return acc;
   }
 
-  /// Transform each element to another object with the type of [T], with the transformer [f].
+  /// Transform each element to another object of type [T], by applying the transformer [f].
   Iterable<T> mapIndexed<T>(T Function(int index, E) f) {
     var i = 0;
     return map((e) => f(i++, e));
@@ -54,5 +54,5 @@ extension IteratorExt<E> on Iterable<E> {
   /// Creates a fixed-length [List] containing the elements of this [Iterable].
   ///
   /// See [Iterable.toList]
-  List<E> toFixedList() => toList(growable: false);
+  List<E> asList() => toList(growable: false);
 }

@@ -79,4 +79,10 @@ void main() {
     expect([3, 2, 1].mapIndexed((i, x) => '$i$x'), equals(['03', '12', '21']));
     expect([].mapIndexed((i, _) => i), isEmpty);
   });
+
+  test('turn a collection into a fixed-length list', () {
+    final list = [3, 2, 1].asList();
+    expect(list, hasLength(3));
+    expect(() => list.add(4), throwsUnsupportedError);
+  });
 }
