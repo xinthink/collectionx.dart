@@ -21,7 +21,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v2.8.0
       env:
         PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
+        PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./build
       with:
         emptyCommits: false
