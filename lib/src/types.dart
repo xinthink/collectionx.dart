@@ -6,3 +6,5 @@ typedef Transform<R, T> = R Function(T);
 typedef IndexedTransform<R, T> = R Function(int index, T);
 typedef Accumulate<S, T> = S Function(S acc, T);
 typedef IndexedAccumulate<S, T> = S Function(int index, S acc, T);
+typedef EntryTransform<R, K, V> = R Function(K, V);
+typedef EntryPredicate<K, V> = bool Function(K, V);
