@@ -2,6 +2,13 @@ import 'package:collection_ext/iterables.dart';
 import 'package:test/test.dart';
 
 void main() {
+  test('if all elements with the predicate', () {
+    final isEven = (x) => x % 2 == 0;
+    expect([5, 19, 2].all(isEven), isFalse);
+    expect([6, 12, 2].all(isEven), isTrue);
+    expect([].all(isEven), isTrue);
+  });
+
   test('filter a collection with index', () {
     final isEven = (i, _) => i % 2 == 0;
     expect([5, 19, 2].whereIndexed(isEven), equals([5, 2]));
@@ -118,6 +125,22 @@ void main() {
     expect([].mapToSetIndexed({}, (i, _) => i), isEmpty);
     expect([].mapToSetIndexed({2}, (i, _) => i), isA<Set<int>>());
     expect([].mapToSetIndexed({2}, (i, _) => i), equals({2}));
+  });
+
+  test('flatten transformations', () {
+    var result = [3, 2, 1].flatMap((x) => ['$x', '${2 * x}']);
+    expect(result, hasLength(6));
+    expect(result, equals(['3', '6', '2', '4', '1', '2']));
+
+    result = [3].flatMap((x) => ['${2 * x}']);
+    expect(result, hasLength(1));
+    expect(result, equals(['6']));
+
+    expect([].flatMap((x) => [x, x]), isEmpty);
+  });
+
+  test('flatten empty transformations', () {
+    expect([3, 2, 1].flatMap((x) => []), isEmpty);
   });
 
   test('turn a collection into a fixed-length list', () {

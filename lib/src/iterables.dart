@@ -5,6 +5,7 @@ import 'types.dart';
 export 'types.dart';
 
 part '_chunked_iterable.dart';
+part '_mapped_iterable.dart';
 
 /// Extensions to [Iterable]s
 extension IterableExt<E> on Iterable<E> {
@@ -17,6 +18,14 @@ extension IterableExt<E> on Iterable<E> {
   ///
   /// See [Iterable.toList]
   List<E> asList() => toList(growable: false);
+
+  /// Returns `true` if all elments match the given predicate [test].
+  bool all(Predicate<E> test) {
+    for (var element in this) {
+      if (!test(element)) return false;
+    }
+    return true;
+  }
 
   /// Returns a new lazy [Iterable] with all elements that satisfy the predicate [test],
   /// providing sequential index of the element.
@@ -106,6 +115,10 @@ extension IterableExt<E> on Iterable<E> {
     mapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
+
+  /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
+  /// being invoked on each element of original collection.
+  Iterable<T> flatMap<T>(Transform<Iterable<T>, E> f) => _FlatMappedIterable(map(f));
 
   /// Splits this collection into pair of lazy iterables,
   /// where the *first* one contains elements for which [test] yields `true`,
