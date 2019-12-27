@@ -47,6 +47,12 @@ import 'package:collection_ext/iterables.dart';
 final sum = [2, 4, 6].foldRight(0, (acc, x) => acc + x);
 ```
 
+## Available Modules
+
+- Extensions to [Iterables]
+
+I'm working on more useful extensions, PRs are welcome! :beers:🖖
+
 
 [Dart]: https://dart.dev
 [github-runs]: https://github.com/xinthink/dart_collection_ext/actions
@@ -55,4 +61,5 @@ final sum = [2, 4, 6].foldRight(0, (acc, x) => acc + x);
 [codecov]: https://codecov.io/gh/xinthink/dart_collection_ext
 [license-badge]: https://img.shields.io/github/license/xinthink/dart_collection_ext
 [license]: https://raw.githubusercontent.com/xinthink/dart_collection_ext/master/LICENSE
-[API Docs]: https://xinthink.github.io/dart_collection_ext/api/index.html
+[API Docs]: https://xinthink.github.io/dart_collection_ext/index.html
+[Iterables]: https://xinthink.github.io/dart_collection_ext/iterables/IterableExt.html
