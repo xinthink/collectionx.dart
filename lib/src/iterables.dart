@@ -7,7 +7,7 @@ export 'types.dart';
 part '_chunked_iterable.dart';
 
 /// Extensions to [Iterable]s
-extension IteratorExt<E> on Iterable<E> {
+extension IterableExt<E> on Iterable<E> {
   /// Returns a new lazy [Iterable] with all `non-null` elements.
   ///
   /// See [Iterable.where]
