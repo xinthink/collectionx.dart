@@ -1,5 +1,6 @@
 # collection_ext
 
+[![Pub][pub-badge]][pub]
 [![Check Status][check-badge]][github-runs]
 [![Code Coverage][codecov-badge]][codecov]
 [![MIT][license-badge]][license]
@@ -61,5 +62,7 @@ I'm working on more useful extensions, PRs are welcome! :beers:🖖
 [codecov]: https://codecov.io/gh/xinthink/dart_collection_ext
 [license-badge]: https://img.shields.io/github/license/xinthink/dart_collection_ext
 [license]: https://raw.githubusercontent.com/xinthink/dart_collection_ext/master/LICENSE
+[pub]: https://pub.dev/packages/collection_ext
+[pub-badge]: https://img.shields.io/pub/v/collection_ext.svg
 [API Docs]: https://xinthink.github.io/dart_collection_ext/index.html
 [Iterables]: https://xinthink.github.io/dart_collection_ext/iterables/IterableExt.html
