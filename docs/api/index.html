@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="generator" content="made with love by dartdoc 0.29.1">
+  <meta name="generator" content="made with love by dartdoc 0.29.2">
   <meta name="description" content="collection_ext API docs, for the Dart programming language.">
   <title>collection_ext - Dart API docs</title>
 
@@ -58,7 +58,7 @@
 <p><a href="https://github.com/xinthink/dart_collection_ext/actions"><img src="https://github.com/xinthink/dart_collection_ext/workflows/check/badge.svg" alt="Check Status"></a>
 <a href="https://codecov.io/gh/xinthink/dart_collection_ext"><img src="https://codecov.io/gh/xinthink/dart_collection_ext/branch/master/graph/badge.svg" alt="Code Coverage"></a>
 <a href="https://raw.githubusercontent.com/xinthink/dart_collection_ext/master/LICENSE"><img src="https://img.shields.io/github/license/xinthink/dart_collection_ext" alt="MIT"></a></p>
-<p>A set of extension functions for <a href="https://dart.dev">Dart</a> collections, designed in the purpose of making it easier to write functional-style, concise dart codes. </p>
+<p>A set of extension functions for <a href="https://dart.dev">Dart</a> collections, designed in the purpose of making it easier to write functional-style, concise dart codes.</p>
 <p>Working on <code>Iterable</code> for example, with <code>collection_ext</code>, we can write:</p>
 <pre class="language-dart"><code class="language-dart">iterable
   .forEachIndexed((i, x) =&gt; /* use index i &amp; element x */)
@@ -79,7 +79,7 @@ Column(
   children: getItems()
     .nonNull
     .mapIndexed((i, item) =&gt; Text("#$i ${item.title}"))
-    .toFixedList(),
+    .asList(),
 )
 </code></pre>
 <p>Or you can import the needed module only, for example:</p>

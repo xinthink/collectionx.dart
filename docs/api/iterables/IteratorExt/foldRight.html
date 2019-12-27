@@ -60,12 +60,12 @@
         <li><a href="iterables/IteratorExt/nonNull.html">nonNull</a></li>
     
         <li class="section-title"><a href="iterables/IteratorExt.html#instance-methods">Methods</a></li>
+        <li><a href="iterables/IteratorExt/asList.html">asList</a></li>
         <li><a href="iterables/IteratorExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IteratorExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IteratorExt/foldRightIndexed.html">foldRightIndexed</a></li>
         <li><a href="iterables/IteratorExt/forEachIndexed.html">forEachIndexed</a></li>
         <li><a href="iterables/IteratorExt/mapIndexed.html">mapIndexed</a></li>
-        <li><a href="iterables/IteratorExt/toFixedList.html">toFixedList</a></li>
     
     
     
@@ -80,7 +80,12 @@
     <section class="multi-line-signature">
       <span class="returntype">S</span>
             <span class="name ">foldRight</span>
-&lt;<wbr><span class="type-parameter">S</span>&gt;(<wbr><span class="parameter" id="foldRight-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span> <span class="parameter" id="foldRight-param-f"><span class="type-annotation">S</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-acc"><span class="type-annotation">S</span> <span class="parameter-name">acc</span>, </span> <span class="parameter" id="param-"><span class="type-annotation">E</span></span>)</span>)
+&lt;<wbr><span class="type-parameter">S</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="foldRight-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span></li>
+<li><span class="parameter" id="foldRight-param-f"><span class="type-annotation">S</span> <span class="parameter-name">f</span>(<ol class="parameter-list"><li><span class="parameter" id="param-acc"><span class="type-annotation">S</span> <span class="parameter-name">acc</span>, </span></li>
+<li><span class="parameter" id="param-"><span class="type-annotation">E</span></span></li>
+</ol>
+)</span></li>
+</ol>)
       
     </section>
     <section class="desc markdown">
@@ -94,7 +99,7 @@ with the combinator <code>f</code> in a reversed order.</p>
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">S foldRight&lt;S&gt;(S initial, S Function(S acc, E) f) =&gt;
-  toFixedList().reversed.fold(initial, f);</code></pre>
+  asList().reversed.fold(initial, f);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
