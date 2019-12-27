@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 0.29.2">
+  <meta name="description" content="collection_ext API docs, for the Dart programming language.">
+  <title>collection_ext - Dart API docs</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  <!-- header placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="xinthink.com">collection_ext package</a></li>
+  </ol>
+  <div class="self-name">collection_ext</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="xinthink.com">collection_ext package</a></li>
+    </ol>
+    
+    <h5 class="hidden-xs"><span class="package-name">collection_ext</span> <span class="package-kind">package</span></h5>
+    <ol>
+          <li class="section-title">Libraries</li>
+          <li><a href="collection_ext/collection_ext-library.html">collection_ext</a></li>
+          <li><a href="iterables/iterables-library.html">iterables</a></li>
+    </ol>
+  </div>
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <section class="desc markdown">
+        <h1 id="collection_ext">collection_ext</h1>
+<p><a href="https://github.com/xinthink/dart_collection_ext/actions"><img src="https://github.com/xinthink/dart_collection_ext/workflows/check/badge.svg" alt="Check Status"></a>
+<a href="https://codecov.io/gh/xinthink/dart_collection_ext"><img src="https://codecov.io/gh/xinthink/dart_collection_ext/branch/master/graph/badge.svg" alt="Code Coverage"></a>
+<a href="https://raw.githubusercontent.com/xinthink/dart_collection_ext/master/LICENSE"><img src="https://img.shields.io/github/license/xinthink/dart_collection_ext" alt="MIT"></a></p>
+<p>A set of extension functions for <a href="https://dart.dev">Dart</a> collections, designed in the purpose of making it easier to write functional-style, concise dart codes.</p>
+<p>Working on an <code>Iterable</code> for example, with <code>collection_ext</code>, we can write:</p>
+<pre class="language-dart"><code class="language-dart">iterable.forEachIndexed((i, x) =&gt; /* use index i &amp; element x */)
+</code></pre>
+<p>instead of:</p>
+<pre class="language-dart"><code class="language-dart">var i = 0;
+for (var x in iterable) {
+  // use index i &amp; element x
+  i++;
+}
+</code></pre>
+<p>:point_right: See <a href="https://xinthink.github.io/dart_collection_ext/api/index.html">API Docs</a> for more details</p>
+<h2 id="usage">Usage</h2>
+<p>Import all extension functions at once:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:collection_ext/all.dart';
+
+Column(
+  children: getItems()
+    .nonNull
+    .mapIndexed((i, item) =&gt; Text("#$i ${item.title}"))
+    .asList(),
+)
+</code></pre>
+<p>Or you can import the needed module only, for example:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:collection_ext/iterables.dart';
+
+final sum = [2, 4, 6].foldRight(0, (acc, x) =&gt; acc + x);
+</code></pre>
+      </section>
+      
+        <section class="summary">
+            <h2>Libraries</h2>
+          <dl>
+            <dt id="collection_ext">
+              <span class="name"><a href="collection_ext/collection_ext-library.html">collection_ext</a></span>             
+            </dt>
+            <dd>
+              
+            </dd>            <dt id="iterables">
+              <span class="name"><a href="iterables/iterables-library.html">iterables</a></span>             
+            </dt>
+            <dd>
+              
+            </dd>          </dl>
+        </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    collection_ext
+      0.0.1
+  </span>
+
+  <!-- footer-text placeholder -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- footer placeholder -->
+
+</body>
+
+</html>
