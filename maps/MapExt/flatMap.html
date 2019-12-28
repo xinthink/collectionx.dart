@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the mapToSet method from the MapExt extension, for the Dart programming language.">
-  <title>mapToSet method - MapExt extension - maps library - Dart API</title>
+  <meta name="description" content="API docs for the flatMap method from the MapExt extension, for the Dart programming language.">
+  <title>flatMap method - MapExt extension - maps library - Dart API</title>
   <!-- required because all the links are pseudo-absolute -->
   <base href="../..">
 
@@ -27,9 +27,9 @@
     <li><a href="index.html">collection_ext</a></li>
     <li><a href="maps/maps-library.html">maps</a></li>
     <li><a href="maps/MapExt.html">MapExt<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></a></li>
-    <li class="self-crumb">mapToSet&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
+    <li class="self-crumb">flatMap&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
   </ol>
-  <div class="self-name">mapToSet</div>
+  <div class="self-name">flatMap</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -48,7 +48,7 @@
       <li><a href="index.html">collection_ext</a></li>
       <li><a href="maps/maps-library.html">maps</a></li>
       <li><a href="maps/MapExt.html">MapExt<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></a></li>
-      <li class="self-crumb">mapToSet&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
+      <li class="self-crumb">flatMap&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
     </ol>
     
     <h5>MapExt extension</h5>
@@ -74,27 +74,24 @@
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">mapToSet&lt;<wbr><span class="type-parameter">T</span>&gt;</span> method</h1></div>
+      <div><h1><span class="kind-method">flatMap&lt;<wbr><span class="type-parameter">T</span>&gt;</span> method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
-            <span class="name ">mapToSet</span>
-&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="mapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span></li>
-<li><span class="parameter" id="mapToSet-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+      <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+            <span class="name ">flatMap</span>
+&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="flatMap-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
     <section class="desc markdown">
-      <p>Transforms entries to objects of type <code>T</code> with the transformer <code>f</code>,
-and appends the result to the given <code>destination</code>.</p>
+      <p>Return a new lazy <code>Iterable</code> of all elements yielded from results of transform <code>f</code> function
+being invoked on each element of original entries.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Set&lt;T&gt; mapToSet&lt;T&gt;(Set&lt;T&gt; destination, EntryTransform&lt;K, V, T&gt; f) {
-  mapEntries(f).forEach((e) =&gt; destination.add(e));
-  return destination;
-}</code></pre>
+      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; flatMap&lt;T&gt;(EntryTransform&lt;K, V, Iterable&lt;T&gt;&gt; f) =&gt;
+  entries.flatMap((e) =&gt; f(e.key, e.value));</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

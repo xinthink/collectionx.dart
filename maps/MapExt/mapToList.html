@@ -59,6 +59,7 @@
         <li class="section-title"><a href="maps/MapExt.html#instance-methods">Methods</a></li>
         <li><a href="maps/MapExt/all.html">all</a></li>
         <li><a href="maps/MapExt/any.html">any</a></li>
+        <li><a href="maps/MapExt/flatMap.html">flatMap</a></li>
         <li><a href="maps/MapExt/mapEntries.html">mapEntries</a></li>
         <li><a href="maps/MapExt/mapToList.html">mapToList</a></li>
         <li><a href="maps/MapExt/mapToSet.html">mapToSet</a></li>
@@ -79,7 +80,7 @@
       <span class="returntype">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
             <span class="name ">mapToList</span>
 &lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="mapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span></li>
-<li><span class="parameter" id="mapToList-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+<li><span class="parameter" id="mapToList-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
@@ -90,7 +91,7 @@ and appends the result to the given <code>destination</code>.</p>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">List&lt;T&gt; mapToList&lt;T&gt;(List&lt;T&gt; destination, EntryTransform&lt;T, K, V&gt; f) {
+      <pre class="language-dart"><code class="language-dart">List&lt;T&gt; mapToList&lt;T&gt;(List&lt;T&gt; destination, EntryTransform&lt;K, V, T&gt; f) {
   mapEntries(f).forEach((e) =&gt; destination.add(e));
   return destination;
 }</code></pre>

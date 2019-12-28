@@ -64,6 +64,7 @@
         <li><a href="iterables/IterableExt/asList.html">asList</a></li>
         <li><a href="iterables/IterableExt/chunked.html">chunked</a></li>
         <li><a href="iterables/IterableExt/flatMap.html">flatMap</a></li>
+        <li><a href="iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></li>
         <li><a href="iterables/IterableExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IterableExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IterableExt/foldRightIndexed.html">foldRightIndexed</a></li>
@@ -92,7 +93,7 @@
     <section class="multi-line-signature">
       <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
             <span class="name ">mapIndexed</span>
-&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="mapIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="mapIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
@@ -103,10 +104,7 @@ providing sequential index of the element.</p>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; mapIndexed&lt;T&gt;(IndexedTransform&lt;T, E&gt; f) {
-  var i = 0;
-  return map((e) =&gt; f(i++, e));
-}</code></pre>
+      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; mapIndexed&lt;T&gt;(IndexedTransform&lt;E, T&gt; f) =&gt; _IndexedMappedIterable(this, f);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

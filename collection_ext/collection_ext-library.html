@@ -85,6 +85,31 @@
 
 
 
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+
+      <dl class="callables">
+        <dt id="mapFromList" class="callable">
+          <span class="name"><a href="maps/mapFromList.html">mapFromList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapFromList-param-pairs"><span class="type-annotation">Iterable</span> <span class="parameter-name">pairs</span></span><wbr>)
+            <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Create a <code>Map</code> from a list of key, value... pairs,
+if the list has an odd length, the last entry of the resulted map will has a <code>null</code> value.
+                  
+</dd>
+        <dt id="mapFromPairs" class="callable">
+          <span class="name"><a href="maps/mapFromPairs.html">mapFromPairs</a></span><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapFromPairs-param-pairs"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">pairs</span></span><wbr>)
+            <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Create a <code>Map</code> from a list of <code>Tuple2</code>s, which provides key/value pairs.
+                  
+</dd>
+      </dl>
+    </section>
 
 
     <section class="summary offset-anchor" id="typedefs">
@@ -119,7 +144,7 @@
                   
 </dd>
         <dt id="EntryTransform" class="callable">
-          <span class="name"><a href="maps/EntryTransform.html">EntryTransform</a></span><span class="signature">&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="EntryTransform-param-"><span class="type-annotation">K</span>, </span><wbr><span class="parameter" id="EntryTransform-param-"><span class="type-annotation">V</span></span><wbr>)
+          <span class="name"><a href="maps/EntryTransform.html">EntryTransform</a></span><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="EntryTransform-param-"><span class="type-annotation">K</span>, </span><wbr><span class="parameter" id="EntryTransform-param-"><span class="type-annotation">V</span></span><wbr>)
             <span class="returntype parameter">&#8594; R</span>
           </span>
                   </dt>
@@ -155,7 +180,7 @@
                   
 </dd>
         <dt id="IndexedTransform" class="callable">
-          <span class="name"><a href="maps/IndexedTransform.html">IndexedTransform</a></span><span class="signature">&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="IndexedTransform-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="IndexedTransform-param-"><span class="type-annotation">T</span></span><wbr>)
+          <span class="name"><a href="maps/IndexedTransform.html">IndexedTransform</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="IndexedTransform-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="IndexedTransform-param-"><span class="type-annotation">T</span></span><wbr>)
             <span class="returntype parameter">&#8594; R</span>
           </span>
                   </dt>
@@ -173,7 +198,7 @@
                   
 </dd>
         <dt id="Transform" class="callable">
-          <span class="name"><a href="maps/Transform.html">Transform</a></span><span class="signature">&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="Transform-param-"><span class="type-annotation">T</span></span><wbr>)
+          <span class="name"><a href="maps/Transform.html">Transform</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="Transform-param-"><span class="type-annotation">T</span></span><wbr>)
             <span class="returntype parameter">&#8594; R</span>
           </span>
                   </dt>
@@ -198,6 +223,9 @@
     
     
     
+      <li class="section-title"><a href="collection_ext/collection_ext-library.html#functions">Functions</a></li>
+      <li><a href="maps/mapFromList.html">mapFromList</a></li>
+      <li><a href="maps/mapFromPairs.html">mapFromPairs</a></li>
     
     
       <li class="section-title"><a href="collection_ext/collection_ext-library.html#typedefs">Typedefs</a></li>

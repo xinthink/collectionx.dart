@@ -64,6 +64,7 @@
         <li><a href="iterables/IterableExt/asList.html">asList</a></li>
         <li><a href="iterables/IterableExt/chunked.html">chunked</a></li>
         <li><a href="iterables/IterableExt/flatMap.html">flatMap</a></li>
+        <li><a href="iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></li>
         <li><a href="iterables/IterableExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IterableExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IterableExt/foldRightIndexed.html">foldRightIndexed</a></li>
@@ -93,7 +94,7 @@
       <span class="returntype">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
             <span class="name ">mapToSetIndexed</span>
 &lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="mapToSetIndexed-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span></li>
-<li><span class="parameter" id="mapToSetIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+<li><span class="parameter" id="mapToSetIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
@@ -104,7 +105,7 @@ providing sequential index of the element, and appends the result to the given <
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Set&lt;T&gt; mapToSetIndexed&lt;T&gt;(Set&lt;T&gt; destination, IndexedTransform&lt;T, E&gt; f) {
+      <pre class="language-dart"><code class="language-dart">Set&lt;T&gt; mapToSetIndexed&lt;T&gt;(Set&lt;T&gt; destination, IndexedTransform&lt;E, T&gt; f) {
   mapIndexed(f).forEach((e) =&gt; destination.add(e));
   return destination;
 }</code></pre>

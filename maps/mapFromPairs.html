@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the IndexedPredicate property from the maps library, for the Dart programming language.">
-  <title>IndexedPredicate typedef - maps library - Dart API</title>
+  <meta name="description" content="API docs for the mapFromPairs function from the maps library, for the Dart programming language.">
+  <title>mapFromPairs function - maps library - Dart API</title>
   <!-- required because all the links are pseudo-absolute -->
   <base href="..">
 
@@ -26,9 +26,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="index.html">collection_ext</a></li>
     <li><a href="maps/maps-library.html">maps</a></li>
-    <li class="self-crumb">IndexedPredicate&lt;<wbr><span class="type-parameter">T</span>&gt; typedef</li>
+    <li class="self-crumb">mapFromPairs&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt; function</li>
   </ol>
-  <div class="self-name">IndexedPredicate</div>
+  <div class="self-name">mapFromPairs</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -46,7 +46,7 @@
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="index.html">collection_ext</a></li>
       <li><a href="maps/maps-library.html">maps</a></li>
-      <li class="self-crumb">IndexedPredicate&lt;<wbr><span class="type-parameter">T</span>&gt; typedef</li>
+      <li class="self-crumb">mapFromPairs&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt; function</li>
     </ol>
     
     <h5>maps library</h5>
@@ -79,19 +79,22 @@
   </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-typedef">IndexedPredicate&lt;<wbr><span class="type-parameter">T</span>&gt;</span> typedef </h1></div>
+      <div><h1><span class="kind-function">mapFromPairs&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span> function </h1></div>
 
     <section class="multi-line-signature">
-        <span class="returntype">bool</span>
-                <span class="name ">IndexedPredicate</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="IndexedPredicate-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="IndexedPredicate-param-"><span class="type-annotation">T</span></span></li>
+        <span class="returntype">Map<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>
+                <span class="name ">mapFromPairs</span>
+&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="mapFromPairs-param-pairs"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">pairs</span></span></li>
 </ol>)
     </section>
-
-        <section class="summary source-code" id="source">
+    <section class="desc markdown">
+      <p>Create a <code>Map</code> from a list of <code>Tuple2</code>s, which provides key/value pairs.</p>
+    </section>
+    
+    <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">typedef IndexedPredicate&lt;T&gt; = bool Function(int index, T);</code></pre>
+      <pre class="language-dart"><code class="language-dart">Map&lt;K, V&gt; mapFromPairs&lt;K, V&gt;(Iterable&lt;Tuple2&lt;K, V&gt;&gt; pairs) =&gt;
+  { for (var t in pairs) t.item1 : t.item2 };</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

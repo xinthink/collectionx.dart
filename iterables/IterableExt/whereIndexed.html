@@ -64,6 +64,7 @@
         <li><a href="iterables/IterableExt/asList.html">asList</a></li>
         <li><a href="iterables/IterableExt/chunked.html">chunked</a></li>
         <li><a href="iterables/IterableExt/flatMap.html">flatMap</a></li>
+        <li><a href="iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></li>
         <li><a href="iterables/IterableExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IterableExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IterableExt/foldRightIndexed.html">foldRightIndexed</a></li>
@@ -103,10 +104,7 @@ providing sequential index of the element.</p>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Iterable&lt;E&gt; whereIndexed(IndexedPredicate&lt;E&gt; test) {
-  var i = 0;
-  return where((e) =&gt; test(i++, e));
-}</code></pre>
+      <pre class="language-dart"><code class="language-dart">Iterable&lt;E&gt; whereIndexed(IndexedPredicate&lt;E&gt; test) =&gt; _IndexedWhereIterable(this, test);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

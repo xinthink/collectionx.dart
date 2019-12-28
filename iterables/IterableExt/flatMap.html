@@ -64,6 +64,7 @@
         <li><a href="iterables/IterableExt/asList.html">asList</a></li>
         <li><a href="iterables/IterableExt/chunked.html">chunked</a></li>
         <li><a href="iterables/IterableExt/flatMap.html">flatMap</a></li>
+        <li><a href="iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></li>
         <li><a href="iterables/IterableExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IterableExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IterableExt/foldRightIndexed.html">foldRightIndexed</a></li>
@@ -92,7 +93,7 @@
     <section class="multi-line-signature">
       <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
             <span class="name ">flatMap</span>
-&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="flatMap-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="flatMap-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
@@ -103,7 +104,7 @@ being invoked on each element of original collection.</p>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; flatMap&lt;T&gt;(Transform&lt;Iterable&lt;T&gt;, E&gt; f) =&gt; _FlatMappedIterable(map(f));</code></pre>
+      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; flatMap&lt;T&gt;(Transform&lt;E, Iterable&lt;T&gt;&gt; f) =&gt; _FlatMappedIterable(map(f));</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
