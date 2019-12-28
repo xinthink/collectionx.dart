@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the whereIndexed method from the IterableExt extension, for the Dart programming language.">
-  <title>whereIndexed method - IterableExt extension - iterables library - Dart API</title>
+  <meta name="description" content="API docs for the flatMap method from the IterableExt extension, for the Dart programming language.">
+  <title>flatMap method - IterableExt extension - iterables library - Dart API</title>
   <!-- required because all the links are pseudo-absolute -->
   <base href="../..">
 
@@ -27,9 +27,9 @@
     <li><a href="index.html">collection_ext</a></li>
     <li><a href="iterables/iterables-library.html">iterables</a></li>
     <li><a href="iterables/IterableExt.html">IterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
-    <li class="self-crumb">whereIndexed method</li>
+    <li class="self-crumb">flatMap&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
   </ol>
-  <div class="self-name">whereIndexed</div>
+  <div class="self-name">flatMap</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -48,7 +48,7 @@
       <li><a href="index.html">collection_ext</a></li>
       <li><a href="iterables/iterables-library.html">iterables</a></li>
       <li><a href="iterables/IterableExt.html">IterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
-      <li class="self-crumb">whereIndexed method</li>
+      <li class="self-crumb">flatMap&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
     </ol>
     
     <h5>IterableExt extension</h5>
@@ -87,26 +87,23 @@
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">whereIndexed</span> method</h1></div>
+      <div><h1><span class="kind-method">flatMap&lt;<wbr><span class="type-parameter">T</span>&gt;</span> method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
-            <span class="name ">whereIndexed</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="whereIndexed-param-test"><span class="type-annotation"><a href="maps/IndexedPredicate.html">IndexedPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span></li>
+      <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+            <span class="name ">flatMap</span>
+&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="flatMap-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
     <section class="desc markdown">
-      <p>Returns a new lazy <code>Iterable</code> with all elements that satisfy the predicate <code>test</code>,
-providing sequential index of the element.</p>
+      <p>Return a new lazy <code>Iterable</code> of all elements yielded from results of transform <code>f</code> function
+being invoked on each element of original collection.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Iterable&lt;E&gt; whereIndexed(IndexedPredicate&lt;E&gt; test) {
-  var i = 0;
-  return where((e) =&gt; test(i++, e));
-}</code></pre>
+      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; flatMap&lt;T&gt;(Transform&lt;Iterable&lt;T&gt;, E&gt; f) =&gt; _FlatMappedIterable(map(f));</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

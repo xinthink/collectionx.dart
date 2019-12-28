@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the mapToSet method from the IterableExt extension, for the Dart programming language.">
-  <title>mapToSet method - IterableExt extension - iterables library - Dart API</title>
+  <meta name="description" content="API docs for the mapToSet method from the MapExt extension, for the Dart programming language.">
+  <title>mapToSet method - MapExt extension - maps library - Dart API</title>
   <!-- required because all the links are pseudo-absolute -->
   <base href="../..">
 
@@ -25,8 +25,8 @@
   <button id="sidenav-left-toggle" type="button">&nbsp;</button>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="index.html">collection_ext</a></li>
-    <li><a href="iterables/iterables-library.html">iterables</a></li>
-    <li><a href="iterables/IterableExt.html">IterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
+    <li><a href="maps/maps-library.html">maps</a></li>
+    <li><a href="maps/MapExt.html">MapExt<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></a></li>
     <li class="self-crumb">mapToSet&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
   </ol>
   <div class="self-name">mapToSet</div>
@@ -46,38 +46,24 @@
     
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="index.html">collection_ext</a></li>
-      <li><a href="iterables/iterables-library.html">iterables</a></li>
-      <li><a href="iterables/IterableExt.html">IterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
+      <li><a href="maps/maps-library.html">maps</a></li>
+      <li><a href="maps/MapExt.html">MapExt<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></a></li>
       <li class="self-crumb">mapToSet&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
     </ol>
     
-    <h5>IterableExt extension</h5>
+    <h5>MapExt extension</h5>
     <ol>
     
     
-        <li class="section-title"> <a href="iterables/IterableExt.html#instance-properties">Properties</a>
-        </li>
-        <li><a href="iterables/IterableExt/nonNull.html">nonNull</a></li>
     
-        <li class="section-title"><a href="iterables/IterableExt.html#instance-methods">Methods</a></li>
-        <li><a href="iterables/IterableExt/all.html">all</a></li>
-        <li><a href="iterables/IterableExt/asList.html">asList</a></li>
-        <li><a href="iterables/IterableExt/chunked.html">chunked</a></li>
-        <li><a href="iterables/IterableExt/flatMap.html">flatMap</a></li>
-        <li><a href="iterables/IterableExt/foldIndexed.html">foldIndexed</a></li>
-        <li><a href="iterables/IterableExt/foldRight.html">foldRight</a></li>
-        <li><a href="iterables/IterableExt/foldRightIndexed.html">foldRightIndexed</a></li>
-        <li><a href="iterables/IterableExt/forEachIndexed.html">forEachIndexed</a></li>
-        <li><a href="iterables/IterableExt/mapIndexed.html">mapIndexed</a></li>
-        <li><a href="iterables/IterableExt/mapToList.html">mapToList</a></li>
-        <li><a href="iterables/IterableExt/mapToListIndexed.html">mapToListIndexed</a></li>
-        <li><a href="iterables/IterableExt/mapToSet.html">mapToSet</a></li>
-        <li><a href="iterables/IterableExt/mapToSetIndexed.html">mapToSetIndexed</a></li>
-        <li><a href="iterables/IterableExt/partition.html">partition</a></li>
-        <li><a href="iterables/IterableExt/partitionIndexed.html">partitionIndexed</a></li>
-        <li><a href="iterables/IterableExt/whereIndexed.html">whereIndexed</a></li>
-        <li><a href="iterables/IterableExt/whereNot.html">whereNot</a></li>
-        <li><a href="iterables/IterableExt/whereNotIndexed.html">whereNotIndexed</a></li>
+        <li class="section-title"><a href="maps/MapExt.html#instance-methods">Methods</a></li>
+        <li><a href="maps/MapExt/all.html">all</a></li>
+        <li><a href="maps/MapExt/any.html">any</a></li>
+        <li><a href="maps/MapExt/mapEntries.html">mapEntries</a></li>
+        <li><a href="maps/MapExt/mapToList.html">mapToList</a></li>
+        <li><a href="maps/MapExt/mapToSet.html">mapToSet</a></li>
+        <li><a href="maps/MapExt/where.html">where</a></li>
+        <li><a href="maps/MapExt/whereNot.html">whereNot</a></li>
     
     
     
@@ -93,19 +79,19 @@
       <span class="returntype">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
             <span class="name ">mapToSet</span>
 &lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="mapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span></li>
-<li><span class="parameter" id="mapToSet-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+<li><span class="parameter" id="mapToSet-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
     <section class="desc markdown">
-      <p>Transforms elements to objects of type <code>T</code> with the transformer <code>f</code>,
+      <p>Transforms entries to objects of type <code>T</code> with the transformer <code>f</code>,
 and appends the result to the given <code>destination</code>.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Set&lt;T&gt; mapToSet&lt;T&gt;(Set&lt;T&gt; destination, Transform&lt;T, E&gt; f) {
-  map(f).forEach((e) =&gt; destination.add(e));
+      <pre class="language-dart"><code class="language-dart">Set&lt;T&gt; mapToSet&lt;T&gt;(Set&lt;T&gt; destination, EntryTransform&lt;T, K, V&gt; f) {
+  mapEntries(f).forEach((e) =&gt; destination.add(e));
   return destination;
 }</code></pre>
     </section>

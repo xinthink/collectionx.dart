@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the IndexedPredicate property from the iterables library, for the Dart programming language.">
-  <title>IndexedPredicate typedef - iterables library - Dart API</title>
+  <meta name="description" content="API docs for the where method from the MapExt extension, for the Dart programming language.">
+  <title>where method - MapExt extension - maps library - Dart API</title>
   <!-- required because all the links are pseudo-absolute -->
-  <base href="..">
+  <base href="../..">
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,10 +25,11 @@
   <button id="sidenav-left-toggle" type="button">&nbsp;</button>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="index.html">collection_ext</a></li>
-    <li><a href="iterables/iterables-library.html">iterables</a></li>
-    <li class="self-crumb">IndexedPredicate&lt;<wbr><span class="type-parameter">T</span>&gt; typedef</li>
+    <li><a href="maps/maps-library.html">maps</a></li>
+    <li><a href="maps/MapExt.html">MapExt<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></a></li>
+    <li class="self-crumb">where method</li>
   </ol>
-  <div class="self-name">IndexedPredicate</div>
+  <div class="self-name">where</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,48 +46,51 @@
     
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="index.html">collection_ext</a></li>
-      <li><a href="iterables/iterables-library.html">iterables</a></li>
-      <li class="self-crumb">IndexedPredicate&lt;<wbr><span class="type-parameter">T</span>&gt; typedef</li>
+      <li><a href="maps/maps-library.html">maps</a></li>
+      <li><a href="maps/MapExt.html">MapExt<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></a></li>
+      <li class="self-crumb">where method</li>
     </ol>
     
-    <h5>iterables library</h5>
+    <h5>MapExt extension</h5>
     <ol>
     
-      <li class="section-title"><a href="iterables/iterables-library.html#extension">Extensions</a></li>
-      <li><a href="iterables/IterableExt.html">IterableExt</a></li>
+    
+    
+        <li class="section-title"><a href="maps/MapExt.html#instance-methods">Methods</a></li>
+        <li><a href="maps/MapExt/all.html">all</a></li>
+        <li><a href="maps/MapExt/any.html">any</a></li>
+        <li><a href="maps/MapExt/mapEntries.html">mapEntries</a></li>
+        <li><a href="maps/MapExt/mapToList.html">mapToList</a></li>
+        <li><a href="maps/MapExt/mapToSet.html">mapToSet</a></li>
+        <li><a href="maps/MapExt/where.html">where</a></li>
+        <li><a href="maps/MapExt/whereNot.html">whereNot</a></li>
     
     
     
     
-    
-    
-      <li class="section-title"><a href="iterables/iterables-library.html#typedefs">Typedefs</a></li>
-      <li><a href="iterables/Accumulate.html">Accumulate</a></li>
-      <li><a href="iterables/Action.html">Action</a></li>
-      <li><a href="iterables/IndexedAccumulate.html">IndexedAccumulate</a></li>
-      <li><a href="iterables/IndexedAction.html">IndexedAction</a></li>
-      <li><a href="iterables/IndexedPredicate.html">IndexedPredicate</a></li>
-      <li><a href="iterables/IndexedTransform.html">IndexedTransform</a></li>
-      <li><a href="iterables/Predicate.html">Predicate</a></li>
-      <li><a href="iterables/Transform.html">Transform</a></li>
     
     </ol>
-  </div><!--/.sidebar-offcanvas-left-->
+  </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-typedef">IndexedPredicate&lt;<wbr><span class="type-parameter">T</span>&gt;</span> typedef </h1></div>
+      <div><h1><span class="kind-method">where</span> method</h1></div>
 
     <section class="multi-line-signature">
-        <span class="returntype">bool</span>
-                <span class="name ">IndexedPredicate</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="IndexedPredicate-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="IndexedPredicate-param-"><span class="type-annotation">T</span></span></li>
+      <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">MapEntry<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span>
+            <span class="name ">where</span>
+(<wbr><ol class="parameter-list"><li><span class="parameter" id="where-param-test"><span class="type-annotation"><a href="maps/EntryPredicate.html">EntryPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span></li>
 </ol>)
+      
     </section>
-
-        <section class="summary source-code" id="source">
+    <section class="desc markdown">
+      <p>Returns a new lazy <code>Iterable</code> with all entries that satisfy the predicate <code>test</code>,
+providing sequential index of the element.</p>
+    </section>
+    
+    <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">typedef IndexedPredicate&lt;T&gt; = bool Function(int index, T);</code></pre>
+      <pre class="language-dart"><code class="language-dart">Iterable&lt;MapEntry&lt;K, V&gt;&gt; where(EntryPredicate&lt;K, V&gt; test) =&gt;
+  entries.where((e) =&gt; test(e.key, e.value));</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

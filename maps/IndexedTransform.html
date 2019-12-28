@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the Accumulate property from the iterables library, for the Dart programming language.">
-  <title>Accumulate typedef - iterables library - Dart API</title>
+  <meta name="description" content="API docs for the IndexedTransform property from the maps library, for the Dart programming language.">
+  <title>IndexedTransform typedef - maps library - Dart API</title>
   <!-- required because all the links are pseudo-absolute -->
   <base href="..">
 
@@ -25,10 +25,10 @@
   <button id="sidenav-left-toggle" type="button">&nbsp;</button>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="index.html">collection_ext</a></li>
-    <li><a href="iterables/iterables-library.html">iterables</a></li>
-    <li class="self-crumb">Accumulate&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">T</span>&gt; typedef</li>
+    <li><a href="maps/maps-library.html">maps</a></li>
+    <li class="self-crumb">IndexedTransform&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T</span>&gt; typedef</li>
   </ol>
-  <div class="self-name">Accumulate</div>
+  <div class="self-name">IndexedTransform</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,48 +45,50 @@
     
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="index.html">collection_ext</a></li>
-      <li><a href="iterables/iterables-library.html">iterables</a></li>
-      <li class="self-crumb">Accumulate&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">T</span>&gt; typedef</li>
+      <li><a href="maps/maps-library.html">maps</a></li>
+      <li class="self-crumb">IndexedTransform&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T</span>&gt; typedef</li>
     </ol>
     
-    <h5>iterables library</h5>
+    <h5>maps library</h5>
     <ol>
     
-      <li class="section-title"><a href="iterables/iterables-library.html#extension">Extensions</a></li>
-      <li><a href="iterables/IterableExt.html">IterableExt</a></li>
+      <li class="section-title"><a href="maps/maps-library.html#extension">Extensions</a></li>
+      <li><a href="maps/MapExt.html">MapExt</a></li>
     
     
     
     
     
     
-      <li class="section-title"><a href="iterables/iterables-library.html#typedefs">Typedefs</a></li>
-      <li><a href="iterables/Accumulate.html">Accumulate</a></li>
-      <li><a href="iterables/Action.html">Action</a></li>
-      <li><a href="iterables/IndexedAccumulate.html">IndexedAccumulate</a></li>
-      <li><a href="iterables/IndexedAction.html">IndexedAction</a></li>
-      <li><a href="iterables/IndexedPredicate.html">IndexedPredicate</a></li>
-      <li><a href="iterables/IndexedTransform.html">IndexedTransform</a></li>
-      <li><a href="iterables/Predicate.html">Predicate</a></li>
-      <li><a href="iterables/Transform.html">Transform</a></li>
+      <li class="section-title"><a href="maps/maps-library.html#typedefs">Typedefs</a></li>
+      <li><a href="maps/Accumulate.html">Accumulate</a></li>
+      <li><a href="maps/Action.html">Action</a></li>
+      <li><a href="maps/EntryPredicate.html">EntryPredicate</a></li>
+      <li><a href="maps/EntryTransform.html">EntryTransform</a></li>
+      <li><a href="maps/IndexedAccumulate.html">IndexedAccumulate</a></li>
+      <li><a href="maps/IndexedAction.html">IndexedAction</a></li>
+      <li><a href="maps/IndexedPredicate.html">IndexedPredicate</a></li>
+      <li><a href="maps/IndexedTransform.html">IndexedTransform</a></li>
+      <li><a href="maps/Predicate.html">Predicate</a></li>
+      <li><a href="maps/Transform.html">Transform</a></li>
     
     </ol>
   </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-typedef">Accumulate&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">T</span>&gt;</span> typedef </h1></div>
+      <div><h1><span class="kind-typedef">IndexedTransform&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T</span>&gt;</span> typedef </h1></div>
 
     <section class="multi-line-signature">
-        <span class="returntype">S</span>
-                <span class="name ">Accumulate</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="Accumulate-param-acc"><span class="type-annotation">S</span> <span class="parameter-name">acc</span>, </span></li>
-<li><span class="parameter" id="Accumulate-param-"><span class="type-annotation">T</span></span></li>
+        <span class="returntype">R</span>
+                <span class="name ">IndexedTransform</span>
+(<wbr><ol class="parameter-list"><li><span class="parameter" id="IndexedTransform-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
+<li><span class="parameter" id="IndexedTransform-param-"><span class="type-annotation">T</span></span></li>
 </ol>)
     </section>
 
         <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">typedef Accumulate&lt;S, T&gt; = S Function(S acc, T);</code></pre>
+      <pre class="language-dart"><code class="language-dart">typedef IndexedTransform&lt;R, T&gt; = R Function(int index, T);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
