@@ -4,8 +4,9 @@ import 'types.dart';
 
 export 'types.dart';
 
-part '_chunked_iterable.dart';
-part '_mapped_iterable.dart';
+part '_internal/_chunked_iterable.dart';
+part '_internal/_mapped_iterable.dart';
+part '_internal/_where_iterable.dart';
 
 /// Extensions to [Iterable]s
 extension IterableExt<E> on Iterable<E> {
@@ -29,10 +30,7 @@ extension IterableExt<E> on Iterable<E> {
 
   /// Returns a new lazy [Iterable] with all elements that satisfy the predicate [test],
   /// providing sequential index of the element.
-  Iterable<E> whereIndexed(IndexedPredicate<E> test) {
-    var i = 0;
-    return where((e) => test(i++, e));
-  }
+  Iterable<E> whereIndexed(IndexedPredicate<E> test) => _IndexedWhereIterable(this, test);
 
   /// Returns a new lazy [Iterable] with all elements that does **NOT** satisfy the predicate [test].
   Iterable<E> whereNot(Predicate<E> test) => where((e) => !test(e));
@@ -83,10 +81,7 @@ extension IterableExt<E> on Iterable<E> {
 
   /// Transforms each element to another object of type [T], by applying the transformer [f],
   /// providing sequential index of the element.
-  Iterable<T> mapIndexed<T>(IndexedTransform<T, E> f) {
-    var i = 0;
-    return map((e) => f(i++, e));
-  }
+  Iterable<T> mapIndexed<T>(IndexedTransform<T, E> f) => _IndexedMappedIterable(this, f);
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
@@ -119,6 +114,11 @@ extension IterableExt<E> on Iterable<E> {
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original collection.
   Iterable<T> flatMap<T>(Transform<Iterable<T>, E> f) => _FlatMappedIterable(map(f));
+
+  /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
+  /// being invoked on each element of original collection, providing sequential index of each element.
+  Iterable<T> flatMapIndexed<T>(IndexedTransform<Iterable<T>, E> f) =>
+    _FlatMappedIterable(mapIndexed(f));
 
   /// Splits this collection into pair of lazy iterables,
   /// where the *first* one contains elements for which [test] yields `true`,

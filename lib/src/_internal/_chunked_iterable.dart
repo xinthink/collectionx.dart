@@ -1,4 +1,4 @@
-part of 'iterables.dart';
+part of '../iterables.dart';
 
 /// Lazy [Iterable] splits the original one into chunks, each as a new [Iterable].
 class _ChunkedIterable<E> extends Iterable<Iterable<E>> {

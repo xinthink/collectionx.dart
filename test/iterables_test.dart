@@ -14,6 +14,15 @@ void main() {
     expect([5, 19, 2].whereIndexed(isEven), equals([5, 2]));
   });
 
+  test('result of `whereIndexed` should be re-traversable', () {
+    final third = (i, _) => i == 2;
+    final result = [5, 19, 2].whereIndexed(third);
+    // traverse the resulted iterable multiple times
+    result.forEach((e) {});
+    result.forEach((e) {});
+    expect(result, equals([2]));
+  });
+
   test('filter a collection with false predicate', () {
     final isEven = (x) => x % 2 == 0;
     expect([3, 2, 19, 100].whereNot(isEven), equals([3, 19]));
@@ -102,6 +111,15 @@ void main() {
     expect([].mapIndexed((i, _) => i), isEmpty);
   });
 
+  test('transformation of collection with index, should be re-traversable', () {
+    final result = [3, 2, 1].mapIndexed((i, x) => '$i$x');
+    // traverse the resulted iterable multiple times
+    result.forEach((e) {});
+    result.forEach((e) {});
+    expect(result, equals(['03', '12', '21']));
+    expect([].mapIndexed((i, _) => i), isEmpty);
+  });
+
   test('map a collection into a list', () {
     expect([3, 2, 1].mapToList(['10'], (x) => '$x'), equals(['10', '3', '2', '1']));
     expect([].mapToList([], (x) => x), isEmpty);
@@ -141,6 +159,12 @@ void main() {
 
   test('flatten empty transformations', () {
     expect([3, 2, 1].flatMap((x) => []), isEmpty);
+  });
+
+  test('flatten indexed transformations', () {
+    final result = [3, 2, 1].flatMapIndexed((i, x) => ['$i$x', '$i${2 * x}']);
+    expect(result, hasLength(6));
+    expect(result, equals(['03', '06', '12', '14', '21', '22']));
   });
 
   test('turn a collection into a fixed-length list', () {
