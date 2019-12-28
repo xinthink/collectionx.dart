@@ -1,6 +1,10 @@
+import 'package:tuple/tuple.dart';
+
 import 'iterables.dart';
 
 export 'types.dart';
+
+part 'map_factories.dart';
 
 /// Extensions to [Map]s
 extension MapExt<K, V> on Map<K, V> {
@@ -36,4 +40,9 @@ extension MapExt<K, V> on Map<K, V> {
     mapEntries(f).forEach((e) => destination.add(e));
     return destination;
   }
+
+  /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
+  /// being invoked on each element of original entries.
+  Iterable<T> flatMap<T>(EntryTransform<K, V, Iterable<T>> f) =>
+    entries.flatMap((e) => f(e.key, e.value));
 }

@@ -38,4 +38,20 @@ void main() {
     expect({}.mapToSet({2}, (_, v) => v), isA<Set<int>>());
     expect({}.mapToSet({2}, (_, v) => v), equals([2]));
   });
+
+  test('flatten transformations', () {
+    var result = {1: 3, 2: 0}.flatMap((k, v) => ['$k', '$k$v']);
+    expect(result, hasLength(4));
+    expect(result, equals(['1', '13', '2', '20']));
+
+    result = {5: 7}.flatMap((k, v) => ['$v$k']);
+    expect(result, hasLength(1));
+    expect(result, equals(['75']));
+
+    expect({}.flatMap((k, v) => [k, v]), isEmpty);
+  });
+
+  test('flatten empty transformations', () {
+    expect({1: 3, 2: 0}.flatMap((_, __) => []), isEmpty);
+  });
 }
