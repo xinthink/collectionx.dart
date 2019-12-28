@@ -20,19 +20,19 @@ extension MapExt<K, V> on Map<K, V> {
     where((k, v) => !test(k, v));
 
   /// Transforms each entry to object of type [T], by applying the transformer [f].
-  Iterable<T> mapEntries<T>(EntryTransform<T, K, V> f) =>
+  Iterable<T> mapEntries<T>(EntryTransform<K, V, T> f) =>
     entries.map((e) => f(e.key, e.value));
 
   /// Transforms entries to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
-  List<T> mapToList<T>(List<T> destination, EntryTransform<T, K, V> f) {
+  List<T> mapToList<T>(List<T> destination, EntryTransform<K, V, T> f) {
     mapEntries(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms entries to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
-  Set<T> mapToSet<T>(Set<T> destination, EntryTransform<T, K, V> f) {
+  Set<T> mapToSet<T>(Set<T> destination, EntryTransform<K, V, T> f) {
     mapEntries(f).forEach((e) => destination.add(e));
     return destination;
   }

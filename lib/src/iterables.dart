@@ -81,43 +81,43 @@ extension IterableExt<E> on Iterable<E> {
 
   /// Transforms each element to another object of type [T], by applying the transformer [f],
   /// providing sequential index of the element.
-  Iterable<T> mapIndexed<T>(IndexedTransform<T, E> f) => _IndexedMappedIterable(this, f);
+  Iterable<T> mapIndexed<T>(IndexedTransform<E, T> f) => _IndexedMappedIterable(this, f);
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
-  List<T> mapToList<T>(List<T> destination, Transform<T, E> f) {
+  List<T> mapToList<T>(List<T> destination, Transform<E, T> f) {
     map(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// providing sequential index of the element, and appends the result to the given [destination].
-  List<T> mapToListIndexed<T>(List<T> destination, IndexedTransform<T, E> f) {
+  List<T> mapToListIndexed<T>(List<T> destination, IndexedTransform<E, T> f) {
     mapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
-  Set<T> mapToSet<T>(Set<T> destination, Transform<T, E> f) {
+  Set<T> mapToSet<T>(Set<T> destination, Transform<E, T> f) {
     map(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// providing sequential index of the element, and appends the result to the given [destination].
-  Set<T> mapToSetIndexed<T>(Set<T> destination, IndexedTransform<T, E> f) {
+  Set<T> mapToSetIndexed<T>(Set<T> destination, IndexedTransform<E, T> f) {
     mapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original collection.
-  Iterable<T> flatMap<T>(Transform<Iterable<T>, E> f) => _FlatMappedIterable(map(f));
+  Iterable<T> flatMap<T>(Transform<E, Iterable<T>> f) => _FlatMappedIterable(map(f));
 
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original collection, providing sequential index of each element.
-  Iterable<T> flatMapIndexed<T>(IndexedTransform<Iterable<T>, E> f) =>
+  Iterable<T> flatMapIndexed<T>(IndexedTransform<E, Iterable<T>> f) =>
     _FlatMappedIterable(mapIndexed(f));
 
   /// Splits this collection into pair of lazy iterables,

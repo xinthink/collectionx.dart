@@ -4,9 +4,9 @@ part of '../iterables.dart';
 /// the transform function will be provided with the sequential index of the element.
 class _IndexedMappedIterable<S, T> extends Iterable<T> {
   final Iterable<S> _iterable;
-  final IndexedTransform<T, S> _f;
+  final IndexedTransform<S, T> _f;
 
-  factory _IndexedMappedIterable(Iterable<S> iterable, IndexedTransform<T, S> f) =>
+  factory _IndexedMappedIterable(Iterable<S> iterable, IndexedTransform<S, T> f) =>
     _IndexedMappedIterable<S, T>._(iterable, f);
 
   _IndexedMappedIterable._(this._iterable, this._f);
@@ -20,7 +20,7 @@ class _IndexedMappedIterator<S, T> extends Iterator<T> {
   T _current;
   int _index = 0;
   final Iterator<S> _iterator;
-  final IndexedTransform<T, S> _f;
+  final IndexedTransform<S, T> _f;
 
   _IndexedMappedIterator(this._iterator, this._f);
 
