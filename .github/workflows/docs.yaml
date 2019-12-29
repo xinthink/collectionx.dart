@@ -25,12 +25,3 @@ jobs:
         PUBLISH_DIR: ./build
       with:
         emptyCommits: false
-    # - name: Deploy to GitHub Pages
-    #   uses: JamesIves/github-pages-deploy-action@3.1.1
-    #   with:
-    #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-    #     BRANCH: gh-pages
-    #     FOLDER: build
-    #     TARGET_FOLDERL: .
-    #     CLEAN: true
-    #     CLEAN_EXCLUDE: '[".nojekyll"]'
