@@ -49,6 +49,7 @@ final sum = [2, 4, 6].foldRight(0, (acc, x) => acc + x);
 ## Available Modules
 
 - Extensions to [Iterables]
+- Extensions to [Maps]
 
 :point_right: See [API Docs] for more details
 
@@ -65,4 +66,5 @@ I'm working on more useful extensions, PRs are welcome! :beers:🖖
 [pub]: https://pub.dev/packages/collection_ext
 [pub-badge]: https://img.shields.io/pub/v/collection_ext.svg
 [API Docs]: https://xinthink.github.io/dart_collection_ext/index.html
-[Iterables]: https://xinthink.github.io/dart_collection_ext/iterables/IterableExt.html
+[Iterables]: https://xinthink.github.io/dart_collection_ext/iterables/iterables-library.html
+[Maps]: https://xinthink.github.io/dart_collection_ext/maps/maps-library.html
