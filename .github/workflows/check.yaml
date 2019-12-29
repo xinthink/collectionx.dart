@@ -1,6 +1,12 @@
 name: check
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+      - 'refs/pull/*'
+      - '!**/publish'
+      - '!publish'
 
 jobs:
   test:
@@ -14,6 +20,7 @@ jobs:
       run: |
         dartanalyzer --options analysis_options.yaml .
         pub run test
+        pub publish --dry-run
 
   coverage:
     runs-on: ubuntu-latest
