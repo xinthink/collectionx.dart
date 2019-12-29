@@ -1,6 +1,6 @@
 name: collection_ext
 description: Extension methods for Dart collections.
-version: 0.0.2+1
+version: 0.0.3-dev
 homepage: https://github.com/xinthink/dart_collection_ext/
 repository: https://github.com/xinthink/dart_collection_ext/
 
