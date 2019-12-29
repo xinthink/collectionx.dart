@@ -105,7 +105,7 @@
               </span>
                           </dt>
             <dd>
-              Returns <code>true</code> if at least one entry matches the given predicate <code>test</code>.
+              Returns <code>true</code> if all entries match the given predicate <code>test</code>.
                           
 </dd>
             <dt id="any" class="callable">
@@ -124,6 +124,26 @@
                           </dt>
             <dd>
               Return a new lazy <code>Iterable</code> of all elements yielded from results of transform <code>f</code> function
+being invoked on each element of original entries.
+                          
+</dd>
+            <dt id="flatMapToList" class="callable">
+              <span class="name"><a href="maps/MapExt/flatMapToList.html">flatMapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToList-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Appends to the give <code>destination</code> with the elements yielded from results of transform <code>f</code> function
+being invoked on each element of original entries.
+                          
+</dd>
+            <dt id="flatMapToSet" class="callable">
+              <span class="name"><a href="maps/MapExt/flatMapToSet.html">flatMapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToSet-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Appends to the give <code>destination</code> with the elements yielded from results of transform <code>f</code> function
 being invoked on each element of original entries.
                           
 </dd>
@@ -156,6 +176,15 @@ and appends the result to the given <code>destination</code>.
 and appends the result to the given <code>destination</code>.
                           
 </dd>
+            <dt id="none" class="callable">
+              <span class="name"><a href="maps/MapExt/none.html">none</a></span><span class="signature">(<wbr><span class="parameter" id="none-param-test"><span class="type-annotation"><a href="maps/EntryPredicate.html">EntryPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+                <span class="returntype parameter">&#8594; bool</span>
+              </span>
+                          </dt>
+            <dd>
+              Returns <code>true</code> if <strong>no</strong> entries match the given predicate <code>test</code>.
+                          
+</dd>
             <dt id="where" class="callable">
               <span class="name"><a href="maps/MapExt/where.html">where</a></span><span class="signature">(<wbr><span class="parameter" id="where-param-test"><span class="type-annotation"><a href="maps/EntryPredicate.html">EntryPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">MapEntry<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span>
@@ -172,7 +201,7 @@ providing sequential index of the element.
               </span>
                           </dt>
             <dd>
-              Returns a new lazy <code>Iterable</code> with all entries that does <strong>NOT</strong> satisfy the predicate <code>test</code>.
+              Returns a new lazy <code>Iterable</code> with all entries that do <strong>NOT</strong> satisfy the predicate <code>test</code>.
                           
 </dd>
         </dl>
@@ -192,9 +221,12 @@ providing sequential index of the element.
         <li><a href="maps/MapExt/all.html">all</a></li>
         <li><a href="maps/MapExt/any.html">any</a></li>
         <li><a href="maps/MapExt/flatMap.html">flatMap</a></li>
+        <li><a href="maps/MapExt/flatMapToList.html">flatMapToList</a></li>
+        <li><a href="maps/MapExt/flatMapToSet.html">flatMapToSet</a></li>
         <li><a href="maps/MapExt/mapEntries.html">mapEntries</a></li>
         <li><a href="maps/MapExt/mapToList.html">mapToList</a></li>
         <li><a href="maps/MapExt/mapToSet.html">mapToSet</a></li>
+        <li><a href="maps/MapExt/none.html">none</a></li>
         <li><a href="maps/MapExt/where.html">where</a></li>
         <li><a href="maps/MapExt/whereNot.html">whereNot</a></li>
     

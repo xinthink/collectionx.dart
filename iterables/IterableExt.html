@@ -116,7 +116,7 @@
               </span>
                           </dt>
             <dd>
-              Returns <code>true</code> if all elments match the given predicate <code>test</code>.
+              Returns <code>true</code> if all elements match the given predicate <code>test</code>.
                           
 </dd>
             <dt id="asList" class="callable">
@@ -154,6 +154,46 @@ being invoked on each element of original collection.
                           </dt>
             <dd>
               Return a new lazy <code>Iterable</code> of all elements yielded from results of transform <code>f</code> function
+being invoked on each element of original collection, providing sequential index of each element.
+                          
+</dd>
+            <dt id="flatMapToList" class="callable">
+              <span class="name"><a href="iterables/IterableExt/flatMapToList.html">flatMapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToList-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Appends to the give <code>destination</code> with the elements yielded from results of transform <code>f</code> function
+being invoked on each element of original collection.
+                          
+</dd>
+            <dt id="flatMapToListIndexed" class="callable">
+              <span class="name"><a href="iterables/IterableExt/flatMapToListIndexed.html">flatMapToListIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToListIndexed-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToListIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Appends to the give <code>destination</code> with the elements yielded from results of transform <code>f</code> function
+being invoked on each element of original collection, providing sequential index of each element.
+                          
+</dd>
+            <dt id="flatMapToSet" class="callable">
+              <span class="name"><a href="iterables/IterableExt/flatMapToSet.html">flatMapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToSet-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Appends to the give <code>destination</code> with the elements yielded from results of transform <code>f</code> function
+being invoked on each element of original collection.
+                          
+</dd>
+            <dt id="flatMapToSetIndexed" class="callable">
+              <span class="name"><a href="iterables/IterableExt/flatMapToSetIndexed.html">flatMapToSetIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToSetIndexed-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToSetIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+              </span>
+                          </dt>
+            <dd>
+              Appends to the give <code>destination</code> with the elements yielded from results of transform <code>f</code> function
 being invoked on each element of original collection, providing sequential index of each element.
                           
 </dd>
@@ -249,15 +289,24 @@ and appends the result to the given <code>destination</code>.
 providing sequential index of the element, and appends the result to the given <code>destination</code>.
                           
 </dd>
+            <dt id="none" class="callable">
+              <span class="name"><a href="iterables/IterableExt/none.html">none</a></span><span class="signature">(<wbr><span class="parameter" id="none-param-test"><span class="type-annotation"><a href="maps/Predicate.html">Predicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+                <span class="returntype parameter">&#8594; bool</span>
+              </span>
+                          </dt>
+            <dd>
+              Returns <code>true</code> if <strong>no</strong> elements match the given predicate <code>test</code>.
+                          
+</dd>
             <dt id="partition" class="callable">
               <span class="name"><a href="iterables/IterableExt/partition.html">partition</a></span><span class="signature">(<wbr><span class="parameter" id="partition-param-test"><span class="type-annotation"><a href="maps/Predicate.html">Predicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span>
               </span>
                           </dt>
             <dd>
-              Splits this collection into pair of lazy iterables,
-where the <em>first</em> one contains elements for which <code>test</code> yields <code>true</code>,
-while the <em>second</em> one contains elements for which <code>test</code> yields <code>false</code>.
+              Splits this collection into pair (<code>Tuple2</code>) of lazy iterables,
+where <code>item1</code> contains elements for which <code>test</code> yields <code>true</code>,
+while <code>item2</code> contains elements for which <code>test</code> yields <code>false</code>.
                           
 </dd>
             <dt id="partitionIndexed" class="callable">
@@ -266,9 +315,9 @@ while the <em>second</em> one contains elements for which <code>test</code> yiel
               </span>
                           </dt>
             <dd>
-              Splits this collection into pair of lazy iterables,
-where the <em>first</em> one contains elements for which <code>test</code> yields <code>true</code>,
-while the <em>second</em> one contains elements for which <code>test</code> yields <code>false</code>,
+              Splits this collection into pair (<code>Tuple2</code>) of lazy iterables,
+where <code>item1</code> contains elements for which <code>test</code> yields <code>true</code>,
+while <code>item2</code> contains elements for which <code>test</code> yields <code>false</code>,
 comparing to <code>partition</code>, <code>test</code> will has access to the sequential index of each element.
                           
 </dd>
@@ -323,6 +372,10 @@ providing sequential index of the element.
         <li><a href="iterables/IterableExt/chunked.html">chunked</a></li>
         <li><a href="iterables/IterableExt/flatMap.html">flatMap</a></li>
         <li><a href="iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></li>
+        <li><a href="iterables/IterableExt/flatMapToList.html">flatMapToList</a></li>
+        <li><a href="iterables/IterableExt/flatMapToListIndexed.html">flatMapToListIndexed</a></li>
+        <li><a href="iterables/IterableExt/flatMapToSet.html">flatMapToSet</a></li>
+        <li><a href="iterables/IterableExt/flatMapToSetIndexed.html">flatMapToSetIndexed</a></li>
         <li><a href="iterables/IterableExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IterableExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IterableExt/foldRightIndexed.html">foldRightIndexed</a></li>
@@ -332,6 +385,7 @@ providing sequential index of the element.
         <li><a href="iterables/IterableExt/mapToListIndexed.html">mapToListIndexed</a></li>
         <li><a href="iterables/IterableExt/mapToSet.html">mapToSet</a></li>
         <li><a href="iterables/IterableExt/mapToSetIndexed.html">mapToSetIndexed</a></li>
+        <li><a href="iterables/IterableExt/none.html">none</a></li>
         <li><a href="iterables/IterableExt/partition.html">partition</a></li>
         <li><a href="iterables/IterableExt/partitionIndexed.html">partitionIndexed</a></li>
         <li><a href="iterables/IterableExt/whereIndexed.html">whereIndexed</a></li>

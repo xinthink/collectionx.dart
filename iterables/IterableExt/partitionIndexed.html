@@ -65,6 +65,10 @@
         <li><a href="iterables/IterableExt/chunked.html">chunked</a></li>
         <li><a href="iterables/IterableExt/flatMap.html">flatMap</a></li>
         <li><a href="iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></li>
+        <li><a href="iterables/IterableExt/flatMapToList.html">flatMapToList</a></li>
+        <li><a href="iterables/IterableExt/flatMapToListIndexed.html">flatMapToListIndexed</a></li>
+        <li><a href="iterables/IterableExt/flatMapToSet.html">flatMapToSet</a></li>
+        <li><a href="iterables/IterableExt/flatMapToSetIndexed.html">flatMapToSetIndexed</a></li>
         <li><a href="iterables/IterableExt/foldIndexed.html">foldIndexed</a></li>
         <li><a href="iterables/IterableExt/foldRight.html">foldRight</a></li>
         <li><a href="iterables/IterableExt/foldRightIndexed.html">foldRightIndexed</a></li>
@@ -74,6 +78,7 @@
         <li><a href="iterables/IterableExt/mapToListIndexed.html">mapToListIndexed</a></li>
         <li><a href="iterables/IterableExt/mapToSet.html">mapToSet</a></li>
         <li><a href="iterables/IterableExt/mapToSetIndexed.html">mapToSetIndexed</a></li>
+        <li><a href="iterables/IterableExt/none.html">none</a></li>
         <li><a href="iterables/IterableExt/partition.html">partition</a></li>
         <li><a href="iterables/IterableExt/partitionIndexed.html">partitionIndexed</a></li>
         <li><a href="iterables/IterableExt/whereIndexed.html">whereIndexed</a></li>
@@ -98,9 +103,9 @@
       
     </section>
     <section class="desc markdown">
-      <p>Splits this collection into pair of lazy iterables,
-where the <em>first</em> one contains elements for which <code>test</code> yields <code>true</code>,
-while the <em>second</em> one contains elements for which <code>test</code> yields <code>false</code>,
+      <p>Splits this collection into pair (<code>Tuple2</code>) of lazy iterables,
+where <code>item1</code> contains elements for which <code>test</code> yields <code>true</code>,
+while <code>item2</code> contains elements for which <code>test</code> yields <code>false</code>,
 comparing to <code>partition</code>, <code>test</code> will has access to the sequential index of each element.</p>
     </section>
     
