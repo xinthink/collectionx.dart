@@ -20,10 +20,18 @@ extension IterableExt<E> on Iterable<E> {
   /// See [Iterable.toList]
   List<E> asList() => toList(growable: false);
 
-  /// Returns `true` if all elments match the given predicate [test].
+  /// Returns `true` if all elements match the given predicate [test].
   bool all(Predicate<E> test) {
     for (var element in this) {
       if (!test(element)) return false;
+    }
+    return true;
+  }
+
+  /// Returns `true` if **no** elements match the given predicate [test].
+  bool none(Predicate<E> test) {
+    for (var element in this) {
+      if (test(element)) return false;
     }
     return true;
   }
@@ -120,15 +128,43 @@ extension IterableExt<E> on Iterable<E> {
   Iterable<T> flatMapIndexed<T>(IndexedTransform<E, Iterable<T>> f) =>
     _FlatMappedIterable(mapIndexed(f));
 
-  /// Splits this collection into pair of lazy iterables,
-  /// where the *first* one contains elements for which [test] yields `true`,
-  /// while the *second* one contains elements for which [test] yields `false`.
+  /// Appends to the give [destination] with the elements yielded from results of transform [f] function
+  /// being invoked on each element of original collection.
+  List<T> flatMapToList<T>(List<T> destination, Transform<E, Iterable<T>> f) {
+    flatMap(f).forEach((e) => destination.add(e));
+    return destination;
+  }
+
+  /// Appends to the give [destination] with the elements yielded from results of transform [f] function
+  /// being invoked on each element of original collection, providing sequential index of each element.
+  List<T> flatMapToListIndexed<T>(List<T> destination, IndexedTransform<E, Iterable<T>> f) {
+    flatMapIndexed(f).forEach((e) => destination.add(e));
+    return destination;
+  }
+
+  /// Appends to the give [destination] with the elements yielded from results of transform [f] function
+  /// being invoked on each element of original collection.
+  Set<T> flatMapToSet<T>(Set<T> destination, Transform<E, Iterable<T>> f) {
+    flatMap(f).forEach((e) => destination.add(e));
+    return destination;
+  }
+
+  /// Appends to the give [destination] with the elements yielded from results of transform [f] function
+  /// being invoked on each element of original collection, providing sequential index of each element.
+  Set<T> flatMapToSetIndexed<T>(Set<T> destination, IndexedTransform<E, Iterable<T>> f) {
+    flatMapIndexed(f).forEach((e) => destination.add(e));
+    return destination;
+  }
+
+  /// Splits this collection into pair ([Tuple2]) of lazy iterables,
+  /// where `item1` contains elements for which [test] yields `true`,
+  /// while `item2` contains elements for which [test] yields `false`.
   Tuple2<Iterable<E>, Iterable<E>> partition(Predicate<E> test) =>
     Tuple2(where(test), whereNot(test));
 
-  /// Splits this collection into pair of lazy iterables,
-  /// where the *first* one contains elements for which [test] yields `true`,
-  /// while the *second* one contains elements for which [test] yields `false`,
+  /// Splits this collection into pair ([Tuple2]) of lazy iterables,
+  /// where `item1` contains elements for which [test] yields `true`,
+  /// while `item2` contains elements for which [test] yields `false`,
   /// comparing to [partition], [test] will has access to the sequential index of each element.
   Tuple2<Iterable<E>, Iterable<E>> partitionIndexed(IndexedPredicate<E> test) =>
     Tuple2(whereIndexed(test), whereNotIndexed(test));

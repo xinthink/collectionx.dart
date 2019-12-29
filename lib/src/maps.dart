@@ -11,15 +11,18 @@ extension MapExt<K, V> on Map<K, V> {
   /// Returns `true` if at least one entry matches the given predicate [test].
   bool any(EntryPredicate<K, V> test) => entries.any((e) => test(e.key, e.value));
 
-  /// Returns `true` if at least one entry matches the given predicate [test].
+  /// Returns `true` if all entries match the given predicate [test].
   bool all(EntryPredicate<K, V> test) => entries.all((e) => test(e.key, e.value));
+
+  /// Returns `true` if **no** entries match the given predicate [test].
+  bool none(EntryPredicate<K, V> test) => entries.none((e) => test(e.key, e.value));
 
   /// Returns a new lazy [Iterable] with all entries that satisfy the predicate [test],
   /// providing sequential index of the element.
   Iterable<MapEntry<K, V>> where(EntryPredicate<K, V> test) =>
     entries.where((e) => test(e.key, e.value));
 
-  /// Returns a new lazy [Iterable] with all entries that does **NOT** satisfy the predicate [test].
+  /// Returns a new lazy [Iterable] with all entries that do **NOT** satisfy the predicate [test].
   Iterable<MapEntry<K, V>> whereNot(EntryPredicate<K, V> test) =>
     where((k, v) => !test(k, v));
 
@@ -45,4 +48,18 @@ extension MapExt<K, V> on Map<K, V> {
   /// being invoked on each element of original entries.
   Iterable<T> flatMap<T>(EntryTransform<K, V, Iterable<T>> f) =>
     entries.flatMap((e) => f(e.key, e.value));
+
+  /// Appends to the give [destination] with the elements yielded from results of transform [f] function
+  /// being invoked on each element of original entries.
+  List<T> flatMapToList<T>(List<T> destination, EntryTransform<K, V, Iterable<T>> f) {
+    flatMap(f).forEach((e) => destination.add(e));
+    return destination;
+  }
+
+  /// Appends to the give [destination] with the elements yielded from results of transform [f] function
+  /// being invoked on each element of original entries.
+  Set<T> flatMapToSet<T>(Set<T> destination, EntryTransform<K, V, Iterable<T>> f) {
+    flatMap(f).forEach((e) => destination.add(e));
+    return destination;
+  }
 }

@@ -2,11 +2,18 @@ import 'package:collection_ext/iterables.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('if all elements with the predicate', () {
+  test('if all elements match the predicate', () {
     final isEven = (x) => x % 2 == 0;
     expect([5, 19, 2].all(isEven), isFalse);
     expect([6, 12, 2].all(isEven), isTrue);
     expect([].all(isEven), isTrue);
+  });
+
+  test('if no elements match the predicate', () {
+    final isEven = (x) => x % 2 == 0;
+    expect([5, 19, 2].none(isEven), isFalse);
+    expect([7, 21, 1].none(isEven), isTrue);
+    expect([].none(isEven), isTrue);
   });
 
   test('filter a collection with index', () {
@@ -165,6 +172,41 @@ void main() {
     final result = [3, 2, 1].flatMapIndexed((i, x) => ['$i$x', '$i${2 * x}']);
     expect(result, hasLength(6));
     expect(result, equals(['03', '06', '12', '14', '21', '22']));
+  });
+
+  test('flatten transformations, and appends the result to a list', () {
+    expect(
+        [3, 2, 1].flatMapToList(['10'], (x) => ['$x', '${2 * x}']),
+        equals(['10', '3', '6', '2', '4', '1', '2'])
+    );
+    expect([].flatMapToList([], (x) => x), isEmpty);
+    expect([].flatMapToList([2], (x) => x), equals([2]));
+  });
+
+  test('flatten indexed transformations, and appends the result to a list', () {
+    expect(
+        [3, 2, 1].flatMapToListIndexed(['10'], (i, x) => ['$i$x', '$i${2 * x}']),
+        equals(['10', '03', '06', '12', '14', '21', '22'])
+    );
+    expect([].flatMapToListIndexed([], (i, x) => x), isEmpty);
+    expect([].flatMapToListIndexed([2], (i, x) => x), equals([2]));
+  });
+
+  test('flatten transformations, and appends the result to a set', () {
+    final result = [3, 2, 1].flatMapToSet({'10'}, (x) => ['$x', '${2 * x}']);
+    expect(result, isA<Set<String>>());
+    expect(result, equals(['10', '3', '6', '2', '4', '1'])); // except one duplicated element
+    expect([].flatMapToSet({}, (x) => x), isEmpty);
+    expect([].flatMapToSet({2}, (x) => x), equals([2]));
+  });
+
+  test('flatten indexed transformations, and appends the result to a set', () {
+    expect(
+        [3, 2, 1].flatMapToSetIndexed({'10'}, (i, x) => ['$i$x', '$i${2 * x}']),
+        equals(['10', '03', '06', '12', '14', '21', '22'])
+    );
+    expect([].flatMapToSetIndexed({}, (i, x) => x), isEmpty);
+    expect([].flatMapToSetIndexed({2}, (i, x) => x), equals([2]));
   });
 
   test('turn a collection into a fixed-length list', () {
