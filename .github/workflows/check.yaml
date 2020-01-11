@@ -20,6 +20,13 @@ jobs:
       run: |
         dartanalyzer --options analysis_options.yaml .
         pub run test
+    - name: notification
+      if: cancelled() == false
+      uses: xinthink/action-telegram@v1.1
+      with:
+        botToken: ${{ secrets.TelegramBotToken }}
+        chatId: ${{ secrets.TelegramTarget }}
+        jobStatus: ${{ job.status }}
 
   coverage:
     runs-on: ubuntu-latest
