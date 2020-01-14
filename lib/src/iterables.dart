@@ -68,8 +68,7 @@ extension IterableExt<E> on Iterable<E> {
   /// **Caution**: to reverse an [Iterable] may cause performance issue, see [sdk#26928](https://is.gd/lXPlJI)
   ///
   /// See also: [List.reversed]
-  S foldRight<S>(S initial, Accumulate<S, E> f) =>
-    asList().reversed.fold(initial, f);
+  S foldRight<S>(S initial, Accumulate<S, E> f) => asList().reversed.fold(initial, f);
 
   /// Accumulates a collection to a single value, which starts from an [initial] value,
   /// by combining each element with the current accumulator value,
@@ -126,7 +125,7 @@ extension IterableExt<E> on Iterable<E> {
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original collection, providing sequential index of each element.
   Iterable<T> flatMapIndexed<T>(IndexedTransform<E, Iterable<T>> f) =>
-    _FlatMappedIterable(mapIndexed(f));
+      _FlatMappedIterable(mapIndexed(f));
 
   /// Appends to the give [destination] with the elements yielded from results of transform [f] function
   /// being invoked on each element of original collection.
@@ -160,16 +159,16 @@ extension IterableExt<E> on Iterable<E> {
   /// where `item1` contains elements for which [test] yields `true`,
   /// while `item2` contains elements for which [test] yields `false`.
   Tuple2<Iterable<E>, Iterable<E>> partition(Predicate<E> test) =>
-    Tuple2(where(test), whereNot(test));
+      Tuple2(where(test), whereNot(test));
 
   /// Splits this collection into pair ([Tuple2]) of lazy iterables,
   /// where `item1` contains elements for which [test] yields `true`,
   /// while `item2` contains elements for which [test] yields `false`,
   /// comparing to [partition], [test] will has access to the sequential index of each element.
   Tuple2<Iterable<E>, Iterable<E>> partitionIndexed(IndexedPredicate<E> test) =>
-    Tuple2(whereIndexed(test), whereNotIndexed(test));
+      Tuple2(whereIndexed(test), whereNotIndexed(test));
 
   /// Return a new lazy iterable contains chunks of this collection each not exceeding the given [size].
   Iterable<Iterable<E>> chunked(int size) =>
-    size != null && size > 0 ? _ChunkedIterable(this, size) : [];
+      size != null && size > 0 ? _ChunkedIterable(this, size) : [];
 }

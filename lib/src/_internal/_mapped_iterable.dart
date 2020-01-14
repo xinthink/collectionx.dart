@@ -7,7 +7,7 @@ class _IndexedMappedIterable<S, T> extends Iterable<T> {
   final IndexedTransform<S, T> _f;
 
   factory _IndexedMappedIterable(Iterable<S> iterable, IndexedTransform<S, T> f) =>
-    _IndexedMappedIterable<S, T>._(iterable, f);
+      _IndexedMappedIterable<S, T>._(iterable, f);
 
   _IndexedMappedIterable._(this._iterable, this._f);
 
@@ -43,8 +43,7 @@ class _FlatMappedIterable<E> extends Iterable<E> {
   final Iterable<Iterable<E>> _iterables;
 
   /// Create a [_FlatMappedIterable] given the original [iterable].
-  factory _FlatMappedIterable(Iterable<Iterable<E>> iterable) =>
-    _FlatMappedIterable._(iterable);
+  factory _FlatMappedIterable(Iterable<Iterable<E>> iterable) => _FlatMappedIterable._(iterable);
 
   _FlatMappedIterable._(this._iterables);
 

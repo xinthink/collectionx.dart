@@ -2,7 +2,7 @@ part of 'maps.dart';
 
 /// Create a [Map] from a list of [Tuple2]s, which provides key/value pairs.
 Map<K, V> mapFromPairs<K, V>(Iterable<Tuple2<K, V>> pairs) =>
-  {for (var t in pairs) t.item1: t.item2};
+    {for (var t in pairs) t.item1: t.item2};
 
 /// Create a [Map] from a list of key, value... pairs,
 /// if the list has an odd length, the last entry of the resulted map will has a `null` value.

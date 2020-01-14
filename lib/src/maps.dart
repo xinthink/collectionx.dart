@@ -20,15 +20,13 @@ extension MapExt<K, V> on Map<K, V> {
   /// Returns a new lazy [Iterable] with all entries that satisfy the predicate [test],
   /// providing sequential index of the element.
   Iterable<MapEntry<K, V>> where(EntryPredicate<K, V> test) =>
-    entries.where((e) => test(e.key, e.value));
+      entries.where((e) => test(e.key, e.value));
 
   /// Returns a new lazy [Iterable] with all entries that do **NOT** satisfy the predicate [test].
-  Iterable<MapEntry<K, V>> whereNot(EntryPredicate<K, V> test) =>
-    where((k, v) => !test(k, v));
+  Iterable<MapEntry<K, V>> whereNot(EntryPredicate<K, V> test) => where((k, v) => !test(k, v));
 
   /// Transforms each entry to object of type [T], by applying the transformer [f].
-  Iterable<T> mapEntries<T>(EntryTransform<K, V, T> f) =>
-    entries.map((e) => f(e.key, e.value));
+  Iterable<T> mapEntries<T>(EntryTransform<K, V, T> f) => entries.map((e) => f(e.key, e.value));
 
   /// Transforms entries to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
@@ -47,7 +45,7 @@ extension MapExt<K, V> on Map<K, V> {
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original entries.
   Iterable<T> flatMap<T>(EntryTransform<K, V, Iterable<T>> f) =>
-    entries.flatMap((e) => f(e.key, e.value));
+      entries.flatMap((e) => f(e.key, e.value));
 
   /// Appends to the give [destination] with the elements yielded from results of transform [f] function
   /// being invoked on each element of original entries.

@@ -6,8 +6,7 @@ class _ChunkedIterable<E> extends Iterable<Iterable<E>> {
   final int _size;
 
   /// Create a [_ChunkedIterable] given the original [iterable], and a chunk [size].
-  factory _ChunkedIterable(Iterable<E> iterable, int size) =>
-    _ChunkedIterable._(iterable, size);
+  factory _ChunkedIterable(Iterable<E> iterable, int size) => _ChunkedIterable._(iterable, size);
 
   _ChunkedIterable._(this._iterable, this._size);
 
