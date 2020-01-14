@@ -9,7 +9,7 @@ void main() {
     expect(map, equals({1: 'one', 2: 'two'}));
   });
 
-  test('build a empty map from a empty list', () {
+  test('empty lists yield empty maps', () {
     expect(mapFromList([]), isEmpty);
   });
 

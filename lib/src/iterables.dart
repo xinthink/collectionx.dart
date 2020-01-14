@@ -13,7 +13,8 @@ extension IterableExt<E> on Iterable<E> {
   /// See [Iterable.where]
   Iterable<E> get nonNull => where((e) => e != null);
 
-  /// Creates a fixed-length [List] containing the elements of this [Iterable].
+  /// Creates a fixed-length [List] containing the elements of this [Iterable],
+  /// equivalent to `toList(growable: false)`.
   ///
   /// See [Iterable.toList]
   List<E> asList() => toList(growable: false);
