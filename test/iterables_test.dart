@@ -69,34 +69,34 @@ void main() {
 
   test('fold a collection in reversed order', () {
     final numbers = <int>[];
-    final add = (acc, n) {
+    final subtract = (n, acc) {
       numbers.add(n);
-      return acc + n;
+      return n - acc;
     };
 
-    var sum = [2, 4].foldRight(0, add);
-    expect(numbers, equals([4, 2]));
-    expect(sum, equals(6));
+    var sub = [1, 2, 3, 4].foldRight(0, subtract);
+    expect(numbers, equals([4, 3, 2, 1]));
+    expect(sub, equals(-2));
 
     numbers.clear();
-    sum = [].foldRight(0, add);
+    sub = [].foldRight(0, subtract);
     expect(numbers, isEmpty);
-    expect(sum, equals(0));
+    expect(sub, equals(0));
   });
 
   test('fold a collection in reversed order with index', () {
     final indexes = <int>[];
-    final add = (i, acc, n) {
+    final subtract = (i, n, acc) {
       indexes.add(i);
-      return acc + n;
+      return n - acc;
     };
 
-    var sum = [2, 4].foldRightIndexed(0, add);
-    expect(indexes, equals([1, 0]));
-    expect(sum, equals(6));
+    var sum = [1, 2, 3, 4].foldRightIndexed(0, subtract);
+    expect(indexes, equals([3, 2, 1, 0]));
+    expect(sum, equals(-2));
 
     indexes.clear();
-    sum = [].foldRightIndexed(0, add);
+    sum = [].foldRightIndexed(0, subtract);
     expect(indexes, isEmpty);
     expect(sum, equals(0));
   });

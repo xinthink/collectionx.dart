@@ -2,8 +2,6 @@ import 'package:tuple/tuple.dart';
 
 import 'types.dart';
 
-export 'types.dart';
-
 part '_internal/_chunked_iterable.dart';
 part '_internal/_mapped_iterable.dart';
 part '_internal/_where_iterable.dart';
@@ -65,23 +63,29 @@ extension IterableExt<E> on Iterable<E> {
   /// by combining each element with the current accumulator value,
   /// with the combinator [f] in a reversed order.
   ///
+  /// Please notice that the arguments' order of the combinator [f] is `(element, acc)`, which is **reversed** to the one for `fold`.
+  ///
   /// **Caution**: to reverse an [Iterable] may cause performance issue, see [sdk#26928](https://is.gd/lXPlJI)
   ///
   /// See also: [List.reversed]
-  S foldRight<S>(S initial, Accumulate<S, E> f) => asList().reversed.fold(initial, f);
+  S foldRight<S>(S initial, ReversedAccumulate<S, E> f) {
+    var acc = initial;
+    asList().reversed.forEach((e) {
+      acc = f(e, acc);
+    });
+    return acc;
+  }
 
   /// Accumulates a collection to a single value, which starts from an [initial] value,
   /// by combining each element with the current accumulator value,
   /// with the combinator [f] in a reversed order, providing sequential index of the element.
   ///
   /// **Caution**: to reverse an [Iterable] may cause performance issue, see [sdk#26928](https://is.gd/lXPlJI)
-  ///
-  /// See also: [List.reversed]
-  S foldRightIndexed<S>(S initial, IndexedAccumulate<S, E> f) {
+  S foldRightIndexed<S>(S initial, IndexedReversedAccumulate<S, E> f) {
     final list = asList();
     var acc = initial;
     for (var i = list.length - 1; i >= 0; i--) {
-      acc = f(i, acc, list[i]);
+      acc = f(i, list[i], acc);
     }
     return acc;
   }

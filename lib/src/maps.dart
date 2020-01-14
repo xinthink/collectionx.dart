@@ -1,8 +1,7 @@
 import 'package:tuple/tuple.dart';
 
 import 'iterables.dart';
-
-export 'types.dart';
+import 'types.dart';
 
 part 'map_factories.dart';
 
