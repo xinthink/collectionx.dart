@@ -82,7 +82,7 @@
     <section class="multi-line-signature">
       <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">MapEntry<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span>
             <span class="name ">whereNot</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="whereNot-param-test"><span class="type-annotation"><a href="maps/EntryPredicate.html">EntryPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span></li>
+(<wbr><ol class="parameter-list"><li><span class="parameter" id="whereNot-param-test"><span class="type-annotation">EntryPredicate<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span></li>
 </ol>)
       
     </section>
@@ -92,8 +92,7 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Iterable&lt;MapEntry&lt;K, V&gt;&gt; whereNot(EntryPredicate&lt;K, V&gt; test) =&gt;
-  where((k, v) =&gt; !test(k, v));</code></pre>
+      <pre class="language-dart"><code class="language-dart">Iterable&lt;MapEntry&lt;K, V&gt;&gt; whereNot(EntryPredicate&lt;K, V&gt; test) =&gt; where((k, v) =&gt; !test(k, v));</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -106,7 +105,7 @@
 <footer>
   <span class="no-break">
     collection_ext
-      0.0.3-dev
+      0.1.0-dev
   </span>
 
   <!-- footer-text placeholder -->

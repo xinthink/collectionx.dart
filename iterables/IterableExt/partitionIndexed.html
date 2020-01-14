@@ -98,7 +98,7 @@
     <section class="multi-line-signature">
       <span class="returntype">Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span>
             <span class="name ">partitionIndexed</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="partitionIndexed-param-test"><span class="type-annotation"><a href="maps/IndexedPredicate.html">IndexedPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span></li>
+(<wbr><ol class="parameter-list"><li><span class="parameter" id="partitionIndexed-param-test"><span class="type-annotation">IndexedPredicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span></li>
 </ol>)
       
     </section>
@@ -112,7 +112,7 @@ comparing to <code>partition</code>, <code>test</code> will has access to the se
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">Tuple2&lt;Iterable&lt;E&gt;, Iterable&lt;E&gt;&gt; partitionIndexed(IndexedPredicate&lt;E&gt; test) =&gt;
-  Tuple2(whereIndexed(test), whereNotIndexed(test));</code></pre>
+    Tuple2(whereIndexed(test), whereNotIndexed(test));</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -125,7 +125,7 @@ comparing to <code>partition</code>, <code>test</code> will has access to the se
 <footer>
   <span class="no-break">
     collection_ext
-      0.0.3-dev
+      0.1.0-dev
   </span>
 
   <!-- footer-text placeholder -->

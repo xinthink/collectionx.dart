@@ -99,7 +99,7 @@
       <span class="returntype">S</span>
             <span class="name ">foldRightIndexed</span>
 &lt;<wbr><span class="type-parameter">S</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="foldRightIndexed-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span></li>
-<li><span class="parameter" id="foldRightIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedAccumulate.html">IndexedAccumulate</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+<li><span class="parameter" id="foldRightIndexed-param-f"><span class="type-annotation">IndexedReversedAccumulate<span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
@@ -108,16 +108,15 @@
 by combining each element with the current accumulator value,
 with the combinator <code>f</code> in a reversed order, providing sequential index of the element.</p>
 <p><strong>Caution</strong>: to reverse an <code>Iterable</code> may cause performance issue, see <a href="https://is.gd/lXPlJI">sdk#26928</a></p>
-<p>See also: <code>List.reversed</code></p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">S foldRightIndexed&lt;S&gt;(S initial, IndexedAccumulate&lt;S, E&gt; f) {
+      <pre class="language-dart"><code class="language-dart">S foldRightIndexed&lt;S&gt;(S initial, IndexedReversedAccumulate&lt;S, E&gt; f) {
   final list = asList();
   var acc = initial;
   for (var i = list.length - 1; i &gt;= 0; i--) {
-    acc = f(i, acc, list[i]);
+    acc = f(i, list[i], acc);
   }
   return acc;
 }</code></pre>
@@ -133,7 +132,7 @@ with the combinator <code>f</code> in a reversed order, providing sequential ind
 <footer>
   <span class="no-break">
     collection_ext
-      0.0.3-dev
+      0.1.0-dev
   </span>
 
   <!-- footer-text placeholder -->

@@ -82,7 +82,7 @@
     <section class="multi-line-signature">
       <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
             <span class="name ">mapEntries</span>
-&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="mapEntries-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="mapEntries-param-f"><span class="type-annotation">EntryTransform<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
@@ -92,8 +92,7 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; mapEntries&lt;T&gt;(EntryTransform&lt;K, V, T&gt; f) =&gt;
-  entries.map((e) =&gt; f(e.key, e.value));</code></pre>
+      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; mapEntries&lt;T&gt;(EntryTransform&lt;K, V, T&gt; f) =&gt; entries.map((e) =&gt; f(e.key, e.value));</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -106,7 +105,7 @@
 <footer>
   <span class="no-break">
     collection_ext
-      0.0.3-dev
+      0.1.0-dev
   </span>
 
   <!-- footer-text placeholder -->

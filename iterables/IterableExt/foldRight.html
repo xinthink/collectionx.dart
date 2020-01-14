@@ -99,7 +99,7 @@
       <span class="returntype">S</span>
             <span class="name ">foldRight</span>
 &lt;<wbr><span class="type-parameter">S</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="foldRight-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span></li>
-<li><span class="parameter" id="foldRight-param-f"><span class="type-annotation"><a href="maps/Accumulate.html">Accumulate</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+<li><span class="parameter" id="foldRight-param-f"><span class="type-annotation">ReversedAccumulate<span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
 </ol>)
       
     </section>
@@ -107,14 +107,20 @@
       <p>Accumulates a collection to a single value, which starts from an <code>initial</code> value,
 by combining each element with the current accumulator value,
 with the combinator <code>f</code> in a reversed order.</p>
+<p>Please notice that the arguments' order of the combinator <code>f</code> is <code>(element, acc)</code>, which is <strong>reversed</strong> to the one for <code>fold</code>.</p>
 <p><strong>Caution</strong>: to reverse an <code>Iterable</code> may cause performance issue, see <a href="https://is.gd/lXPlJI">sdk#26928</a></p>
 <p>See also: <code>List.reversed</code></p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">S foldRight&lt;S&gt;(S initial, Accumulate&lt;S, E&gt; f) =&gt;
-  asList().reversed.fold(initial, f);</code></pre>
+      <pre class="language-dart"><code class="language-dart">S foldRight&lt;S&gt;(S initial, ReversedAccumulate&lt;S, E&gt; f) {
+  var acc = initial;
+  asList().reversed.forEach((e) {
+    acc = f(e, acc);
+  });
+  return acc;
+}</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -127,7 +133,7 @@ with the combinator <code>f</code> in a reversed order.</p>
 <footer>
   <span class="no-break">
     collection_ext
-      0.0.3-dev
+      0.1.0-dev
   </span>
 
   <!-- footer-text placeholder -->

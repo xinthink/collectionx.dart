@@ -60,17 +60,6 @@
     
     
     
-      <li class="section-title"><a href="iterables/iterables-library.html#typedefs">Typedefs</a></li>
-      <li><a href="maps/Accumulate.html">Accumulate</a></li>
-      <li><a href="maps/Action.html">Action</a></li>
-      <li><a href="maps/EntryPredicate.html">EntryPredicate</a></li>
-      <li><a href="maps/EntryTransform.html">EntryTransform</a></li>
-      <li><a href="maps/IndexedAccumulate.html">IndexedAccumulate</a></li>
-      <li><a href="maps/IndexedAction.html">IndexedAction</a></li>
-      <li><a href="maps/IndexedPredicate.html">IndexedPredicate</a></li>
-      <li><a href="maps/IndexedTransform.html">IndexedTransform</a></li>
-      <li><a href="maps/Predicate.html">Predicate</a></li>
-      <li><a href="maps/Transform.html">Transform</a></li>
     
     </ol>
 </div>
@@ -111,7 +100,7 @@
         <h2>Methods</h2>
         <dl class="callables">
             <dt id="all" class="callable">
-              <span class="name"><a href="iterables/IterableExt/all.html">all</a></span><span class="signature">(<wbr><span class="parameter" id="all-param-test"><span class="type-annotation"><a href="maps/Predicate.html">Predicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/all.html">all</a></span><span class="signature">(<wbr><span class="parameter" id="all-param-test"><span class="type-annotation">Predicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; bool</span>
               </span>
                           </dt>
@@ -125,7 +114,8 @@
               </span>
                           </dt>
             <dd>
-              Creates a fixed-length <code>List</code> containing the elements of this <code>Iterable</code>. <a href="iterables/IterableExt/asList.html">[...]</a>
+              Creates a fixed-length <code>List</code> containing the elements of this <code>Iterable</code>,
+equivalent to <code>toList(growable: false)</code>. <a href="iterables/IterableExt/asList.html">[...]</a>
                           
 </dd>
             <dt id="chunked" class="callable">
@@ -138,7 +128,7 @@
                           
 </dd>
             <dt id="flatMap" class="callable">
-              <span class="name"><a href="iterables/IterableExt/flatMap.html">flatMap</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMap-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/flatMap.html">flatMap</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMap-param-f"><span class="type-annotation">Transform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -148,7 +138,7 @@ being invoked on each element of original collection.
                           
 </dd>
             <dt id="flatMapIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapIndexed-param-f"><span class="type-annotation">IndexedTransform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -158,7 +148,7 @@ being invoked on each element of original collection, providing sequential index
                           
 </dd>
             <dt id="flatMapToList" class="callable">
-              <span class="name"><a href="iterables/IterableExt/flatMapToList.html">flatMapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToList-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/flatMapToList.html">flatMapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToList-param-f"><span class="type-annotation">Transform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -168,7 +158,7 @@ being invoked on each element of original collection.
                           
 </dd>
             <dt id="flatMapToListIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/flatMapToListIndexed.html">flatMapToListIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToListIndexed-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToListIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/flatMapToListIndexed.html">flatMapToListIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToListIndexed-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToListIndexed-param-f"><span class="type-annotation">IndexedTransform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -178,7 +168,7 @@ being invoked on each element of original collection, providing sequential index
                           
 </dd>
             <dt id="flatMapToSet" class="callable">
-              <span class="name"><a href="iterables/IterableExt/flatMapToSet.html">flatMapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToSet-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/flatMapToSet.html">flatMapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToSet-param-f"><span class="type-annotation">Transform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -188,7 +178,7 @@ being invoked on each element of original collection.
                           
 </dd>
             <dt id="flatMapToSetIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/flatMapToSetIndexed.html">flatMapToSetIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToSetIndexed-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToSetIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/flatMapToSetIndexed.html">flatMapToSetIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToSetIndexed-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToSetIndexed-param-f"><span class="type-annotation">IndexedTransform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -198,7 +188,7 @@ being invoked on each element of original collection, providing sequential index
                           
 </dd>
             <dt id="foldIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/foldIndexed.html">foldIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldIndexed-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedAccumulate.html">IndexedAccumulate</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/foldIndexed.html">foldIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldIndexed-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldIndexed-param-f"><span class="type-annotation">IndexedAccumulate<span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; S</span>
               </span>
                           </dt>
@@ -209,7 +199,7 @@ with the combinator <code>f</code>, providing sequential index of the element.
                           
 </dd>
             <dt id="foldRight" class="callable">
-              <span class="name"><a href="iterables/IterableExt/foldRight.html">foldRight</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldRight-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldRight-param-f"><span class="type-annotation"><a href="maps/Accumulate.html">Accumulate</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/foldRight.html">foldRight</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldRight-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldRight-param-f"><span class="type-annotation">ReversedAccumulate<span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; S</span>
               </span>
                           </dt>
@@ -220,7 +210,7 @@ with the combinator <code>f</code> in a reversed order. <a href="iterables/Itera
                           
 </dd>
             <dt id="foldRightIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/foldRightIndexed.html">foldRightIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldRightIndexed-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldRightIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedAccumulate.html">IndexedAccumulate</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/foldRightIndexed.html">foldRightIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="foldRightIndexed-param-initial"><span class="type-annotation">S</span> <span class="parameter-name">initial</span>, </span><wbr><span class="parameter" id="foldRightIndexed-param-f"><span class="type-annotation">IndexedReversedAccumulate<span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; S</span>
               </span>
                           </dt>
@@ -231,7 +221,7 @@ with the combinator <code>f</code> in a reversed order, providing sequential ind
                           
 </dd>
             <dt id="forEachIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/forEachIndexed.html">forEachIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="forEachIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedAction.html">IndexedAction</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/forEachIndexed.html">forEachIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="forEachIndexed-param-f"><span class="type-annotation">IndexedAction<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; void</span>
               </span>
                           </dt>
@@ -240,7 +230,7 @@ with the combinator <code>f</code> in a reversed order, providing sequential ind
                           
 </dd>
             <dt id="mapIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/mapIndexed.html">mapIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/mapIndexed.html">mapIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapIndexed-param-f"><span class="type-annotation">IndexedTransform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -250,7 +240,7 @@ providing sequential index of the element.
                           
 </dd>
             <dt id="mapToList" class="callable">
-              <span class="name"><a href="iterables/IterableExt/mapToList.html">mapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToList-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/mapToList.html">mapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToList-param-f"><span class="type-annotation">Transform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -260,7 +250,7 @@ and appends the result to the given <code>destination</code>.
                           
 </dd>
             <dt id="mapToListIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/mapToListIndexed.html">mapToListIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToListIndexed-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToListIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/mapToListIndexed.html">mapToListIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToListIndexed-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToListIndexed-param-f"><span class="type-annotation">IndexedTransform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -270,7 +260,7 @@ providing sequential index of the element, and appends the result to the given <
                           
 </dd>
             <dt id="mapToSet" class="callable">
-              <span class="name"><a href="iterables/IterableExt/mapToSet.html">mapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToSet-param-f"><span class="type-annotation"><a href="maps/Transform.html">Transform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/mapToSet.html">mapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToSet-param-f"><span class="type-annotation">Transform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -280,7 +270,7 @@ and appends the result to the given <code>destination</code>.
                           
 </dd>
             <dt id="mapToSetIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/mapToSetIndexed.html">mapToSetIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToSetIndexed-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToSetIndexed-param-f"><span class="type-annotation"><a href="maps/IndexedTransform.html">IndexedTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/mapToSetIndexed.html">mapToSetIndexed</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToSetIndexed-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToSetIndexed-param-f"><span class="type-annotation">IndexedTransform<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -290,7 +280,7 @@ providing sequential index of the element, and appends the result to the given <
                           
 </dd>
             <dt id="none" class="callable">
-              <span class="name"><a href="iterables/IterableExt/none.html">none</a></span><span class="signature">(<wbr><span class="parameter" id="none-param-test"><span class="type-annotation"><a href="maps/Predicate.html">Predicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/none.html">none</a></span><span class="signature">(<wbr><span class="parameter" id="none-param-test"><span class="type-annotation">Predicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; bool</span>
               </span>
                           </dt>
@@ -299,7 +289,7 @@ providing sequential index of the element, and appends the result to the given <
                           
 </dd>
             <dt id="partition" class="callable">
-              <span class="name"><a href="iterables/IterableExt/partition.html">partition</a></span><span class="signature">(<wbr><span class="parameter" id="partition-param-test"><span class="type-annotation"><a href="maps/Predicate.html">Predicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/partition.html">partition</a></span><span class="signature">(<wbr><span class="parameter" id="partition-param-test"><span class="type-annotation">Predicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span>
               </span>
                           </dt>
@@ -310,7 +300,7 @@ while <code>item2</code> contains elements for which <code>test</code> yields <c
                           
 </dd>
             <dt id="partitionIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/partitionIndexed.html">partitionIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="partitionIndexed-param-test"><span class="type-annotation"><a href="maps/IndexedPredicate.html">IndexedPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/partitionIndexed.html">partitionIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="partitionIndexed-param-test"><span class="type-annotation">IndexedPredicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span>
               </span>
                           </dt>
@@ -322,7 +312,7 @@ comparing to <code>partition</code>, <code>test</code> will has access to the se
                           
 </dd>
             <dt id="whereIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/whereIndexed.html">whereIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="whereIndexed-param-test"><span class="type-annotation"><a href="maps/IndexedPredicate.html">IndexedPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/whereIndexed.html">whereIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="whereIndexed-param-test"><span class="type-annotation">IndexedPredicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
               </span>
                           </dt>
@@ -332,7 +322,7 @@ providing sequential index of the element.
                           
 </dd>
             <dt id="whereNot" class="callable">
-              <span class="name"><a href="iterables/IterableExt/whereNot.html">whereNot</a></span><span class="signature">(<wbr><span class="parameter" id="whereNot-param-test"><span class="type-annotation"><a href="maps/Predicate.html">Predicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/whereNot.html">whereNot</a></span><span class="signature">(<wbr><span class="parameter" id="whereNot-param-test"><span class="type-annotation">Predicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
               </span>
                           </dt>
@@ -341,7 +331,7 @@ providing sequential index of the element.
                           
 </dd>
             <dt id="whereNotIndexed" class="callable">
-              <span class="name"><a href="iterables/IterableExt/whereNotIndexed.html">whereNotIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="whereNotIndexed-param-test"><span class="type-annotation"><a href="maps/IndexedPredicate.html">IndexedPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="iterables/IterableExt/whereNotIndexed.html">whereNotIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="whereNotIndexed-param-test"><span class="type-annotation">IndexedPredicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
               </span>
                           </dt>
@@ -404,7 +394,7 @@ providing sequential index of the element.
 <footer>
   <span class="no-break">
     collection_ext
-      0.0.3-dev
+      0.1.0-dev
   </span>
 
   <!-- footer-text placeholder -->

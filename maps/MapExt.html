@@ -63,17 +63,6 @@
       <li><a href="maps/mapFromPairs.html">mapFromPairs</a></li>
     
     
-      <li class="section-title"><a href="maps/maps-library.html#typedefs">Typedefs</a></li>
-      <li><a href="maps/Accumulate.html">Accumulate</a></li>
-      <li><a href="maps/Action.html">Action</a></li>
-      <li><a href="maps/EntryPredicate.html">EntryPredicate</a></li>
-      <li><a href="maps/EntryTransform.html">EntryTransform</a></li>
-      <li><a href="maps/IndexedAccumulate.html">IndexedAccumulate</a></li>
-      <li><a href="maps/IndexedAction.html">IndexedAction</a></li>
-      <li><a href="maps/IndexedPredicate.html">IndexedPredicate</a></li>
-      <li><a href="maps/IndexedTransform.html">IndexedTransform</a></li>
-      <li><a href="maps/Predicate.html">Predicate</a></li>
-      <li><a href="maps/Transform.html">Transform</a></li>
     
     </ol>
 </div>
@@ -100,7 +89,7 @@
         <h2>Methods</h2>
         <dl class="callables">
             <dt id="all" class="callable">
-              <span class="name"><a href="maps/MapExt/all.html">all</a></span><span class="signature">(<wbr><span class="parameter" id="all-param-test"><span class="type-annotation"><a href="maps/EntryPredicate.html">EntryPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/all.html">all</a></span><span class="signature">(<wbr><span class="parameter" id="all-param-test"><span class="type-annotation">EntryPredicate<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; bool</span>
               </span>
                           </dt>
@@ -109,7 +98,7 @@
                           
 </dd>
             <dt id="any" class="callable">
-              <span class="name"><a href="maps/MapExt/any.html">any</a></span><span class="signature">(<wbr><span class="parameter" id="any-param-test"><span class="type-annotation"><a href="maps/EntryPredicate.html">EntryPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/any.html">any</a></span><span class="signature">(<wbr><span class="parameter" id="any-param-test"><span class="type-annotation">EntryPredicate<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; bool</span>
               </span>
                           </dt>
@@ -118,7 +107,7 @@
                           
 </dd>
             <dt id="flatMap" class="callable">
-              <span class="name"><a href="maps/MapExt/flatMap.html">flatMap</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMap-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/flatMap.html">flatMap</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMap-param-f"><span class="type-annotation">EntryTransform<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -128,7 +117,7 @@ being invoked on each element of original entries.
                           
 </dd>
             <dt id="flatMapToList" class="callable">
-              <span class="name"><a href="maps/MapExt/flatMapToList.html">flatMapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToList-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/flatMapToList.html">flatMapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToList-param-f"><span class="type-annotation">EntryTransform<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -138,7 +127,7 @@ being invoked on each element of original entries.
                           
 </dd>
             <dt id="flatMapToSet" class="callable">
-              <span class="name"><a href="maps/MapExt/flatMapToSet.html">flatMapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToSet-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/flatMapToSet.html">flatMapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="flatMapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="flatMapToSet-param-f"><span class="type-annotation">EntryTransform<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -148,7 +137,7 @@ being invoked on each element of original entries.
                           
 </dd>
             <dt id="mapEntries" class="callable">
-              <span class="name"><a href="maps/MapExt/mapEntries.html">mapEntries</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapEntries-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/mapEntries.html">mapEntries</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapEntries-param-f"><span class="type-annotation">EntryTransform<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -157,7 +146,7 @@ being invoked on each element of original entries.
                           
 </dd>
             <dt id="mapToList" class="callable">
-              <span class="name"><a href="maps/MapExt/mapToList.html">mapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToList-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/mapToList.html">mapToList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToList-param-destination"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToList-param-f"><span class="type-annotation">EntryTransform<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -167,7 +156,7 @@ and appends the result to the given <code>destination</code>.
                           
 </dd>
             <dt id="mapToSet" class="callable">
-              <span class="name"><a href="maps/MapExt/mapToSet.html">mapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToSet-param-f"><span class="type-annotation"><a href="maps/EntryTransform.html">EntryTransform</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/mapToSet.html">mapToSet</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span><wbr><span class="parameter" id="mapToSet-param-f"><span class="type-annotation">EntryTransform<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
               </span>
                           </dt>
@@ -177,7 +166,7 @@ and appends the result to the given <code>destination</code>.
                           
 </dd>
             <dt id="none" class="callable">
-              <span class="name"><a href="maps/MapExt/none.html">none</a></span><span class="signature">(<wbr><span class="parameter" id="none-param-test"><span class="type-annotation"><a href="maps/EntryPredicate.html">EntryPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/none.html">none</a></span><span class="signature">(<wbr><span class="parameter" id="none-param-test"><span class="type-annotation">EntryPredicate<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; bool</span>
               </span>
                           </dt>
@@ -186,7 +175,7 @@ and appends the result to the given <code>destination</code>.
                           
 </dd>
             <dt id="where" class="callable">
-              <span class="name"><a href="maps/MapExt/where.html">where</a></span><span class="signature">(<wbr><span class="parameter" id="where-param-test"><span class="type-annotation"><a href="maps/EntryPredicate.html">EntryPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/where.html">where</a></span><span class="signature">(<wbr><span class="parameter" id="where-param-test"><span class="type-annotation">EntryPredicate<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">MapEntry<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span>
               </span>
                           </dt>
@@ -196,7 +185,7 @@ providing sequential index of the element.
                           
 </dd>
             <dt id="whereNot" class="callable">
-              <span class="name"><a href="maps/MapExt/whereNot.html">whereNot</a></span><span class="signature">(<wbr><span class="parameter" id="whereNot-param-test"><span class="type-annotation"><a href="maps/EntryPredicate.html">EntryPredicate</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
+              <span class="name"><a href="maps/MapExt/whereNot.html">whereNot</a></span><span class="signature">(<wbr><span class="parameter" id="whereNot-param-test"><span class="type-annotation">EntryPredicate<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">MapEntry<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span>
               </span>
                           </dt>
@@ -242,7 +231,7 @@ providing sequential index of the element.
 <footer>
   <span class="no-break">
     collection_ext
-      0.0.3-dev
+      0.1.0-dev
   </span>
 
   <!-- footer-text placeholder -->
