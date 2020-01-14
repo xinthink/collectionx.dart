@@ -15,7 +15,7 @@ jobs:
     - name: Publish
       run: |
         echo "${{ secrets.PUB_CREDENTIALS }}" | base64 --decode > ~/.pub-cache/credentials.json
-        dartfmt -w lib -l 80
+        dartfmt -l 80 -w .
         dartanalyzer --options analysis_options.yaml .
         pub run test
         pub publish --force

@@ -175,19 +175,15 @@ void main() {
   });
 
   test('flatten transformations, and appends the result to a list', () {
-    expect(
-        [3, 2, 1].flatMapToList(['10'], (x) => ['$x', '${2 * x}']),
-        equals(['10', '3', '6', '2', '4', '1', '2'])
-    );
+    expect([3, 2, 1].flatMapToList(['10'], (x) => ['$x', '${2 * x}']),
+        equals(['10', '3', '6', '2', '4', '1', '2']));
     expect([].flatMapToList([], (x) => x), isEmpty);
     expect([].flatMapToList([2], (x) => x), equals([2]));
   });
 
   test('flatten indexed transformations, and appends the result to a list', () {
-    expect(
-        [3, 2, 1].flatMapToListIndexed(['10'], (i, x) => ['$i$x', '$i${2 * x}']),
-        equals(['10', '03', '06', '12', '14', '21', '22'])
-    );
+    expect([3, 2, 1].flatMapToListIndexed(['10'], (i, x) => ['$i$x', '$i${2 * x}']),
+        equals(['10', '03', '06', '12', '14', '21', '22']));
     expect([].flatMapToListIndexed([], (i, x) => x), isEmpty);
     expect([].flatMapToListIndexed([2], (i, x) => x), equals([2]));
   });
@@ -201,10 +197,8 @@ void main() {
   });
 
   test('flatten indexed transformations, and appends the result to a set', () {
-    expect(
-        [3, 2, 1].flatMapToSetIndexed({'10'}, (i, x) => ['$i$x', '$i${2 * x}']),
-        equals(['10', '03', '06', '12', '14', '21', '22'])
-    );
+    expect([3, 2, 1].flatMapToSetIndexed({'10'}, (i, x) => ['$i$x', '$i${2 * x}']),
+        equals(['10', '03', '06', '12', '14', '21', '22']));
     expect([].flatMapToSetIndexed({}, (i, x) => x), isEmpty);
     expect([].flatMapToSetIndexed({2}, (i, x) => x), equals([2]));
   });
