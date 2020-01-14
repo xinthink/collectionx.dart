@@ -45,6 +45,10 @@ docs/
 .pub/
 build/
 
+# For library packages, don’t check in the lockfile, because libraries are expected to work with a range of dependency versions.
+# see https://dart.dev/tools/pub/cmd/pub-upgrade
+pubspec.lock
+
 # Coverage
 coverage/
 test/.test_coverage.dart
