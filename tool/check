@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+cd `dirname $0`/..
+dartanalyzer --options analysis_options.yaml .
+echo 'Running all tests...' && pub run test

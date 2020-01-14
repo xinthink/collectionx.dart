@@ -17,9 +17,7 @@ jobs:
     - uses: actions/checkout@v1
     - run: pub get
     - name: Check
-      run: |
-        dartanalyzer --options analysis_options.yaml .
-        pub run test
+      run: tool/check
     - name: notification
       if: cancelled() == false
       uses: xinthink/action-telegram@v1.1
