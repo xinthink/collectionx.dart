@@ -6,14 +6,13 @@
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
   <meta name="description" content="collection_ext library API docs, for the Dart programming language.">
   <title>collection_ext library - Dart API</title>
-  <!-- required because all the links are pseudo-absolute -->
-  <base href="..">
 
+  
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="static-assets/github.css">
-  <link rel="stylesheet" href="static-assets/styles.css">
-  <link rel="icon" href="static-assets/favicon.png">
+  <link rel="stylesheet" href="../static-assets/github.css">
+  <link rel="stylesheet" href="../static-assets/styles.css">
+  <link rel="icon" href="../static-assets/favicon.png">
   <!-- header placeholder -->
 </head>
 
@@ -24,7 +23,7 @@
 <header id="title">
   <button id="sidenav-left-toggle" type="button">&nbsp;</button>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
-    <li><a href="index.html">collection_ext</a></li>
+    <li><a href="../index.html">collection_ext</a></li>
     <li class="self-crumb">collection_ext library</li>
   </ol>
   <div class="self-name">collection_ext</div>
@@ -43,16 +42,16 @@
     </header>
     
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-      <li><a href="index.html">collection_ext</a></li>
+      <li><a href="../index.html">collection_ext</a></li>
       <li class="self-crumb">collection_ext library</li>
     </ol>
     
     <h5><span class="package-name">collection_ext</span> <span class="package-kind">package</span></h5>
     <ol>
           <li class="section-title">Libraries</li>
-          <li><a href="collection_ext/collection_ext-library.html">collection_ext</a></li>
-          <li><a href="iterables/iterables-library.html">iterables</a></li>
-          <li><a href="maps/maps-library.html">maps</a></li>
+          <li><a href="../collection_ext/collection_ext-library.html">collection_ext</a></li>
+          <li><a href="../iterables/iterables-library.html">iterables</a></li>
+          <li><a href="../maps/maps-library.html">maps</a></li>
     </ol>
   </div>
 
@@ -67,17 +66,17 @@
 
       <dl>
         <dt id="IterableExt">
-            <span class="name "><a href="iterables/IterableExt.html">IterableExt</a></span>         
+            <span class="name "><a href="../iterables/IterableExt.html">IterableExt</a></span>         
         </dt>
         <dd>
-            Extensions to <code>Iterable</code>s
+            Extensions to <code>Iterable</code>s 
         </dd>
         
         <dt id="MapExt">
-            <span class="name "><a href="maps/MapExt.html">MapExt</a></span>         
+            <span class="name "><a href="../maps/MapExt.html">MapExt</a></span>         
         </dt>
         <dd>
-            Extensions to <code>Map</code>s
+            Extensions to <code>Map</code>s 
         </dd>
         
       </dl>
@@ -90,22 +89,22 @@
 
       <dl class="callables">
         <dt id="mapFromList" class="callable">
-          <span class="name"><a href="maps/mapFromList.html">mapFromList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapFromList-param-pairs"><span class="type-annotation">Iterable</span> <span class="parameter-name">pairs</span></span><wbr>)
+          <span class="name"><a href="../maps/mapFromList.html">mapFromList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapFromList-param-pairs"><span class="type-annotation">Iterable</span> <span class="parameter-name">pairs</span></span><wbr>)
             <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>
           </span>
                   </dt>
         <dd>
           Create a <code>Map</code> from a list of key, value... pairs,
-if the list has an odd length, the last entry of the resulted map will has a <code>null</code> value.
+if the list has an odd length, the last entry of the resulted map will has a <code>null</code> value. 
                   
 </dd>
         <dt id="mapFromPairs" class="callable">
-          <span class="name"><a href="maps/mapFromPairs.html">mapFromPairs</a></span><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapFromPairs-param-pairs"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">pairs</span></span><wbr>)
+          <span class="name"><a href="../maps/mapFromPairs.html">mapFromPairs</a></span><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapFromPairs-param-pairs"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">Tuple2<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">pairs</span></span><wbr>)
             <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>
           </span>
                   </dt>
         <dd>
-          Create a <code>Map</code> from a list of <code>Tuple2</code>s, which provides key/value pairs.
+          Create a <code>Map</code> from a list of <code>Tuple2</code>s, which provides key/value pairs. 
                   
 </dd>
       </dl>
@@ -120,16 +119,16 @@ if the list has an odd length, the last entry of the resulted map will has a <co
     <h5>collection_ext library</h5>
     <ol>
     
-      <li class="section-title"><a href="collection_ext/collection_ext-library.html#extension">Extensions</a></li>
-      <li><a href="iterables/IterableExt.html">IterableExt</a></li>
-      <li><a href="maps/MapExt.html">MapExt</a></li>
+      <li class="section-title"><a href="../collection_ext/collection_ext-library.html#extension">Extensions</a></li>
+      <li><a href="../iterables/IterableExt.html">IterableExt</a></li>
+      <li><a href="../maps/MapExt.html">MapExt</a></li>
     
     
     
     
-      <li class="section-title"><a href="collection_ext/collection_ext-library.html#functions">Functions</a></li>
-      <li><a href="maps/mapFromList.html">mapFromList</a></li>
-      <li><a href="maps/mapFromPairs.html">mapFromPairs</a></li>
+      <li class="section-title"><a href="../collection_ext/collection_ext-library.html#functions">Functions</a></li>
+      <li><a href="../maps/mapFromList.html">mapFromList</a></li>
+      <li><a href="../maps/mapFromPairs.html">mapFromPairs</a></li>
     
     
     
@@ -148,10 +147,10 @@ if the list has an odd length, the last entry of the resulted map will has a <co
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="static-assets/typeahead.bundle.min.js"></script>
-<script src="static-assets/highlight.pack.js"></script>
-<script src="static-assets/URI.js"></script>
-<script src="static-assets/script.js"></script>
+<script src="../static-assets/typeahead.bundle.min.js"></script>
+<script src="../static-assets/highlight.pack.js"></script>
+<script src="../static-assets/URI.js"></script>
+<script src="../static-assets/script.js"></script>
 <!-- footer placeholder -->
 
 </body>
