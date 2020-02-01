@@ -86,7 +86,7 @@ Column(
 <p>Or you can import the needed module only, for example:</p>
 <pre class="language-dart"><code class="language-dart">import 'package:collection_ext/iterables.dart';
 
-final sum = [2, 4, 6].foldRight(0, (acc, x) =&gt; acc + x);
+final diff = [2, 4, 6].foldRight(0, (x, acc) =&gt; x - acc);
 </code></pre>
 <h2 id="available-modules">Available Modules</h2>
 <ul>
