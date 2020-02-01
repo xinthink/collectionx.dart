@@ -43,7 +43,7 @@ Or you can import the needed module only, for example:
 ```dart
 import 'package:collection_ext/iterables.dart';
 
-final sum = [2, 4, 6].foldRight(0, (acc, x) => acc + x);
+final diff = [2, 4, 6].foldRight(0, (x, acc) => x - acc);
 ```
 
 ## Available Modules
