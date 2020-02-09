@@ -52,6 +52,7 @@
           <li><a href="../collection_ext/collection_ext-library.html">collection_ext</a></li>
           <li><a href="../iterables/iterables-library.html">iterables</a></li>
           <li><a href="../maps/maps-library.html">maps</a></li>
+          <li><a href="../ranges/ranges-library.html">ranges</a></li>
     </ol>
   </div>
 
@@ -59,12 +60,56 @@
       <div><h1><span class="kind-library">collection_ext</span> library </h1></div>
 
     
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+
+      <dl>
+        <dt id="EmptyIntRange">
+          <span class="name "><a href="../ranges/EmptyIntRange-class.html">EmptyIntRange</a></span>         
+        </dt>
+        <dd>
+          An empty <a href="../ranges/IntRange-class.html">IntRange</a>, which contains no value. <a href="../ranges/EmptyIntRange-class.html">[...]</a>
+        </dd>
+        <dt id="IntRange">
+          <span class="name "><a href="../ranges/IntRange-class.html">IntRange</a></span>         
+        </dt>
+        <dd>
+          A range of values of type <code>int</code>, and it also represents an <a href="https://en.wikipedia.org/wiki/Arithmetic_progression">arithmetic progression</a>. <a href="../ranges/IntRange-class.html">[...]</a>
+        </dd>
+        <dt id="Progression">
+          <span class="name "><a href="../ranges/Progression-class.html">Progression</a></span>         
+        </dt>
+        <dd>
+          An <a href="https://en.wikipedia.org/wiki/Arithmetic_progression">arithmetic progression</a>. <a href="../ranges/Progression-class.html">[...]</a>
+        </dd>
+        <dt id="Range">
+          <span class="name "><a href="../ranges/Range-class.html">Range</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span></span>         
+        </dt>
+        <dd>
+          Represents a range of numbers. <a href="../ranges/Range-class.html">[...]</a>
+        </dd>
+      </dl>
+    </section>
 
 
     <section class="summary offset-anchor" id="extensions">
       <h2>Extensions</h2>
 
       <dl>
+        <dt id="DoubleExt">
+            <span class="name "><a href="../ranges/DoubleExt.html">DoubleExt</a></span>         
+        </dt>
+        <dd>
+            Extensions to <code>double</code>. 
+        </dd>
+        
+        <dt id="IntExt">
+            <span class="name "><a href="../ranges/IntExt.html">IntExt</a></span>         
+        </dt>
+        <dd>
+            Extensions to <code>int</code>. 
+        </dd>
+        
         <dt id="IterableExt">
             <span class="name "><a href="../iterables/IterableExt.html">IterableExt</a></span>         
         </dt>
@@ -77,6 +122,13 @@
         </dt>
         <dd>
             Extensions to <code>Map</code>s 
+        </dd>
+        
+        <dt id="NumExt">
+            <span class="name "><a href="../ranges/NumExt.html">NumExt</a></span>         
+        </dt>
+        <dd>
+            Extensions to <code>num</code>. 
         </dd>
         
       </dl>
@@ -118,10 +170,18 @@ if the list has an odd length, the last entry of the resulted map will has a <co
   <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
     <h5>collection_ext library</h5>
     <ol>
+      <li class="section-title"><a href="../collection_ext/collection_ext-library.html#classes">Classes</a></li>
+      <li><a href="../ranges/EmptyIntRange-class.html">EmptyIntRange</a></li>
+      <li><a href="../ranges/IntRange-class.html">IntRange</a></li>
+      <li><a href="../ranges/Progression-class.html">Progression</a></li>
+      <li><a href="../ranges/Range-class.html">Range</a></li>
     
       <li class="section-title"><a href="../collection_ext/collection_ext-library.html#extension">Extensions</a></li>
+      <li><a href="../ranges/DoubleExt.html">DoubleExt</a></li>
+      <li><a href="../ranges/IntExt.html">IntExt</a></li>
       <li><a href="../iterables/IterableExt.html">IterableExt</a></li>
       <li><a href="../maps/MapExt.html">MapExt</a></li>
+      <li><a href="../ranges/NumExt.html">NumExt</a></li>
     
     
     
@@ -140,7 +200,7 @@ if the list has an odd length, the last entry of the resulted map will has a <co
 <footer>
   <span class="no-break">
     collection_ext
-      0.1.0
+      0.2.0-dev
   </span>
 
   <!-- footer-text placeholder -->
