@@ -25,7 +25,7 @@ for (var x in iterable) {
 
 ## Usage
 
-Import all extension functions at once:
+Import all extension methods at once:
 
 ```dart
 import 'package:collection_ext/all.dart';
@@ -50,6 +50,7 @@ final diff = [2, 4, 6].foldRight(0, (x, acc) => x - acc);
 
 - Extensions to [Iterables]
 - Extensions to [Maps]
+- [Ranges] & related extensions
 
 :point_right: See [API Docs] for more details
 
@@ -68,3 +69,4 @@ I'm working on more useful extensions, PRs are welcome! :beers:🖖
 [API Docs]: https://xinthink.github.io/dart_collection_ext/index.html
 [Iterables]: https://xinthink.github.io/dart_collection_ext/iterables/iterables-library.html
 [Maps]: https://xinthink.github.io/dart_collection_ext/maps/maps-library.html
+[Ranges]: https://xinthink.github.io/dart_collection_ext/ranges/ranges-library.html

@@ -1,9 +1,11 @@
 import 'package:collection_ext/iterables.dart';
 import 'package:collection_ext/maps.dart';
+import 'package:collection_ext/ranges.dart';
 
 void main() {
   iterablesExample();
   mapsExample();
+  rangesExample();
 }
 
 /// Example usage of extensions to [Iterable]s.
@@ -52,6 +54,15 @@ void mapsExample() {
   // duplicates entries using `flatMap`
   final duplicated = {1: 3, 2: 0}.flatMap((k, v) => ['$k$v', '$k$v']); // ['13', '13', '20', '20']
   print('{1: 3, 2: 0} duplicated => $duplicated');
+}
+
+void rangesExample() {
+  Range.upTo(3).forEach(print); // => 0, 1, 2, 3
+  Range.upTo(4, step: 2).forEach(print); // => 0, 2, 4
+  1.upTo(3).forEach(print); // => 1, 2, 3
+  1.until(3).forEach(print); // => 1, 2
+  3.downTo(1).forEach(print); // => 3, 2, 1
+  3.downUntil(1).forEach(print); // => 3, 2
 }
 
 /// Arithmetic operator `+`
