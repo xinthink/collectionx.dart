@@ -35,20 +35,32 @@ void main() {
     expect(0.downUntil(0), isEmpty);
     expect(0.withinRange(0.downUntil(0)), isFalse);
     expect(0.downUntil(0).contains(0), isFalse);
+    expect(0.downUntil(0), equals([]));
+    expect(0.downUntil(0).toString(), '[]');
 
     // wrong step direction, no next value can be reached
     expect(0.upTo(-1), equals([0]));
     expect(0.downTo(1), equals([0]));
+
+    // unvailable properties for en empty range
+    expect(() => 0.until(0).from, throwsUnsupportedError);
+    expect(() => 0.until(0).to, throwsUnsupportedError);
+    expect(() => 0.until(0).first, throwsUnsupportedError);
+    expect(() => 0.until(0).last, throwsUnsupportedError);
   });
 
   test('check progression ranges', () {
     var progression = 1.rangeTo(2);
+    expect([progression.from, progression.to], equals([1, 2]));
+    expect([progression.first, progression.last], equals([1, 2]));
     expect(progression.contains(0), isFalse);
     expect(progression.contains(1), isTrue);
     expect(progression.contains(2), isTrue);
     expect(progression.contains(3), isFalse);
 
     progression = Range.upTo(2, step: 2);
+    expect([progression.from, progression.to], equals([0, 2]));
+    expect([progression.first, progression.last], equals([0, 2]));
     expect(progression.contains(-1), isFalse);
     expect(progression.contains(0), isTrue);
     expect(progression.contains(1), isTrue);
