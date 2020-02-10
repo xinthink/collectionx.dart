@@ -1,7 +1,10 @@
 import 'package:tuple/tuple.dart';
+import 'dart:math' as math;
 
+import 'numbers.dart';
 import 'types.dart';
 
+part 'num_iterables.dart';
 part '_internal/_chunked_iterable.dart';
 part '_internal/_mapped_iterable.dart';
 part '_internal/_where_iterable.dart';
@@ -52,7 +55,14 @@ extension IterableExt<E> on Iterable<E> {
     forEach((e) => f(i++, e));
   }
 
-  /// Accumulates a collection to a single value, which starts from an [initial] value,
+  /// Index-aware version of [reduce()], which reduces a collection to a single value
+  /// by iteratively combining elements of the collection using the provided function [f].
+  E reduceIndexed(IndexedAccumulate<E, E> f) {
+    var i = 0;
+    return reduce((acc, e) => f(i++, acc, e));
+  }
+
+  /// Accumulates a collection to a single value of type [S], which starts from an [initial] value,
   /// by combining each element with the current accumulator value,
   /// with the combinator [f], providing sequential index of the element.
   S foldIndexed<S>(S initial, IndexedAccumulate<S, E> f) {
@@ -60,7 +70,7 @@ extension IterableExt<E> on Iterable<E> {
     return fold(initial, (acc, e) => f(i++, acc, e));
   }
 
-  /// Accumulates a collection to a single value, which starts from an [initial] value,
+  /// Accumulates a collection to a single value of type [S], which starts from an [initial] value,
   /// by combining each element with the current accumulator value,
   /// with the combinator [f] in a reversed order.
   ///
@@ -176,4 +186,62 @@ extension IterableExt<E> on Iterable<E> {
   /// Return a new lazy iterable contains chunks of this collection each not exceeding the given [size].
   Iterable<Iterable<E>> chunked(int size) =>
       size != null && size > 0 ? _ChunkedIterable(this, size) : [];
+
+  /// Returns the sum of all values produced by [selector] function applied to each element in the collection.
+  ///
+  /// For example:
+  /// ```dart
+  /// [jon, amy, joe].sumBy((_, student) => student.score) // => total score
+  /// ```
+  T sumBy<T extends num>(T Function(int index, E) selector) => mapIndexed(selector).sum();
+
+  /// Returns the first element yielding the largest value of the given function or `null` if there are no elements.
+  ///
+  /// For example:
+  /// ```dart
+  /// [-3, 2].maxBy((_, x) => x * x) // => -3
+  /// ```
+  E maxBy<T extends Comparable<Object>>(T Function(int index, E) selector)  {
+    E maxElem;
+    T maxValue;
+
+    forEachIndexed((i, e) {
+      final v = selector(i, e);
+      if (maxElem == null || v.compareTo(maxValue) > 0) {
+        maxValue = v;
+        maxElem = e;
+      }
+    });
+
+    return maxElem;
+  }
+
+  /// Returns the first element yielding the smallest value of the given function or `null` if there are no elements.
+  ///
+  /// For example:
+  /// ```dart
+  /// [-3, 2].minBy((_, x) => x * x) // => 2
+  /// ```
+  E minBy<T extends Comparable<Object>>(T Function(int index, E) selector) {
+    E minElem;
+    T minValue;
+
+    forEachIndexed((i, e) {
+      final v = selector(i, e);
+      if (minElem == null || v.compareTo(minValue) < 0) {
+        minValue = v;
+        minElem = e;
+      }
+    });
+
+    return minElem;
+  }
+
+  /// Returns an average of all values produced by [selector] function or [double.nan] if there are no elements.
+  ///
+  /// For example:
+  /// ```dart
+  /// [jon, amy, joe].averageBy((_, student) => student.age) // => average age
+  /// ```
+  double averageBy<T extends num>(T Function(int index, E) selector) => mapIndexed(selector).average();
 }

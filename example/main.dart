@@ -20,8 +20,8 @@ void iterablesExample() {
   print('indexes walked through: $indexes'); // => '012'
 
   // `fold` the list in reverse direction
-  final subRight = [1, 2, 3, 4].foldRight(0, subtract); // => (1 - (2 - (3 - (4 - 0)))) => -2
-  final subLeft = [1, 2, 3, 4].fold(0, subtract); // => ((((0 - 1) - 2) - 3) - 4) => -10
+  final subRight = [1, 2, 3, 4].foldRight(0, NumExt.subtract); // => (1 - (2 - (3 - (4 - 0)))) => -2
+  final subLeft = [1, 2, 3, 4].fold(0, NumExt.subtract); // => ((((0 - 1) - 2) - 3) - 4) => -10
   print('[1, 2, 3, 4].foldRight(0, subtract) => $subRight, while `fold` => $subLeft');
 
   // duplicates each element using `flatMap`
@@ -64,9 +64,3 @@ void rangesExample() {
   3.downTo(1).forEach(print); // => 3, 2, 1
   3.downUntil(1).forEach(print); // => 3, 2
 }
-
-/// Arithmetic operator `+`
-num add(num a, num b) => a + b;
-
-/// Arithmetic operator `-`
-num subtract(num a, num b) => a - b;

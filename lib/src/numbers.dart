@@ -36,6 +36,21 @@ extension DoubleExt on double {
 
 /// Extensions to [num].
 extension NumExt on num {
+  /// Function-styled arithmetic operator `+`
+  static T add<T extends num>(T a, T b) => a + b;
+
+  /// Function-styled arithmetic operator `-`
+  static T subtract<T extends num>(T a, T b) => a - b;
+
+  /// Function-styled arithmetic operator `*`
+  static T multiply<T extends num>(T a, T b) => a * b;
+
+  /// Function-styled arithmetic operator `/`
+  static double divide<T extends num>(T a, T b) => a / b;
+
+  /// Function-styled arithmetic operator `~/`
+  static int divideTruncated<T extends num>(T a, T b) => a ~/ b;
+
   /// Checks if this value is within the range: \[[from], [to]\].
   bool within<T extends num>(T from, T to) => (from <= to && this >= from && this <= to) ||
     (from > to && this >= to && this <= from);
