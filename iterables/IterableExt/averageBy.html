@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the all method from the IterableExt extension, for the Dart programming language.">
-  <title>all method - IterableExt extension - iterables library - Dart API</title>
+  <meta name="description" content="API docs for the averageBy method from the IterableExt extension, for the Dart programming language.">
+  <title>averageBy method - IterableExt extension - iterables library - Dart API</title>
 
   
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
@@ -26,9 +26,9 @@
     <li><a href="../../index.html">collection_ext</a></li>
     <li><a href="../../iterables/iterables-library.html">iterables</a></li>
     <li><a href="../../iterables/IterableExt.html">IterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
-    <li class="self-crumb">all method</li>
+    <li class="self-crumb">averageBy&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
   </ol>
-  <div class="self-name">all</div>
+  <div class="self-name">averageBy</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -47,7 +47,7 @@
       <li><a href="../../index.html">collection_ext</a></li>
       <li><a href="../../iterables/iterables-library.html">iterables</a></li>
       <li><a href="../../iterables/IterableExt.html">IterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
-      <li class="self-crumb">all method</li>
+      <li class="self-crumb">averageBy&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
     </ol>
     
     <h5>IterableExt extension</h5>
@@ -97,27 +97,28 @@
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">all</span> method</h1></div>
+      <div><h1><span class="kind-method">averageBy&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span> method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">bool</span>
-            <span class="name ">all</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="all-param-test"><span class="type-annotation">Predicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span></li>
+      <span class="returntype">double</span>
+            <span class="name ">averageBy</span>
+&lt;<wbr><span class="type-parameter">T extends num</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="averageBy-param-selector"><span class="type-annotation">T</span> <span class="parameter-name">selector</span>(<ol class="parameter-list"><li><span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
+<li><span class="parameter" id="param-"><span class="type-annotation">E</span></span></li>
+</ol>
+)</span></li>
 </ol>)
       
     </section>
     <section class="desc markdown">
-      <p>Returns <code>true</code> if all elements match the given predicate <code>test</code>.</p>
+      <p>Returns an average of all values produced by <code>selector</code> function or <code>double.nan</code> if there are no elements.</p>
+<p>For example:</p>
+<pre class="language-dart"><code class="language-dart">[jon, amy, joe].averageBy((_, student) =&gt; student.age) // =&gt; average age
+</code></pre>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">bool all(Predicate&lt;E&gt; test) {
-  for (var element in this) {
-    if (!test(element)) return false;
-  }
-  return true;
-}</code></pre>
+      <pre class="language-dart"><code class="language-dart">double averageBy&lt;T extends num&gt;(T Function(int index, E) selector) =&gt; mapIndexed(selector).average();</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

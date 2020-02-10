@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the withinRange method from the NumExt extension, for the Dart programming language.">
-  <title>withinRange method - NumExt extension - ranges library - Dart API</title>
+  <meta name="description" content="API docs for the multiply method from the NumExt extension, for the Dart programming language.">
+  <title>multiply method - NumExt extension - ranges library - Dart API</title>
 
   
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
@@ -26,9 +26,9 @@
     <li><a href="../../index.html">collection_ext</a></li>
     <li><a href="../../ranges/ranges-library.html">ranges</a></li>
     <li><a href="../../ranges/NumExt.html">NumExt</a></li>
-    <li class="self-crumb">withinRange&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
+    <li class="self-crumb">multiply&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
   </ol>
-  <div class="self-name">withinRange</div>
+  <div class="self-name">multiply</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -47,7 +47,7 @@
       <li><a href="../../index.html">collection_ext</a></li>
       <li><a href="../../ranges/ranges-library.html">ranges</a></li>
       <li><a href="../../ranges/NumExt.html">NumExt</a></li>
-      <li class="self-crumb">withinRange&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
+      <li class="self-crumb">multiply&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
     </ol>
     
     <h5>NumExt extension</h5>
@@ -73,22 +73,23 @@
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">withinRange&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span> method</h1></div>
+      <div><h1><span class="kind-method">multiply&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span> method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">bool</span>
-            <span class="name ">withinRange</span>
-&lt;<wbr><span class="type-parameter">T extends num</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="withinRange-param-range"><span class="type-annotation"><a href="../../ranges/Range-class.html">Range</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">range</span></span></li>
+      <span class="returntype">T</span>
+            <span class="name ">multiply</span>
+&lt;<wbr><span class="type-parameter">T extends num</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="multiply-param-a"><span class="type-annotation">T</span> <span class="parameter-name">a</span>, </span></li>
+<li><span class="parameter" id="multiply-param-b"><span class="type-annotation">T</span> <span class="parameter-name">b</span></span></li>
 </ol>)
       
     </section>
     <section class="desc markdown">
-      <p>Checks if this value is within the given <code>range</code>.</p>
+      <p>Function-styled arithmetic operator <code>*</code></p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">bool withinRange&lt;T extends num&gt;(Range&lt;T&gt; range) =&gt; range.contains(this);</code></pre>
+      <pre class="language-dart"><code class="language-dart">static T multiply&lt;T extends num&gt;(T a, T b) =&gt; a * b;</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

@@ -53,6 +53,7 @@
     
       <li class="section-title"><a href="../iterables/iterables-library.html#extension">Extensions</a></li>
       <li><a href="../iterables/IterableExt.html">IterableExt</a></li>
+      <li><a href="../iterables/NumericIterableExt.html">NumericIterableExt</a></li>
     
     
     
@@ -115,6 +116,15 @@
             <dd>
               Creates a fixed-length <code>List</code> containing the elements of this <code>Iterable</code>,
 equivalent to <code>toList(growable: false)</code>. <a href="../iterables/IterableExt/asList.html">[...]</a>
+                          
+</dd>
+            <dt id="averageBy" class="callable">
+              <span class="name"><a href="../iterables/IterableExt/averageBy.html">averageBy</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="averageBy-param-selector"><span class="type-annotation">T</span> <span class="parameter-name">selector</span>(<span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="param-"><span class="type-annotation">E</span></span><wbr>)</span><wbr>)
+                <span class="returntype parameter">&#8594; double</span>
+              </span>
+                          </dt>
+            <dd>
+              Returns an average of all values produced by <code>selector</code> function or <code>double.nan</code> if there are no elements. <a href="../iterables/IterableExt/averageBy.html">[...]</a>
                           
 </dd>
             <dt id="chunked" class="callable">
@@ -192,7 +202,7 @@ being invoked on each element of original collection, providing sequential index
               </span>
                           </dt>
             <dd>
-              Accumulates a collection to a single value, which starts from an <code>initial</code> value,
+              Accumulates a collection to a single value of type <code>S</code>, which starts from an <code>initial</code> value,
 by combining each element with the current accumulator value,
 with the combinator <code>f</code>, providing sequential index of the element. 
                           
@@ -203,7 +213,7 @@ with the combinator <code>f</code>, providing sequential index of the element.
               </span>
                           </dt>
             <dd>
-              Accumulates a collection to a single value, which starts from an <code>initial</code> value,
+              Accumulates a collection to a single value of type <code>S</code>, which starts from an <code>initial</code> value,
 by combining each element with the current accumulator value,
 with the combinator <code>f</code> in a reversed order. <a href="../iterables/IterableExt/foldRight.html">[...]</a>
                           
@@ -278,6 +288,24 @@ and appends the result to the given <code>destination</code>.
 providing sequential index of the element, and appends the result to the given <code>destination</code>. 
                           
 </dd>
+            <dt id="maxBy" class="callable">
+              <span class="name"><a href="../iterables/IterableExt/maxBy.html">maxBy</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends Comparable<span class="signature">&lt;<wbr><span class="type-parameter">Object</span>&gt;</span></span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="maxBy-param-selector"><span class="type-annotation">T</span> <span class="parameter-name">selector</span>(<span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="param-"><span class="type-annotation">E</span></span><wbr>)</span><wbr>)
+                <span class="returntype parameter">&#8594; E</span>
+              </span>
+                          </dt>
+            <dd>
+              Returns the first element yielding the largest value of the given function or <code>null</code> if there are no elements. <a href="../iterables/IterableExt/maxBy.html">[...]</a>
+                          
+</dd>
+            <dt id="minBy" class="callable">
+              <span class="name"><a href="../iterables/IterableExt/minBy.html">minBy</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends Comparable<span class="signature">&lt;<wbr><span class="type-parameter">Object</span>&gt;</span></span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="minBy-param-selector"><span class="type-annotation">T</span> <span class="parameter-name">selector</span>(<span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="param-"><span class="type-annotation">E</span></span><wbr>)</span><wbr>)
+                <span class="returntype parameter">&#8594; E</span>
+              </span>
+                          </dt>
+            <dd>
+              Returns the first element yielding the smallest value of the given function or <code>null</code> if there are no elements. <a href="../iterables/IterableExt/minBy.html">[...]</a>
+                          
+</dd>
             <dt id="none" class="callable">
               <span class="name"><a href="../iterables/IterableExt/none.html">none</a></span><span class="signature">(<wbr><span class="parameter" id="none-param-test"><span class="type-annotation">Predicate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">test</span></span><wbr>)
                 <span class="returntype parameter">&#8594; bool</span>
@@ -308,6 +336,25 @@ while <code>item2</code> contains elements for which <code>test</code> yields <c
 where <code>item1</code> contains elements for which <code>test</code> yields <code>true</code>,
 while <code>item2</code> contains elements for which <code>test</code> yields <code>false</code>,
 comparing to <code>partition</code>, <code>test</code> will has access to the sequential index of each element. 
+                          
+</dd>
+            <dt id="reduceIndexed" class="callable">
+              <span class="name"><a href="../iterables/IterableExt/reduceIndexed.html">reduceIndexed</a></span><span class="signature">(<wbr><span class="parameter" id="reduceIndexed-param-f"><span class="type-annotation">IndexedAccumulate<span class="signature">&lt;<wbr><span class="type-parameter">E</span>, <span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">f</span></span><wbr>)
+                <span class="returntype parameter">&#8594; E</span>
+              </span>
+                          </dt>
+            <dd>
+              Index-aware version of <code>reduce()</code>, which reduces a collection to a single value
+by iteratively combining elements of the collection using the provided function <code>f</code>. 
+                          
+</dd>
+            <dt id="sumBy" class="callable">
+              <span class="name"><a href="../iterables/IterableExt/sumBy.html">sumBy</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="sumBy-param-selector"><span class="type-annotation">T</span> <span class="parameter-name">selector</span>(<span class="parameter" id="param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><wbr><span class="parameter" id="param-"><span class="type-annotation">E</span></span><wbr>)</span><wbr>)
+                <span class="returntype parameter">&#8594; T</span>
+              </span>
+                          </dt>
+            <dd>
+              Returns the sum of all values produced by <code>selector</code> function applied to each element in the collection. <a href="../iterables/IterableExt/sumBy.html">[...]</a>
                           
 </dd>
             <dt id="whereIndexed" class="callable">
@@ -358,6 +405,7 @@ providing sequential index of the element.
         <li class="section-title"><a href="../iterables/IterableExt.html#instance-methods">Methods</a></li>
         <li><a href="../iterables/IterableExt/all.html">all</a></li>
         <li><a href="../iterables/IterableExt/asList.html">asList</a></li>
+        <li><a href="../iterables/IterableExt/averageBy.html">averageBy</a></li>
         <li><a href="../iterables/IterableExt/chunked.html">chunked</a></li>
         <li><a href="../iterables/IterableExt/flatMap.html">flatMap</a></li>
         <li><a href="../iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></li>
@@ -374,9 +422,13 @@ providing sequential index of the element.
         <li><a href="../iterables/IterableExt/mapToListIndexed.html">mapToListIndexed</a></li>
         <li><a href="../iterables/IterableExt/mapToSet.html">mapToSet</a></li>
         <li><a href="../iterables/IterableExt/mapToSetIndexed.html">mapToSetIndexed</a></li>
+        <li><a href="../iterables/IterableExt/maxBy.html">maxBy</a></li>
+        <li><a href="../iterables/IterableExt/minBy.html">minBy</a></li>
         <li><a href="../iterables/IterableExt/none.html">none</a></li>
         <li><a href="../iterables/IterableExt/partition.html">partition</a></li>
         <li><a href="../iterables/IterableExt/partitionIndexed.html">partitionIndexed</a></li>
+        <li><a href="../iterables/IterableExt/reduceIndexed.html">reduceIndexed</a></li>
+        <li><a href="../iterables/IterableExt/sumBy.html">sumBy</a></li>
         <li><a href="../iterables/IterableExt/whereIndexed.html">whereIndexed</a></li>
         <li><a href="../iterables/IterableExt/whereNot.html">whereNot</a></li>
         <li><a href="../iterables/IterableExt/whereNotIndexed.html">whereNotIndexed</a></li>

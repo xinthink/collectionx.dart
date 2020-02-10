@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the withinRange method from the NumExt extension, for the Dart programming language.">
-  <title>withinRange method - NumExt extension - ranges library - Dart API</title>
+  <meta name="description" content="API docs for the min method from the NumericIterableExt extension, for the Dart programming language.">
+  <title>min method - NumericIterableExt extension - iterables library - Dart API</title>
 
   
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
@@ -24,11 +24,11 @@
   <button id="sidenav-left-toggle" type="button">&nbsp;</button>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">collection_ext</a></li>
-    <li><a href="../../ranges/ranges-library.html">ranges</a></li>
-    <li><a href="../../ranges/NumExt.html">NumExt</a></li>
-    <li class="self-crumb">withinRange&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
+    <li><a href="../../iterables/iterables-library.html">iterables</a></li>
+    <li><a href="../../iterables/NumericIterableExt.html">NumericIterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E extends num</span>&gt;</span></a></li>
+    <li class="self-crumb">min method</li>
   </ol>
-  <div class="self-name">withinRange</div>
+  <div class="self-name">min</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,50 +45,45 @@
     
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="../../index.html">collection_ext</a></li>
-      <li><a href="../../ranges/ranges-library.html">ranges</a></li>
-      <li><a href="../../ranges/NumExt.html">NumExt</a></li>
-      <li class="self-crumb">withinRange&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
+      <li><a href="../../iterables/iterables-library.html">iterables</a></li>
+      <li><a href="../../iterables/NumericIterableExt.html">NumericIterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E extends num</span>&gt;</span></a></li>
+      <li class="self-crumb">min method</li>
     </ol>
     
-    <h5>NumExt extension</h5>
+    <h5>NumericIterableExt extension</h5>
     <ol>
     
     
     
-        <li class="section-title"><a href="../../ranges/NumExt.html#instance-methods">Methods</a></li>
-        <li><a href="../../ranges/NumExt/within.html">within</a></li>
-        <li><a href="../../ranges/NumExt/withinRange.html">withinRange</a></li>
+        <li class="section-title"><a href="../../iterables/NumericIterableExt.html#instance-methods">Methods</a></li>
+        <li><a href="../../iterables/NumericIterableExt/average.html">average</a></li>
+        <li><a href="../../iterables/NumericIterableExt/max.html">max</a></li>
+        <li><a href="../../iterables/NumericIterableExt/min.html">min</a></li>
+        <li><a href="../../iterables/NumericIterableExt/sum.html">sum</a></li>
     
     
     
-        <li class="section-title"><a href="../../ranges/NumExt.html#static-methods">Static methods</a></li>
-        <li><a href="../../ranges/NumExt/add.html">add</a></li>
-        <li><a href="../../ranges/NumExt/divide.html">divide</a></li>
-        <li><a href="../../ranges/NumExt/divideTruncated.html">divideTruncated</a></li>
-        <li><a href="../../ranges/NumExt/multiply.html">multiply</a></li>
-        <li><a href="../../ranges/NumExt/subtract.html">subtract</a></li>
     
     
     </ol>
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">withinRange&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span> method</h1></div>
+      <div><h1><span class="kind-method">min</span> method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">bool</span>
-            <span class="name ">withinRange</span>
-&lt;<wbr><span class="type-parameter">T extends num</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="withinRange-param-range"><span class="type-annotation"><a href="../../ranges/Range-class.html">Range</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">range</span></span></li>
-</ol>)
+      <span class="returntype">E</span>
+            <span class="name ">min</span>
+(<wbr>)
       
     </section>
     <section class="desc markdown">
-      <p>Checks if this value is within the given <code>range</code>.</p>
+      <p>Returns the smallest element or <code>null</code> if there are no elements.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">bool withinRange&lt;T extends num&gt;(Range&lt;T&gt; range) =&gt; range.contains(this);</code></pre>
+      <pre class="language-dart"><code class="language-dart">E min() =&gt; isEmpty ? null : reduce(math.min);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

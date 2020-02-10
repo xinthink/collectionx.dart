@@ -61,6 +61,7 @@
         <li class="section-title"><a href="../../iterables/IterableExt.html#instance-methods">Methods</a></li>
         <li><a href="../../iterables/IterableExt/all.html">all</a></li>
         <li><a href="../../iterables/IterableExt/asList.html">asList</a></li>
+        <li><a href="../../iterables/IterableExt/averageBy.html">averageBy</a></li>
         <li><a href="../../iterables/IterableExt/chunked.html">chunked</a></li>
         <li><a href="../../iterables/IterableExt/flatMap.html">flatMap</a></li>
         <li><a href="../../iterables/IterableExt/flatMapIndexed.html">flatMapIndexed</a></li>
@@ -77,9 +78,13 @@
         <li><a href="../../iterables/IterableExt/mapToListIndexed.html">mapToListIndexed</a></li>
         <li><a href="../../iterables/IterableExt/mapToSet.html">mapToSet</a></li>
         <li><a href="../../iterables/IterableExt/mapToSetIndexed.html">mapToSetIndexed</a></li>
+        <li><a href="../../iterables/IterableExt/maxBy.html">maxBy</a></li>
+        <li><a href="../../iterables/IterableExt/minBy.html">minBy</a></li>
         <li><a href="../../iterables/IterableExt/none.html">none</a></li>
         <li><a href="../../iterables/IterableExt/partition.html">partition</a></li>
         <li><a href="../../iterables/IterableExt/partitionIndexed.html">partitionIndexed</a></li>
+        <li><a href="../../iterables/IterableExt/reduceIndexed.html">reduceIndexed</a></li>
+        <li><a href="../../iterables/IterableExt/sumBy.html">sumBy</a></li>
         <li><a href="../../iterables/IterableExt/whereIndexed.html">whereIndexed</a></li>
         <li><a href="../../iterables/IterableExt/whereNot.html">whereNot</a></li>
         <li><a href="../../iterables/IterableExt/whereNotIndexed.html">whereNotIndexed</a></li>
@@ -103,7 +108,7 @@
       
     </section>
     <section class="desc markdown">
-      <p>Accumulates a collection to a single value, which starts from an <code>initial</code> value,
+      <p>Accumulates a collection to a single value of type <code>S</code>, which starts from an <code>initial</code> value,
 by combining each element with the current accumulator value,
 with the combinator <code>f</code> in a reversed order.</p>
 <p>Please notice that the arguments' order of the combinator <code>f</code> is <code>(element, acc)</code>, which is <strong>reversed</strong> to the one for <code>fold</code>.</p>
