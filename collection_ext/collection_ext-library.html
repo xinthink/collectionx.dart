@@ -50,8 +50,10 @@
     <ol>
           <li class="section-title">Libraries</li>
           <li><a href="../collection_ext/collection_ext-library.html">collection_ext</a></li>
+          <li><a href="../currying/currying-library.html">currying</a></li>
           <li><a href="../iterables/iterables-library.html">iterables</a></li>
           <li><a href="../maps/maps-library.html">maps</a></li>
+          <li><a href="../numbers/numbers-library.html">numbers</a></li>
           <li><a href="../ranges/ranges-library.html">ranges</a></li>
     </ol>
   </div>
@@ -96,18 +98,18 @@
       <h2>Extensions</h2>
 
       <dl>
-        <dt id="DoubleExt">
-            <span class="name "><a href="../ranges/DoubleExt.html">DoubleExt</a></span>         
+        <dt id="DoubleRangeExt">
+            <span class="name "><a href="../ranges/DoubleRangeExt.html">DoubleRangeExt</a></span>         
         </dt>
         <dd>
-            Extensions to <code>double</code>. 
+            Add range extensions to <code>double</code>. 
         </dd>
         
-        <dt id="IntExt">
-            <span class="name "><a href="../ranges/IntExt.html">IntExt</a></span>         
+        <dt id="IntRangeExt">
+            <span class="name "><a href="../ranges/IntRangeExt.html">IntRangeExt</a></span>         
         </dt>
         <dd>
-            Extensions to <code>int</code>. 
+            Add range extensions to <code>int</code>. 
         </dd>
         
         <dt id="IterableExt">
@@ -131,11 +133,11 @@
             Extensions to numeric iterables. 
         </dd>
         
-        <dt id="NumExt">
-            <span class="name "><a href="../ranges/NumExt.html">NumExt</a></span>         
+        <dt id="NumRangeExt">
+            <span class="name "><a href="../ranges/NumRangeExt.html">NumRangeExt</a></span>         
         </dt>
         <dd>
-            Extensions to <code>num</code>. 
+            Add range extensions to <code>num</code>. 
         </dd>
         
       </dl>
@@ -166,6 +168,24 @@ if the list has an odd length, the last entry of the resulted map will has a <co
           Create a <code>Map</code> from a list of <code>Tuple2</code>s, which provides key/value pairs. 
                   
 </dd>
+        <dt id="partial" class="callable">
+          <span class="name"><a href="../currying/partial.html">partial</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="partial-param-f"><span class="type-annotation">BinaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">f</span>, </span><wbr><span class="parameter" id="partial-param-a"><span class="type-annotation">T1</span> <span class="parameter-name">a</span></span><wbr>)
+            <span class="returntype parameter">&#8594; UnaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Returns a partial applied version of function <code>f</code>. <a href="../currying/partial.html">[...]</a>
+                  
+</dd>
+        <dt id="partialRight" class="callable">
+          <span class="name"><a href="../currying/partialRight.html">partialRight</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="partialRight-param-f"><span class="type-annotation">BinaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">f</span>, </span><wbr><span class="parameter" id="partialRight-param-b"><span class="type-annotation">T2</span> <span class="parameter-name">b</span></span><wbr>)
+            <span class="returntype parameter">&#8594; UnaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">R</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Returns a partial applied version of function <code>f</code>, in a right-to-left manner. <a href="../currying/partialRight.html">[...]</a>
+                  
+</dd>
       </dl>
     </section>
 
@@ -184,12 +204,12 @@ if the list has an odd length, the last entry of the resulted map will has a <co
       <li><a href="../ranges/Range-class.html">Range</a></li>
     
       <li class="section-title"><a href="../collection_ext/collection_ext-library.html#extension">Extensions</a></li>
-      <li><a href="../ranges/DoubleExt.html">DoubleExt</a></li>
-      <li><a href="../ranges/IntExt.html">IntExt</a></li>
+      <li><a href="../ranges/DoubleRangeExt.html">DoubleRangeExt</a></li>
+      <li><a href="../ranges/IntRangeExt.html">IntRangeExt</a></li>
       <li><a href="../iterables/IterableExt.html">IterableExt</a></li>
       <li><a href="../maps/MapExt.html">MapExt</a></li>
       <li><a href="../iterables/NumericIterableExt.html">NumericIterableExt</a></li>
-      <li><a href="../ranges/NumExt.html">NumExt</a></li>
+      <li><a href="../ranges/NumRangeExt.html">NumRangeExt</a></li>
     
     
     
@@ -197,6 +217,8 @@ if the list has an odd length, the last entry of the resulted map will has a <co
       <li class="section-title"><a href="../collection_ext/collection_ext-library.html#functions">Functions</a></li>
       <li><a href="../maps/mapFromList.html">mapFromList</a></li>
       <li><a href="../maps/mapFromPairs.html">mapFromPairs</a></li>
+      <li><a href="../currying/partial.html">partial</a></li>
+      <li><a href="../currying/partialRight.html">partialRight</a></li>
     
     
     

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the upTo method from the DoubleExt extension, for the Dart programming language.">
-  <title>upTo method - DoubleExt extension - ranges library - Dart API</title>
+  <meta name="description" content="API docs for the downTo method from the IntRangeExt extension, for the Dart programming language.">
+  <title>downTo method - IntRangeExt extension - ranges library - Dart API</title>
 
   
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
@@ -25,10 +25,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">collection_ext</a></li>
     <li><a href="../../ranges/ranges-library.html">ranges</a></li>
-    <li><a href="../../ranges/DoubleExt.html">DoubleExt</a></li>
-    <li class="self-crumb">upTo method</li>
+    <li><a href="../../ranges/IntRangeExt.html">IntRangeExt</a></li>
+    <li class="self-crumb">downTo method</li>
   </ol>
-  <div class="self-name">upTo</div>
+  <div class="self-name">downTo</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -46,19 +46,21 @@
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="../../index.html">collection_ext</a></li>
       <li><a href="../../ranges/ranges-library.html">ranges</a></li>
-      <li><a href="../../ranges/DoubleExt.html">DoubleExt</a></li>
-      <li class="self-crumb">upTo method</li>
+      <li><a href="../../ranges/IntRangeExt.html">IntRangeExt</a></li>
+      <li class="self-crumb">downTo method</li>
     </ol>
     
-    <h5>DoubleExt extension</h5>
+    <h5>IntRangeExt extension</h5>
     <ol>
     
     
     
-        <li class="section-title"><a href="../../ranges/DoubleExt.html#instance-methods">Methods</a></li>
-        <li><a href="../../ranges/DoubleExt/downTo.html">downTo</a></li>
-        <li><a href="../../ranges/DoubleExt/rangeTo.html">rangeTo</a></li>
-        <li><a href="../../ranges/DoubleExt/upTo.html">upTo</a></li>
+        <li class="section-title"><a href="../../ranges/IntRangeExt.html#instance-methods">Methods</a></li>
+        <li><a href="../../ranges/IntRangeExt/downTo.html">downTo</a></li>
+        <li><a href="../../ranges/IntRangeExt/downUntil.html">downUntil</a></li>
+        <li><a href="../../ranges/IntRangeExt/rangeTo.html">rangeTo</a></li>
+        <li><a href="../../ranges/IntRangeExt/until.html">until</a></li>
+        <li><a href="../../ranges/IntRangeExt/upTo.html">upTo</a></li>
     
     
     
@@ -68,22 +70,23 @@
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">upTo</span> method</h1></div>
+      <div><h1><span class="kind-method">downTo</span> method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype"><a href="../../ranges/Range-class.html">Range</a><span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>
-            <span class="name ">upTo</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="upTo-param-toInclusive"><span class="type-annotation">double</span> <span class="parameter-name">toInclusive</span></span></li>
+      <span class="returntype"><a href="../../ranges/IntRange-class.html">IntRange</a></span>
+            <span class="name ">downTo</span>
+(<wbr><ol class="parameter-list"><li><span class="parameter" id="downTo-param-toInclusive"><span class="type-annotation">int</span> <span class="parameter-name">toInclusive</span>, </span></li>
+<li><span class="parameter" id="downTo-param-step">{<span class="type-annotation">dynamic</span> <span class="parameter-name">step</span>: <span class="default-value">1</span>}</span></li>
 </ol>)
       
     </section>
     <section class="desc markdown">
-      <p>Alias for <code>rangeTo()</code>, creates a range from this value to the specified <code>toInclusive</code> value, inclusively.</p>
+      <p>Returns a progression from this value down to the specified <code>toInclusive</code> value with the step <code>-step</code>.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Range&lt;double&gt; upTo(double toInclusive) =&gt; Range.range(this, toInclusive);</code></pre>
+      <pre class="language-dart"><code class="language-dart">IntRange downTo(int toInclusive, {step = 1}) =&gt; IntRange(this, toInclusive, step: -step);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

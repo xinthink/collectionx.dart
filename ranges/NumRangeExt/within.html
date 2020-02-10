@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the until method from the IntExt extension, for the Dart programming language.">
-  <title>until method - IntExt extension - ranges library - Dart API</title>
+  <meta name="description" content="API docs for the within method from the NumRangeExt extension, for the Dart programming language.">
+  <title>within method - NumRangeExt extension - ranges library - Dart API</title>
 
   
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
@@ -25,10 +25,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">collection_ext</a></li>
     <li><a href="../../ranges/ranges-library.html">ranges</a></li>
-    <li><a href="../../ranges/IntExt.html">IntExt</a></li>
-    <li class="self-crumb">until method</li>
+    <li><a href="../../ranges/NumRangeExt.html">NumRangeExt</a></li>
+    <li class="self-crumb">within&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
   </ol>
-  <div class="self-name">until</div>
+  <div class="self-name">within</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -46,21 +46,18 @@
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="../../index.html">collection_ext</a></li>
       <li><a href="../../ranges/ranges-library.html">ranges</a></li>
-      <li><a href="../../ranges/IntExt.html">IntExt</a></li>
-      <li class="self-crumb">until method</li>
+      <li><a href="../../ranges/NumRangeExt.html">NumRangeExt</a></li>
+      <li class="self-crumb">within&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
     </ol>
     
-    <h5>IntExt extension</h5>
+    <h5>NumRangeExt extension</h5>
     <ol>
     
     
     
-        <li class="section-title"><a href="../../ranges/IntExt.html#instance-methods">Methods</a></li>
-        <li><a href="../../ranges/IntExt/downTo.html">downTo</a></li>
-        <li><a href="../../ranges/IntExt/downUntil.html">downUntil</a></li>
-        <li><a href="../../ranges/IntExt/rangeTo.html">rangeTo</a></li>
-        <li><a href="../../ranges/IntExt/until.html">until</a></li>
-        <li><a href="../../ranges/IntExt/upTo.html">upTo</a></li>
+        <li class="section-title"><a href="../../ranges/NumRangeExt.html#instance-methods">Methods</a></li>
+        <li><a href="../../ranges/NumRangeExt/within.html">within</a></li>
+        <li><a href="../../ranges/NumRangeExt/withinRange.html">withinRange</a></li>
     
     
     
@@ -70,25 +67,24 @@
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">until</span> method</h1></div>
+      <div><h1><span class="kind-method">within&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span> method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype"><a href="../../ranges/IntRange-class.html">IntRange</a></span>
-            <span class="name ">until</span>
-(<wbr><ol class="parameter-list"><li><span class="parameter" id="until-param-toExclusive"><span class="type-annotation">int</span> <span class="parameter-name">toExclusive</span>, </span></li>
-<li><span class="parameter" id="until-param-step">{<span class="type-annotation">dynamic</span> <span class="parameter-name">step</span>: <span class="default-value">1</span>}</span></li>
+      <span class="returntype">bool</span>
+            <span class="name ">within</span>
+&lt;<wbr><span class="type-parameter">T extends num</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="within-param-from"><span class="type-annotation">T</span> <span class="parameter-name">from</span>, </span></li>
+<li><span class="parameter" id="within-param-to"><span class="type-annotation">T</span> <span class="parameter-name">to</span></span></li>
 </ol>)
       
     </section>
     <section class="desc markdown">
-      <p>Creates a range from this value up to but excluding the specified <code>toExclusive</code> value.</p>
+      <p>Checks if this value is within the range: [<code>from</code>, <code>to</code>].</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">IntRange until(int toExclusive, {step = 1}) =&gt; this == toExclusive
-  ? EmptyIntRange() &#47;&#47; it&#39;s emtpy when all values are excluded
-  : IntRange(this, toExclusive - step, step: step);</code></pre>
+      <pre class="language-dart"><code class="language-dart">bool within&lt;T extends num&gt;(T from, T to) =&gt; (from &lt;= to &amp;&amp; this &gt;= from &amp;&amp; this &lt;= to) ||
+  (from &gt; to &amp;&amp; this &gt;= to &amp;&amp; this &lt;= from);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

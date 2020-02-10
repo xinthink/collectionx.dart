@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the within method from the NumExt extension, for the Dart programming language.">
-  <title>within method - NumExt extension - ranges library - Dart API</title>
+  <meta name="description" content="API docs for the upTo method from the DoubleRangeExt extension, for the Dart programming language.">
+  <title>upTo method - DoubleRangeExt extension - ranges library - Dart API</title>
 
   
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
@@ -25,10 +25,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">collection_ext</a></li>
     <li><a href="../../ranges/ranges-library.html">ranges</a></li>
-    <li><a href="../../ranges/NumExt.html">NumExt</a></li>
-    <li class="self-crumb">within&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
+    <li><a href="../../ranges/DoubleRangeExt.html">DoubleRangeExt</a></li>
+    <li class="self-crumb">upTo method</li>
   </ol>
-  <div class="self-name">within</div>
+  <div class="self-name">upTo</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -46,51 +46,44 @@
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="../../index.html">collection_ext</a></li>
       <li><a href="../../ranges/ranges-library.html">ranges</a></li>
-      <li><a href="../../ranges/NumExt.html">NumExt</a></li>
-      <li class="self-crumb">within&lt;<wbr><span class="type-parameter">T extends num</span>&gt; method</li>
+      <li><a href="../../ranges/DoubleRangeExt.html">DoubleRangeExt</a></li>
+      <li class="self-crumb">upTo method</li>
     </ol>
     
-    <h5>NumExt extension</h5>
+    <h5>DoubleRangeExt extension</h5>
     <ol>
     
     
     
-        <li class="section-title"><a href="../../ranges/NumExt.html#instance-methods">Methods</a></li>
-        <li><a href="../../ranges/NumExt/within.html">within</a></li>
-        <li><a href="../../ranges/NumExt/withinRange.html">withinRange</a></li>
+        <li class="section-title"><a href="../../ranges/DoubleRangeExt.html#instance-methods">Methods</a></li>
+        <li><a href="../../ranges/DoubleRangeExt/downTo.html">downTo</a></li>
+        <li><a href="../../ranges/DoubleRangeExt/rangeTo.html">rangeTo</a></li>
+        <li><a href="../../ranges/DoubleRangeExt/upTo.html">upTo</a></li>
     
     
     
-        <li class="section-title"><a href="../../ranges/NumExt.html#static-methods">Static methods</a></li>
-        <li><a href="../../ranges/NumExt/add.html">add</a></li>
-        <li><a href="../../ranges/NumExt/divide.html">divide</a></li>
-        <li><a href="../../ranges/NumExt/divideTruncated.html">divideTruncated</a></li>
-        <li><a href="../../ranges/NumExt/multiply.html">multiply</a></li>
-        <li><a href="../../ranges/NumExt/subtract.html">subtract</a></li>
     
     
     </ol>
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">within&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span> method</h1></div>
+      <div><h1><span class="kind-method">upTo</span> method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">bool</span>
-            <span class="name ">within</span>
-&lt;<wbr><span class="type-parameter">T extends num</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="within-param-from"><span class="type-annotation">T</span> <span class="parameter-name">from</span>, </span></li>
-<li><span class="parameter" id="within-param-to"><span class="type-annotation">T</span> <span class="parameter-name">to</span></span></li>
+      <span class="returntype"><a href="../../ranges/Range-class.html">Range</a><span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>
+            <span class="name ">upTo</span>
+(<wbr><ol class="parameter-list"><li><span class="parameter" id="upTo-param-toInclusive"><span class="type-annotation">double</span> <span class="parameter-name">toInclusive</span></span></li>
 </ol>)
       
     </section>
     <section class="desc markdown">
-      <p>Checks if this value is within the range: [<code>from</code>, <code>to</code>].</p>
+      <p>Alias for <code>rangeTo()</code>, creates a range from this value to the specified <code>toInclusive</code> value, inclusively.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">bool within&lt;T extends num&gt;(T from, T to) =&gt; (from &lt;= to &amp;&amp; this &gt;= from &amp;&amp; this &lt;= to) ||
-  (from &gt; to &amp;&amp; this &gt;= to &amp;&amp; this &lt;= from);</code></pre>
+      <pre class="language-dart"><code class="language-dart">Range&lt;double&gt; upTo(double toInclusive) =&gt; Range.range(this, toInclusive);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
