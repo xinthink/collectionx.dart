@@ -149,6 +149,33 @@
       <h2>Functions</h2>
 
       <dl class="callables">
+        <dt id="add" class="callable">
+          <span class="name"><a href="../numbers/add.html">add</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="add-param-a"><span class="type-annotation">T</span> <span class="parameter-name">a</span>, </span><wbr><span class="parameter" id="add-param-b"><span class="type-annotation">T</span> <span class="parameter-name">b</span></span><wbr>)
+            <span class="returntype parameter">&#8594; T</span>
+          </span>
+                  </dt>
+        <dd>
+          Function-styled arithmetic operator <code>+</code> 
+                  
+</dd>
+        <dt id="divide" class="callable">
+          <span class="name"><a href="../numbers/divide.html">divide</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="divide-param-a"><span class="type-annotation">T</span> <span class="parameter-name">a</span>, </span><wbr><span class="parameter" id="divide-param-b"><span class="type-annotation">T</span> <span class="parameter-name">b</span></span><wbr>)
+            <span class="returntype parameter">&#8594; double</span>
+          </span>
+                  </dt>
+        <dd>
+          Function-styled arithmetic operator <code>/</code> 
+                  
+</dd>
+        <dt id="divideTruncated" class="callable">
+          <span class="name"><a href="../numbers/divideTruncated.html">divideTruncated</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="divideTruncated-param-a"><span class="type-annotation">T</span> <span class="parameter-name">a</span>, </span><wbr><span class="parameter" id="divideTruncated-param-b"><span class="type-annotation">T</span> <span class="parameter-name">b</span></span><wbr>)
+            <span class="returntype parameter">&#8594; int</span>
+          </span>
+                  </dt>
+        <dd>
+          Function-styled arithmetic operator <code>~/</code> 
+                  
+</dd>
         <dt id="mapFromList" class="callable">
           <span class="name"><a href="../maps/mapFromList.html">mapFromList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapFromList-param-pairs"><span class="type-annotation">Iterable</span> <span class="parameter-name">pairs</span></span><wbr>)
             <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>
@@ -168,6 +195,15 @@ if the list has an odd length, the last entry of the resulted map will has a <co
           Create a <code>Map</code> from a list of <code>Tuple2</code>s, which provides key/value pairs. 
                   
 </dd>
+        <dt id="multiply" class="callable">
+          <span class="name"><a href="../numbers/multiply.html">multiply</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="multiply-param-a"><span class="type-annotation">T</span> <span class="parameter-name">a</span>, </span><wbr><span class="parameter" id="multiply-param-b"><span class="type-annotation">T</span> <span class="parameter-name">b</span></span><wbr>)
+            <span class="returntype parameter">&#8594; T</span>
+          </span>
+                  </dt>
+        <dd>
+          Function-styled arithmetic operator <code>*</code> 
+                  
+</dd>
         <dt id="partial" class="callable">
           <span class="name"><a href="../currying/partial.html">partial</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="partial-param-f"><span class="type-annotation">BinaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">f</span>, </span><wbr><span class="parameter" id="partial-param-a"><span class="type-annotation">T1</span> <span class="parameter-name">a</span></span><wbr>)
             <span class="returntype parameter">&#8594; UnaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span>
@@ -184,6 +220,15 @@ if the list has an odd length, the last entry of the resulted map will has a <co
                   </dt>
         <dd>
           Returns a partial applied version of function <code>f</code>, in a right-to-left manner. <a href="../currying/partialRight.html">[...]</a>
+                  
+</dd>
+        <dt id="subtract" class="callable">
+          <span class="name"><a href="../numbers/subtract.html">subtract</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="subtract-param-a"><span class="type-annotation">T</span> <span class="parameter-name">a</span>, </span><wbr><span class="parameter" id="subtract-param-b"><span class="type-annotation">T</span> <span class="parameter-name">b</span></span><wbr>)
+            <span class="returntype parameter">&#8594; T</span>
+          </span>
+                  </dt>
+        <dd>
+          Function-styled arithmetic operator <code>-</code> 
                   
 </dd>
       </dl>
@@ -215,10 +260,15 @@ if the list has an odd length, the last entry of the resulted map will has a <co
     
     
       <li class="section-title"><a href="../collection_ext/collection_ext-library.html#functions">Functions</a></li>
+      <li><a href="../numbers/add.html">add</a></li>
+      <li><a href="../numbers/divide.html">divide</a></li>
+      <li><a href="../numbers/divideTruncated.html">divideTruncated</a></li>
       <li><a href="../maps/mapFromList.html">mapFromList</a></li>
       <li><a href="../maps/mapFromPairs.html">mapFromPairs</a></li>
+      <li><a href="../numbers/multiply.html">multiply</a></li>
       <li><a href="../currying/partial.html">partial</a></li>
       <li><a href="../currying/partialRight.html">partialRight</a></li>
+      <li><a href="../numbers/subtract.html">subtract</a></li>
     
     
     
