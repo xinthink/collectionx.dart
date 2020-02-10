@@ -110,7 +110,8 @@
       <p>Accumulates a collection to a single value, which starts from an <code>initial</code> value,
 by combining each element with the current accumulator value,
 with the combinator <code>f</code> in a reversed order, providing sequential index of the element.</p>
-<p><strong>Caution</strong>: to reverse an <code>Iterable</code> may cause performance issue, see <a href="https://is.gd/lXPlJI">sdk#26928</a></p>
+<p>It's the index-aware version of <code>foldRight()</code>.
+<strong>Caution</strong>: to reverse an <code>Iterable</code> may cause performance issue, see <a href="https://is.gd/lXPlJI">sdk#26928</a></p>
     </section>
     
     <section class="summary source-code" id="source">

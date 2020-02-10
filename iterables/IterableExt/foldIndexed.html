@@ -110,6 +110,9 @@
       <p>Accumulates a collection to a single value of type <code>S</code>, which starts from an <code>initial</code> value,
 by combining each element with the current accumulator value,
 with the combinator <code>f</code>, providing sequential index of the element.</p>
+<p>Example:</p>
+<pre class="language-dart"><code class="language-dart">[1, 2, 5, 8].foldIndexed(0, (i, acc, x) =&gt; acc + (i % 2 * x)) // =&gt; 0 + 0 + 2 + 0 + 8 =&gt; 10
+</code></pre>
     </section>
     
     <section class="summary source-code" id="source">

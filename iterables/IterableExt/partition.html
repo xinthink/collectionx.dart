@@ -109,6 +109,9 @@
       <p>Splits this collection into pair (<code>Tuple2</code>) of lazy iterables,
 where <code>item1</code> contains elements for which <code>test</code> yields <code>true</code>,
 while <code>item2</code> contains elements for which <code>test</code> yields <code>false</code>.</p>
+<p>Example:</p>
+<pre class="language-dart"><code class="language-dart">[1, 0, -3, 4, -6].partition((n) =&gt; n.isNegative) // =&gt; ([-3, -6], [1, 0, 4])
+</code></pre>
     </section>
     
     <section class="summary source-code" id="source">

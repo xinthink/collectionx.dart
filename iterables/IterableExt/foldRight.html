@@ -110,7 +110,10 @@
       <p>Accumulates a collection to a single value of type <code>S</code>, which starts from an <code>initial</code> value,
 by combining each element with the current accumulator value,
 with the combinator <code>f</code> in a reversed order.</p>
-<p>Please notice that the arguments' order of the combinator <code>f</code> is <code>(element, acc)</code>, which is <strong>reversed</strong> to the one for <code>fold</code>.</p>
+<p>Please notice that the arguments' order of the combinator <code>f</code> is <code>(element, acc)</code>,
+which is <strong>reversed</strong> to the one for <code>fold</code>. For example:</p>
+<pre class="language-dart"><code class="language-dart">[1, 2, 3, 4].foldRight(0, (x, acc) =&gt; x - acc) // =&gt; (1 - (2 - (3 - (4 - 0)))) =&gt; -2
+</code></pre>
 <p><strong>Caution</strong>: to reverse an <code>Iterable</code> may cause performance issue, see <a href="https://is.gd/lXPlJI">sdk#26928</a></p>
 <p>See also: <code>List.reversed</code></p>
     </section>

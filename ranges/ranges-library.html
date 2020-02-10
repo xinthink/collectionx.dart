@@ -61,6 +61,48 @@
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
       <div><h1><span class="kind-library">ranges</span> library </h1></div>
 
+    <section class="desc markdown">
+      <p>Range classes and related extensions.</p>
+<p>The most commonly used range is <a href="../ranges/IntRange-class.html">IntRange</a>,
+which represents an <a href="https://en.wikipedia.org/wiki/Arithmetic_progression">arithmetic progression</a>,
+e.g. <code>0..3</code>, is the sequence <code>0, 1, 2, 3</code> with <em>common difference</em> (<code>step</code>) of <code>1</code>.</p>
+<p>You can work with progressions directly via range-related classes like <a href="../ranges/IntRange-class.html">IntRange</a> or <a href="../ranges/Progression-class.html">Progression</a>, for example:</p>
+<pre class="language-dart"><code class="language-dart">Range.upTo(3); // =&gt; 0..3
+Range.progression(1, 3); // =&gt; 1..3
+IntRange(1, 5, step: 2); // =&gt; 1, 3, 5
+Progression(1, 5, step: 2); // =&gt; 1, 3, 5
+</code></pre>
+<p>The more intuitive way to create ranges might be using extension methods on <code>int</code>:</p>
+<pre class="language-dart"><code class="language-dart">1.upTo(3); // =&gt; 1..3, alias for rangeTo
+1.rangeTo(3); // same as above
+1.upTo(5, step: 2); // =&gt; 1, 3, 5
+1.until(3); // exclusive manner =&gt; 1, 2
+3.downTo(1); // =&gt; 3..1
+3.downUntil(1); // exclusive manner =&gt; 3,2
+</code></pre>
+<p>Furthermore, progressions are <code>Iterable</code>:</p>
+<pre class="language-dart"><code class="language-dart">0.until(list.legth).forEach((i) =&gt; print(list[i]));
+(list.legth - 1).downTo(0).forEach((i) =&gt; print(list[i]));
+</code></pre>
+<p>Another kind of range is <em>closed floating-point range</em>, which is much less useful.
+It is in fact a pair of numbers, marks the beginning and end of the range, respectively.
+So that it can represent a reverse range easily, e.g. <code>3.0..1.0</code>.</p>
+<p>Closed floating-point ranges can be created using the <a href="../ranges/Range-class.html">Range</a> factory methods:</p>
+<pre class="language-dart"><code class="language-dart">final range = Range.range(1.0, 3.0); // =&gt; 1.0..3.0
+assert(range.contains(3.0));
+assert(range.contains(1.0));
+assert(range.contains(0.0) == false);
+</code></pre>
+<p>You can also use extension methods on <code>double</code>:</p>
+<pre class="language-dart"><code class="language-dart">1.0.upTo(3.0); // =&gt; 1.0..3.0, alias for rangeTo
+1.0.rangeTo(3.0); // same as above
+final range = 3.0.downTo(1.0); // =&gt; 3.0..1.0
+assert(3.0.withinRange(range));
+assert(1.0.withinRange(range));
+assert(0.0.withinRange(range) == false);
+</code></pre>
+<p>For more details, please see API docs.</p>
+    </section>
     
     <section class="summary offset-anchor" id="classes">
       <h2>Classes</h2>
