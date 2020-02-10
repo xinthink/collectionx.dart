@@ -1,3 +1,5 @@
+typedef UnaryFun<T, R> = R Function(T);
+typedef BinaryFun<T1, T2, R> = R Function(T1, T2);
 typedef Predicate<T> = bool Function(T);
 typedef IndexedPredicate<T> = bool Function(int index, T);
 typedef Action<T> = void Function(T);

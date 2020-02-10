@@ -1,11 +1,14 @@
+import 'package:collection_ext/currying.dart';
 import 'package:collection_ext/iterables.dart';
 import 'package:collection_ext/maps.dart';
+import 'package:collection_ext/numbers.dart';
 import 'package:collection_ext/ranges.dart';
 
 void main() {
   iterablesExample();
   mapsExample();
   rangesExample();
+  curryingExample();
 }
 
 /// Example usage of extensions to [Iterable]s.
@@ -20,8 +23,8 @@ void iterablesExample() {
   print('indexes walked through: $indexes'); // => '012'
 
   // `fold` the list in reverse direction
-  final subRight = [1, 2, 3, 4].foldRight(0, NumExt.subtract); // => (1 - (2 - (3 - (4 - 0)))) => -2
-  final subLeft = [1, 2, 3, 4].fold(0, NumExt.subtract); // => ((((0 - 1) - 2) - 3) - 4) => -10
+  final subRight = [1, 2, 3, 4].foldRight(0, subtract); // => (1 - (2 - (3 - (4 - 0)))) => -2
+  final subLeft = [1, 2, 3, 4].fold(0, subtract); // => ((((0 - 1) - 2) - 3) - 4) => -10
   print('[1, 2, 3, 4].foldRight(0, subtract) => $subRight, while `fold` => $subLeft');
 
   // duplicates each element using `flatMap`
@@ -63,4 +66,15 @@ void rangesExample() {
   1.until(3).forEach(print); // => 1, 2
   3.downTo(1).forEach(print); // => 3, 2, 1
   3.downUntil(1).forEach(print); // => 3, 2
+}
+
+void curryingExample() {
+
+  final multiply2 = partial(multiply, 2);
+  print(multiply2(3)); // => 6
+
+  final subtract2 = partialRight(subtract, 2);
+  final subtractBy2 = partial(subtract, 2);
+  print(subtract2(3)); // => (3 - 2) => 1
+  print(subtractBy2(3)); // => (2 - 3) => -1
 }
