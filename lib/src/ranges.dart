@@ -9,7 +9,7 @@ part '_internal/_progression_iterator.dart';
 /// Please note that it's not a strict counterpart of the range in mathematics.
 /// In fact, to keep things simple, it's just a pair of numbers,
 /// marks the beginning and end of the range, respectively.
-/// So that it can represent a reverse range easily, e.g., `3 to 1`.
+/// So that it can represent a reverse range easily, e.g., `3.0..1.0`.
 class Range<T extends num> {
   /// The beginning value in the range.
   ///

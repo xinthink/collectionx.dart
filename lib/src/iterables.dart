@@ -58,6 +58,11 @@ extension IterableExt<E> on Iterable<E> {
   /// Accumulates a collection to a single value of type [S], which starts from an [initial] value,
   /// by combining each element with the current accumulator value,
   /// with the combinator [f], providing sequential index of the element.
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 5, 8].foldIndexed(0, (i, acc, x) => acc + (i % 2 * x)) // => 0 + 0 + 2 + 0 + 8 => 10
+  /// ```
   S foldIndexed<S>(S initial, IndexedAccumulate<S, E> f) {
     var i = 0;
     return fold(initial, (acc, e) => f(i++, acc, e));
@@ -67,7 +72,12 @@ extension IterableExt<E> on Iterable<E> {
   /// by combining each element with the current accumulator value,
   /// with the combinator [f] in a reversed order.
   ///
-  /// Please notice that the arguments' order of the combinator [f] is `(element, acc)`, which is **reversed** to the one for `fold`.
+  /// Please notice that the arguments' order of the combinator [f] is `(element, acc)`,
+  /// which is **reversed** to the one for `fold`. For example:
+  ///
+  /// ```dart
+  /// [1, 2, 3, 4].foldRight(0, (x, acc) => x - acc) // => (1 - (2 - (3 - (4 - 0)))) => -2
+  /// ```
   ///
   /// **Caution**: to reverse an [Iterable] may cause performance issue, see [sdk#26928](https://is.gd/lXPlJI)
   ///
@@ -84,6 +94,7 @@ extension IterableExt<E> on Iterable<E> {
   /// by combining each element with the current accumulator value,
   /// with the combinator [f] in a reversed order, providing sequential index of the element.
   ///
+  /// It's the index-aware version of [foldRight()].
   /// **Caution**: to reverse an [Iterable] may cause performance issue, see [sdk#26928](https://is.gd/lXPlJI)
   S foldRightIndexed<S>(S initial, IndexedReversedAccumulate<S, E> f) {
     final list = asList();
@@ -128,10 +139,17 @@ extension IterableExt<E> on Iterable<E> {
 
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original collection.
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3].flatMap((n) => [n, n]) // => [1, 1, 2, 2, 3, 3]
+  /// ```
   Iterable<T> flatMap<T>(Transform<E, Iterable<T>> f) => _FlatMappedIterable(map(f));
 
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original collection, providing sequential index of each element.
+  ///
+  /// It's the index-aware version of [flatMap()].
   Iterable<T> flatMapIndexed<T>(IndexedTransform<E, Iterable<T>> f) =>
       _FlatMappedIterable(mapIndexed(f));
 
@@ -166,6 +184,11 @@ extension IterableExt<E> on Iterable<E> {
   /// Splits this collection into pair ([Tuple2]) of lazy iterables,
   /// where `item1` contains elements for which [test] yields `true`,
   /// while `item2` contains elements for which [test] yields `false`.
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 0, -3, 4, -6].partition((n) => n.isNegative) // => ([-3, -6], [1, 0, 4])
+  /// ```
   Tuple2<Iterable<E>, Iterable<E>> partition(Predicate<E> test) =>
       Tuple2(where(test), whereNot(test));
 
@@ -177,6 +200,11 @@ extension IterableExt<E> on Iterable<E> {
       Tuple2(whereIndexed(test), whereNotIndexed(test));
 
   /// Return a new lazy iterable contains chunks of this collection each not exceeding the given [size].
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 0, -3, 4, -6].chunked(2) // => [[1, 0], [-3, 4], [-6]]
+  /// ```
   Iterable<Iterable<E>> chunked(int size) =>
       size != null && size > 0 ? _ChunkedIterable(this, size) : [];
 
