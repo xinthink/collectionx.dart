@@ -1,7 +1,7 @@
 import 'package:tuple/tuple.dart';
 import 'dart:math' as math;
 
-import 'numbers.dart';
+import 'num_functions.dart';
 import 'types.dart';
 
 part 'num_iterables.dart';
@@ -53,13 +53,6 @@ extension IterableExt<E> on Iterable<E> {
   void forEachIndexed(IndexedAction<E> f) {
     var i = 0;
     forEach((e) => f(i++, e));
-  }
-
-  /// Index-aware version of [reduce()], which reduces a collection to a single value
-  /// by iteratively combining elements of the collection using the provided function [f].
-  E reduceIndexed(IndexedAccumulate<E, E> f) {
-    var i = 0;
-    return reduce((acc, e) => f(i++, acc, e));
   }
 
   /// Accumulates a collection to a single value of type [S], which starts from an [initial] value,

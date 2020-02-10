@@ -1,6 +1,6 @@
-import 'numbers.dart';
+import 'num_ranges.dart';
 
-export 'numbers.dart';
+export 'num_ranges.dart';
 
 part '_internal/_progression_iterator.dart';
 
