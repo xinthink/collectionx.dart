@@ -5,7 +5,7 @@
 [![Code Coverage][codecov-badge]][codecov]
 [![MIT][license-badge]][license]
 
-A set of extension methods for [Dart] collections, designed in the purpose of making it easier to write functional-style, concise [Dart] code.
+A set of extension methods for [Dart] collections, designed for the purpose of making it easier to write functional-programming-styled, concise [Dart] code.
 
 Working on an `Iterable` for example, with `collection_ext`, we can write:
 
