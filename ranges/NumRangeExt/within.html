@@ -83,8 +83,8 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">bool within&lt;T extends num&gt;(T from, T to) =&gt; (from &lt;= to &amp;&amp; this &gt;= from &amp;&amp; this &lt;= to) ||
-  (from &gt; to &amp;&amp; this &gt;= to &amp;&amp; this &lt;= from);</code></pre>
+      <pre class="language-dart"><code class="language-dart">bool within&lt;T extends num&gt;(T from, T to) =&gt;
+    (from &lt;= to &amp;&amp; this &gt;= from &amp;&amp; this &lt;= to) || (from &gt; to &amp;&amp; this &gt;= to &amp;&amp; this &lt;= from);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -97,7 +97,7 @@
 <footer>
   <span class="no-break">
     collection_ext
-      0.2.0-dev
+      0.2.0
   </span>
 
   <!-- footer-text placeholder -->
