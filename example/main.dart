@@ -69,7 +69,6 @@ void rangesExample() {
 }
 
 void curryingExample() {
-
   final multiply2 = partial(multiply, 2);
   print(multiply2(3)); // => 6
 

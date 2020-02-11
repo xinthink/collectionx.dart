@@ -15,7 +15,7 @@ extension NumericIterableExt<E extends num> on Iterable<E> {
   double average() {
     var count = 0;
     num sum = 0;
-    for(final e in this) {
+    for (final e in this) {
       sum += e;
       count++;
     }

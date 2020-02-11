@@ -222,7 +222,7 @@ extension IterableExt<E> on Iterable<E> {
   /// ```dart
   /// [-3, 2].maxBy((_, x) => x * x) // => -3
   /// ```
-  E maxBy<T extends Comparable<Object>>(T Function(int index, E) selector)  {
+  E maxBy<T extends Comparable<Object>>(T Function(int index, E) selector) {
     E maxElem;
     T maxValue;
 
@@ -264,5 +264,6 @@ extension IterableExt<E> on Iterable<E> {
   /// ```dart
   /// [jon, amy, joe].averageBy((_, student) => student.age) // => average age
   /// ```
-  double averageBy<T extends num>(T Function(int index, E) selector) => mapIndexed(selector).average();
+  double averageBy<T extends num>(T Function(int index, E) selector) =>
+      mapIndexed(selector).average();
 }
