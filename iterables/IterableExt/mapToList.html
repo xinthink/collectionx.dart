@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="../../static-assets/github.css">
   <link rel="stylesheet" href="../../static-assets/styles.css">
   <link rel="icon" href="../../static-assets/favicon.png">
-  <!-- header placeholder -->
+
 </head>
 
-<body>
+<body data-base-href="../../"
+      data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -114,7 +115,7 @@ and appends the result to the given <code>destination</code>.</p>
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">List&lt;T&gt; mapToList&lt;T&gt;(List&lt;T&gt; destination, Transform&lt;E, T&gt; f) {
-  map(f).forEach((e) =&gt; destination.add(e));
+  if (this != null) map(f).forEach((e) =&gt; destination.add(e));
   return destination;
 }</code></pre>
     </section>
@@ -132,7 +133,6 @@ and appends the result to the given <code>destination</code>.</p>
       0.2.0
   </span>
 
-  <!-- footer-text placeholder -->
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -140,7 +140,7 @@ and appends the result to the given <code>destination</code>.</p>
 <script src="../../static-assets/highlight.pack.js"></script>
 <script src="../../static-assets/URI.js"></script>
 <script src="../../static-assets/script.js"></script>
-<!-- footer placeholder -->
+
 
 </body>
 

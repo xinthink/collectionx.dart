@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="../../static-assets/github.css">
   <link rel="stylesheet" href="../../static-assets/styles.css">
   <link rel="icon" href="../../static-assets/favicon.png">
-  <!-- header placeholder -->
+
 </head>
 
-<body>
+<body data-base-href="../../"
+      data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -118,8 +119,9 @@ with the combinator <code>f</code> in a reversed order, providing sequential ind
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">S foldRightIndexed&lt;S&gt;(S initial, IndexedReversedAccumulate&lt;S, E&gt; f) {
   final list = asList();
+  final len = list?.length ?? 0;
   var acc = initial;
-  for (var i = list.length - 1; i &gt;= 0; i--) {
+  for (var i = len - 1; i &gt;= 0; i--) {
     acc = f(i, list[i], acc);
   }
   return acc;
@@ -139,7 +141,6 @@ with the combinator <code>f</code> in a reversed order, providing sequential ind
       0.2.0
   </span>
 
-  <!-- footer-text placeholder -->
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -147,7 +148,7 @@ with the combinator <code>f</code> in a reversed order, providing sequential ind
 <script src="../../static-assets/highlight.pack.js"></script>
 <script src="../../static-assets/URI.js"></script>
 <script src="../../static-assets/script.js"></script>
-<!-- footer placeholder -->
+
 
 </body>
 

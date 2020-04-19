@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="../../static-assets/github.css">
   <link rel="stylesheet" href="../../static-assets/styles.css">
   <link rel="icon" href="../../static-assets/favicon.png">
-  <!-- header placeholder -->
+
 </head>
 
-<body>
+<body data-base-href="../../"
+      data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -122,7 +123,7 @@ which is <strong>reversed</strong> to the one for <code>fold</code>. For example
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">S foldRight&lt;S&gt;(S initial, ReversedAccumulate&lt;S, E&gt; f) {
   var acc = initial;
-  asList().reversed.forEach((e) {
+  asList()?.reversed?.forEach((e) {
     acc = f(e, acc);
   });
   return acc;
@@ -142,7 +143,6 @@ which is <strong>reversed</strong> to the one for <code>fold</code>. For example
       0.2.0
   </span>
 
-  <!-- footer-text placeholder -->
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -150,7 +150,7 @@ which is <strong>reversed</strong> to the one for <code>fold</code>. For example
 <script src="../../static-assets/highlight.pack.js"></script>
 <script src="../../static-assets/URI.js"></script>
 <script src="../../static-assets/script.js"></script>
-<!-- footer placeholder -->
+
 
 </body>
 
