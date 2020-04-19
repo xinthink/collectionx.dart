@@ -63,8 +63,8 @@ void main() {
   });
 
   test('calculates average of empty iterables', () {
-    expect(<num>[].min(), isNull);
-    expect(<double>[].min(), isNull);
-    expect([].minBy((i, _) => i), isNull);
+    expect(<num>[].average(), isNaN);
+    expect(<double>[].average(), isNaN);
+    expect([].averageBy((i, _) => i), isNaN);
   });
 }

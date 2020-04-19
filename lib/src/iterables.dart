@@ -14,36 +14,42 @@ extension IterableExt<E> on Iterable<E> {
   /// Returns a new lazy [Iterable] with all `non-null` elements.
   ///
   /// See [Iterable.where]
-  Iterable<E> get nonNull => where((e) => e != null);
+  Iterable<E> get nonNull => this != null ? where((e) => e != null) : null;
 
   /// Creates a fixed-length [List] containing the elements of this [Iterable],
   /// equivalent to `toList(growable: false)`.
   ///
   /// See [Iterable.toList]
-  List<E> asList() => toList(growable: false);
+  List<E> asList() => this != null ? toList(growable: false) : null;
 
   /// Returns `true` if all elements match the given predicate [test].
   bool all(Predicate<E> test) {
-    for (var element in this) {
-      if (!test(element)) return false;
+    if (this != null) {
+      for (var element in this) {
+        if (!test(element)) return false;
+      }
     }
     return true;
   }
 
   /// Returns `true` if **no** elements match the given predicate [test].
   bool none(Predicate<E> test) {
-    for (var element in this) {
-      if (test(element)) return false;
+    if (this != null) {
+      for (var element in this) {
+        if (test(element)) return false;
+      }
     }
     return true;
   }
 
   /// Returns a new lazy [Iterable] with all elements that satisfy the predicate [test],
   /// providing sequential index of the element.
-  Iterable<E> whereIndexed(IndexedPredicate<E> test) => _IndexedWhereIterable(this, test);
+  Iterable<E> whereIndexed(IndexedPredicate<E> test) =>
+      this != null ? _IndexedWhereIterable(this, test) : null;
 
   /// Returns a new lazy [Iterable] with all elements that does **NOT** satisfy the predicate [test].
-  Iterable<E> whereNot(Predicate<E> test) => where((e) => !test(e));
+  Iterable<E> whereNot(Predicate<E> test) =>
+      this != null ? where((e) => !test(e)) : null;
 
   /// Returns a new lazy [Iterable] with all elements that does **NOT** satisfy the predicate [test],
   /// providing sequential index of the element.
@@ -52,7 +58,7 @@ extension IterableExt<E> on Iterable<E> {
   /// Applies the action [f] on each element, providing sequential index of the element.
   void forEachIndexed(IndexedAction<E> f) {
     var i = 0;
-    forEach((e) => f(i++, e));
+    if (this != null) forEach((e) => f(i++, e));
   }
 
   /// Accumulates a collection to a single value of type [S], which starts from an [initial] value,
@@ -60,7 +66,9 @@ extension IterableExt<E> on Iterable<E> {
   /// with the combinator [f], providing sequential index of the element.
   S foldIndexed<S>(S initial, IndexedAccumulate<S, E> f) {
     var i = 0;
-    return fold(initial, (acc, e) => f(i++, acc, e));
+    return this != null
+      ? fold(initial, (acc, e) => f(i++, acc, e))
+      : initial;
   }
 
   /// Accumulates a collection to a single value of type [S], which starts from an [initial] value,
@@ -74,7 +82,7 @@ extension IterableExt<E> on Iterable<E> {
   /// See also: [List.reversed]
   S foldRight<S>(S initial, ReversedAccumulate<S, E> f) {
     var acc = initial;
-    asList().reversed.forEach((e) {
+    asList()?.reversed?.forEach((e) {
       acc = f(e, acc);
     });
     return acc;
@@ -87,8 +95,9 @@ extension IterableExt<E> on Iterable<E> {
   /// **Caution**: to reverse an [Iterable] may cause performance issue, see [sdk#26928](https://is.gd/lXPlJI)
   S foldRightIndexed<S>(S initial, IndexedReversedAccumulate<S, E> f) {
     final list = asList();
+    final len = list?.length ?? 0;
     var acc = initial;
-    for (var i = list.length - 1; i >= 0; i--) {
+    for (var i = len - 1; i >= 0; i--) {
       acc = f(i, list[i], acc);
     }
     return acc;
@@ -96,70 +105,72 @@ extension IterableExt<E> on Iterable<E> {
 
   /// Transforms each element to another object of type [T], by applying the transformer [f],
   /// providing sequential index of the element.
-  Iterable<T> mapIndexed<T>(IndexedTransform<E, T> f) => _IndexedMappedIterable(this, f);
+  Iterable<T> mapIndexed<T>(IndexedTransform<E, T> f) =>
+      this != null ? _IndexedMappedIterable(this, f) : null;
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
   List<T> mapToList<T>(List<T> destination, Transform<E, T> f) {
-    map(f).forEach((e) => destination.add(e));
+    if (this != null) map(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// providing sequential index of the element, and appends the result to the given [destination].
   List<T> mapToListIndexed<T>(List<T> destination, IndexedTransform<E, T> f) {
-    mapIndexed(f).forEach((e) => destination.add(e));
+    if (this != null) mapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
   Set<T> mapToSet<T>(Set<T> destination, Transform<E, T> f) {
-    map(f).forEach((e) => destination.add(e));
+    if (this != null) map(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// providing sequential index of the element, and appends the result to the given [destination].
   Set<T> mapToSetIndexed<T>(Set<T> destination, IndexedTransform<E, T> f) {
-    mapIndexed(f).forEach((e) => destination.add(e));
+    if (this != null) mapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original collection.
-  Iterable<T> flatMap<T>(Transform<E, Iterable<T>> f) => _FlatMappedIterable(map(f));
+  Iterable<T> flatMap<T>(Transform<E, Iterable<T>> f) =>
+      this != null ? _FlatMappedIterable(map(f)) : null;
 
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original collection, providing sequential index of each element.
   Iterable<T> flatMapIndexed<T>(IndexedTransform<E, Iterable<T>> f) =>
-      _FlatMappedIterable(mapIndexed(f));
+      this != null ? _FlatMappedIterable(mapIndexed(f)) : null;
 
   /// Appends to the give [destination] with the elements yielded from results of transform [f] function
   /// being invoked on each element of original collection.
   List<T> flatMapToList<T>(List<T> destination, Transform<E, Iterable<T>> f) {
-    flatMap(f).forEach((e) => destination.add(e));
+    flatMap(f)?.forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Appends to the give [destination] with the elements yielded from results of transform [f] function
   /// being invoked on each element of original collection, providing sequential index of each element.
   List<T> flatMapToListIndexed<T>(List<T> destination, IndexedTransform<E, Iterable<T>> f) {
-    flatMapIndexed(f).forEach((e) => destination.add(e));
+    flatMapIndexed(f)?.forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Appends to the give [destination] with the elements yielded from results of transform [f] function
   /// being invoked on each element of original collection.
   Set<T> flatMapToSet<T>(Set<T> destination, Transform<E, Iterable<T>> f) {
-    flatMap(f).forEach((e) => destination.add(e));
+    flatMap(f)?.forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Appends to the give [destination] with the elements yielded from results of transform [f] function
   /// being invoked on each element of original collection, providing sequential index of each element.
   Set<T> flatMapToSetIndexed<T>(Set<T> destination, IndexedTransform<E, Iterable<T>> f) {
-    flatMapIndexed(f).forEach((e) => destination.add(e));
+    flatMapIndexed(f)?.forEach((e) => destination.add(e));
     return destination;
   }
 
@@ -167,18 +178,18 @@ extension IterableExt<E> on Iterable<E> {
   /// where `item1` contains elements for which [test] yields `true`,
   /// while `item2` contains elements for which [test] yields `false`.
   Tuple2<Iterable<E>, Iterable<E>> partition(Predicate<E> test) =>
-      Tuple2(where(test), whereNot(test));
+      this != null ? Tuple2(where(test), whereNot(test)) : null;
 
   /// Splits this collection into pair ([Tuple2]) of lazy iterables,
   /// where `item1` contains elements for which [test] yields `true`,
   /// while `item2` contains elements for which [test] yields `false`,
   /// comparing to [partition], [test] will has access to the sequential index of each element.
   Tuple2<Iterable<E>, Iterable<E>> partitionIndexed(IndexedPredicate<E> test) =>
-      Tuple2(whereIndexed(test), whereNotIndexed(test));
+      this != null ? Tuple2(whereIndexed(test), whereNotIndexed(test)) : null;
 
   /// Return a new lazy iterable contains chunks of this collection each not exceeding the given [size].
   Iterable<Iterable<E>> chunked(int size) =>
-      size != null && size > 0 ? _ChunkedIterable(this, size) : [];
+      this != null && size != null && size > 0 ? _ChunkedIterable(this, size) : [];
 
   /// Returns the sum of all values produced by [selector] function applied to each element in the collection.
   ///
