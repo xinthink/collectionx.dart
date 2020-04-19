@@ -9,7 +9,7 @@ part '_internal/_progression_iterator.dart';
 /// Please note that it's not a strict counterpart of the range in mathematics.
 /// In fact, to keep things simple, it's just a pair of numbers,
 /// marks the beginning and end of the range, respectively.
-/// So that it can represent a reverse range easily, e.g., `3 to 1`.
+/// So that it can represent a reverse range easily, e.g., `3.0..1.0`.
 class Range<T extends num> {
   /// The beginning value in the range.
   ///
@@ -26,13 +26,32 @@ class Range<T extends num> {
   /// Factory method to create a progression in which the maximum value is [to],
   /// with an optional minimum value [from] which defaults to `0`,
   /// and a common difference of [step] which defaults to `1`.
+  ///
+  /// Example:
+  /// ```dart
+  /// Range.upTo(2) // => 0, 1, 2
+  /// Range.upTo(5, from: 1, step: 2) // => 1, 3, 5
+  /// ```
   static IntRange upTo(int to, {int from = 0, int step = 1}) => IntRange(from, to, step: step);
 
   /// Create an arithmetic progression from [first] to [last] inclusively,
   /// with common difference of [step] which defaults to `1`.
-  static IntRange progression(int first, int last, {int step = 1}) => IntRange(first, last, step: step);
+  ///
+  /// Example:
+  /// ```dart
+  /// Range.progression(1, 3) // => 1, 2, 3
+  /// Range.progression(1, 5, step: 2) // => 1, 3, 5
+  /// ```
+  static IntRange progression(int first, int last, {int step = 1}) =>
+      IntRange(first, last, step: step);
 
   /// Factory method to create a closed floating-point range of type [double]: \[[from], [to]\].
+  ///
+  /// Example:
+  /// ```dart
+  /// Range.range(1.0, 3.0) // => 1.0..3.0
+  /// Range.range(5.0, 0.0) // => 5.0..0.0
+  /// ```
   static Range<double> range(double from, double to) => Range._(from, to);
 
   /// Checks if the given value [n] is within this range.
@@ -44,8 +63,8 @@ class Range<T extends num> {
 
 /// A range of values of type [int], and it also represents an [arithmetic progression](https://en.wikipedia.org/wiki/Arithmetic_progression).
 ///
-/// It can be used as an [Iterable] to access each integer in the range.
-/// For example:
+/// It can be used as an [Iterable] to access each integer in the range. For example:
+///
 /// ```dart
 /// Range.upTo(2).forEach((n) => print(n)) // => 0, 1, 2
 /// 1.upTo(5, step: 2).forEach((n) => print(n)) // => 1, 3, 5
@@ -82,13 +101,15 @@ class EmptyIntRange extends IntRange {
   const EmptyIntRange() : super(null, null);
 
   @override
-  int get from => throw UnsupportedError('`from` property is unavailable for an empty progression.');
+  int get from =>
+      throw UnsupportedError('`from` property is unavailable for an empty progression.');
 
   @override
   int get to => throw UnsupportedError('`to` property is unavailable for an empty progression.');
 
   @override
-  int get first => throw UnsupportedError('`first` element is unavailable for an empty progression.');
+  int get first =>
+      throw UnsupportedError('`first` element is unavailable for an empty progression.');
 
   @override
   int get last => throw UnsupportedError('`last` element is unavailable for an empty progression.');
@@ -105,8 +126,8 @@ class EmptyIntRange extends IntRange {
 
 /// An [arithmetic progression](https://en.wikipedia.org/wiki/Arithmetic_progression).
 ///
-/// It can be used as an [Iterable] to access each integer in the progression.
-/// For example:
+/// It can be used as an [Iterable] to access each integer in the progression. For example:
+///
 /// ```dart
 /// Progression(1, 3).forEach((n) => print(n)) // => 1, 2, 3
 /// Progression(1, 5, step: 2).forEach((n) => print(n)) // => 1, 3, 5

@@ -16,7 +16,7 @@ extension NumericIterableExt<E extends num> on Iterable<E> {
     var count = 0;
     num sum = 0;
     if (this != null) {
-      for(final e in this) {
+      for (final e in this) {
         sum += e;
         count++;
       }
