@@ -48,4 +48,28 @@ void main() {
     expect(itr.flatMapToSet({}, (x) => x), isEmpty);
     expect(itr.flatMapToSetIndexed({}, (i, x) => x), isEmpty);
   });
+
+  test('treats null maps as empty', () {
+    Map map;
+    expect(map.all((_, __) => false), isTrue);
+    expect(map.any((_, __) => true), isFalse);
+    expect(map.none((_, __) => false), isTrue);
+  });
+
+
+  test('null maps yield nulls', () {
+    Map map;
+    expect(map.where((_, __) => true), isNull);
+    expect(map.whereNot((_, __) => false), isNull);
+    expect(map.mapEntries((_, __) => 0), isNull);
+    expect(map.flatMap((_, __) => []), isNull);
+  });
+
+  test('do nothing on null maps', () {
+    Map map;
+    expect(map.mapToList([], (_, __) => 0), isEmpty);
+    expect(map.mapToSet({}, (_, __) => 0), isEmpty);
+    expect(map.flatMapToList([], (_, __) => []), isEmpty);
+    expect(map.flatMapToSet({}, (_, __) => []), isEmpty);
+  });
 }
