@@ -95,7 +95,7 @@ and appends the result to the given <code>destination</code>.</p>
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">Set&lt;T&gt; mapToSet&lt;T&gt;(Set&lt;T&gt; destination, EntryTransform&lt;K, V, T&gt; f) {
-  mapEntries(f).forEach((e) =&gt; destination.add(e));
+  mapEntries(f)?.forEach((e) =&gt; destination.add(e));
   return destination;
 }</code></pre>
     </section>
@@ -110,7 +110,7 @@ and appends the result to the given <code>destination</code>.</p>
 <footer>
   <span class="no-break">
     collection_ext
-      0.2.0
+      0.3.0
   </span>
 
 </footer>

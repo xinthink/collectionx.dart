@@ -92,7 +92,8 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">bool any(EntryPredicate&lt;K, V&gt; test) =&gt; entries.any((e) =&gt; test(e.key, e.value));</code></pre>
+      <pre class="language-dart"><code class="language-dart">bool any(EntryPredicate&lt;K, V&gt; test) =&gt;
+    this != null ? entries.any((e) =&gt; test(e.key, e.value)) : false;</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -105,7 +106,7 @@
 <footer>
   <span class="no-break">
     collection_ext
-      0.2.0
+      0.3.0
   </span>
 
 </footer>

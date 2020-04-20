@@ -95,7 +95,7 @@ being invoked on each element of original entries.</p>
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">List&lt;T&gt; flatMapToList&lt;T&gt;(List&lt;T&gt; destination, EntryTransform&lt;K, V, Iterable&lt;T&gt;&gt; f) {
-  flatMap(f).forEach((e) =&gt; destination.add(e));
+  flatMap(f)?.forEach((e) =&gt; destination.add(e));
   return destination;
 }</code></pre>
     </section>
@@ -110,7 +110,7 @@ being invoked on each element of original entries.</p>
 <footer>
   <span class="no-break">
     collection_ext
-      0.2.0
+      0.3.0
   </span>
 
 </footer>

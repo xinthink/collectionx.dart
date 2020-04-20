@@ -94,7 +94,7 @@ providing sequential index of the element.</p>
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">Iterable&lt;MapEntry&lt;K, V&gt;&gt; where(EntryPredicate&lt;K, V&gt; test) =&gt;
-    entries.where((e) =&gt; test(e.key, e.value));</code></pre>
+    this?.entries?.where((e) =&gt; test(e.key, e.value));</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -107,7 +107,7 @@ providing sequential index of the element.</p>
 <footer>
   <span class="no-break">
     collection_ext
-      0.2.0
+      0.3.0
   </span>
 
 </footer>

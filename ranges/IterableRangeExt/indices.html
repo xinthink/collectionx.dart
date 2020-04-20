@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the min method from the NumericIterableExt extension, for the Dart programming language.">
-  <title>min method - NumericIterableExt extension - iterables library - Dart API</title>
+  <meta name="description" content="API docs for the indices property from the IterableRangeExt extension, for the Dart programming language.">
+  <title>indices property - IterableRangeExt extension - ranges library - Dart API</title>
 
   
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
@@ -25,11 +25,11 @@
   <button id="sidenav-left-toggle" type="button">&nbsp;</button>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">collection_ext</a></li>
-    <li><a href="../../iterables/iterables-library.html">iterables</a></li>
-    <li><a href="../../iterables/NumericIterableExt.html">NumericIterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E extends num</span>&gt;</span></a></li>
-    <li class="self-crumb">min method</li>
+    <li><a href="../../ranges/ranges-library.html">ranges</a></li>
+    <li><a href="../../ranges/IterableRangeExt.html">IterableRangeExt<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
+    <li class="self-crumb">indices property</li>
   </ol>
-  <div class="self-name">min</div>
+  <div class="self-name">indices</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -46,21 +46,19 @@
     
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="../../index.html">collection_ext</a></li>
-      <li><a href="../../iterables/iterables-library.html">iterables</a></li>
-      <li><a href="../../iterables/NumericIterableExt.html">NumericIterableExt<span class="signature">&lt;<wbr><span class="type-parameter">E extends num</span>&gt;</span></a></li>
-      <li class="self-crumb">min method</li>
+      <li><a href="../../ranges/ranges-library.html">ranges</a></li>
+      <li><a href="../../ranges/IterableRangeExt.html">IterableRangeExt<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
+      <li class="self-crumb">indices property</li>
     </ol>
     
-    <h5>NumericIterableExt extension</h5>
+    <h5>IterableRangeExt extension</h5>
     <ol>
     
     
+        <li class="section-title"> <a href="../../ranges/IterableRangeExt.html#instance-properties">Properties</a>
+        </li>
+        <li><a href="../../ranges/IterableRangeExt/indices.html">indices</a></li>
     
-        <li class="section-title"><a href="../../iterables/NumericIterableExt.html#instance-methods">Methods</a></li>
-        <li><a href="../../iterables/NumericIterableExt/average.html">average</a></li>
-        <li><a href="../../iterables/NumericIterableExt/max.html">max</a></li>
-        <li><a href="../../iterables/NumericIterableExt/min.html">min</a></li>
-        <li><a href="../../iterables/NumericIterableExt/sum.html">sum</a></li>
     
     
     
@@ -70,23 +68,29 @@
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">min</span> method</h1></div>
+      <div><h1><span class="kind-property">indices</span> property</h1></div>
 
-    <section class="multi-line-signature">
-      <span class="returntype">E</span>
-            <span class="name ">min</span>
-(<wbr>)
-      
-    </section>
-    <section class="desc markdown">
-      <p>Returns the smallest element or <code>null</code> if there are no elements.</p>
-    </section>
-    
-    <section class="summary source-code" id="source">
-      <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">E min() =&gt; this == null || isEmpty ? null : reduce(math.min);</code></pre>
-    </section>
 
+        <section id="getter">
+        
+        <section class="multi-line-signature">
+          <span class="returntype"><a href="../../ranges/IntRange-class.html">IntRange</a></span>
+                  <span class="name ">indices</span>
+          
+</section>
+        
+                <section class="desc markdown">
+          <p>Returns an <code>IntRange</code> of the valid indices for this collection.</p>
+<p>Counting all elements may involve iterating through all elements
+and can therefore be slow.
+Some iterables have a more efficient way to find the number of elements.</p>
+        </section>
+                <section class="summary source-code" id="source">
+          <h2><span>Implementation</span></h2>
+          <pre class="language-dart"><code class="language-dart">IntRange get indices =&gt; 0.until(this?.length ?? 0);</code></pre>
+        </section>
+</section>
+        
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">

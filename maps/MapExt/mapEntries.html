@@ -92,7 +92,8 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; mapEntries&lt;T&gt;(EntryTransform&lt;K, V, T&gt; f) =&gt; entries.map((e) =&gt; f(e.key, e.value));</code></pre>
+      <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; mapEntries&lt;T&gt;(EntryTransform&lt;K, V, T&gt; f) =&gt;
+    this?.entries?.map((e) =&gt; f(e.key, e.value));</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -105,7 +106,7 @@
 <footer>
   <span class="no-break">
     collection_ext
-      0.2.0
+      0.3.0
   </span>
 
 </footer>
