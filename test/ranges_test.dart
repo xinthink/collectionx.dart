@@ -118,4 +118,14 @@ void main() {
     expect(Range.range(2.0, 4.0).toString(), equals('2.0..4.0'));
     expect(2.0.upTo(4.0).toString(), equals('2.0..4.0'));
   });
+
+  test('indices of iterables', () {
+    expect([2, 4, 6].indices, equals([0, 1, 2]));
+    expect({2, 4, 6}.indices, equals([0, 1, 2]));
+  });
+
+  test('indices of empty or nullable iterables', () {
+    expect([].indices, isEmpty);
+    expect(null.indices, isEmpty);
+  });
 }

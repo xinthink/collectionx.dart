@@ -54,3 +54,4 @@
 library ranges;
 
 export 'src/ranges.dart';
+export 'src/iterable_indices.dart';
