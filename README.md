@@ -46,6 +46,20 @@ import 'package:collection_ext/iterables.dart';
 final diff = [2, 4, 6].foldRight(0, (x, acc) => x - acc);
 ```
 
+### Nullability
+
+All extension methods of Iterables & Maps are null-safe. For example:
+
+```dart
+Iterable itr;
+assert(itr.sum() == 0);
+
+Map map;
+assert(map.none((k, v) => true) == true);
+```
+
+See [nullability tests] for more details.
+
 ## Available Modules
 
 - Extensions to [Iterables]
@@ -70,3 +84,4 @@ I'm working on more useful extensions, PRs are welcome! :beers:🖖
 [Iterables]: https://xinthink.github.io/dart_collection_ext/iterables/iterables-library.html
 [Maps]: https://xinthink.github.io/dart_collection_ext/maps/maps-library.html
 [Ranges]: https://xinthink.github.io/dart_collection_ext/ranges/ranges-library.html
+[nullability tests]: https://github.com/xinthink/dart_collection_ext/blob/master/test/nullability_test.dart
