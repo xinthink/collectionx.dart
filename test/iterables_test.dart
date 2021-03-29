@@ -6,14 +6,14 @@ void main() {
     final isEven = (x) => x % 2 == 0;
     expect([5, 19, 2].all(isEven), isFalse);
     expect([6, 12, 2].all(isEven), isTrue);
-    expect([].all(isEven), isTrue);
+    expect([].all(isEven), isFalse);
   });
 
   test('if no elements match the predicate', () {
     final isEven = (x) => x % 2 == 0;
     expect([5, 19, 2].none(isEven), isFalse);
     expect([7, 21, 1].none(isEven), isTrue);
-    expect([].none(isEven), isTrue);
+    expect([].none(isEven), isFalse);
   });
 
   test('filter a collection with index', () {
@@ -128,25 +128,29 @@ void main() {
   });
 
   test('map a collection into a list', () {
-    expect([3, 2, 1].mapToList(['10'], (x) => '$x'), equals(['10', '3', '2', '1']));
+    expect([3, 2, 1].mapToList(['10'], (x) => '$x'),
+        equals(['10', '3', '2', '1']));
     expect([].mapToList([], (x) => x), isEmpty);
     expect([].mapToList([2], (x) => x), equals([2]));
   });
 
   test('map a collection into a set', () {
-    expect([3, 2, 1].mapToSet({'10', '0'}, (x) => '$x'), equals(['10', '0', '3', '2', '1']));
+    expect([3, 2, 1].mapToSet({'10', '0'}, (x) => '$x'),
+        equals(['10', '0', '3', '2', '1']));
     expect([].mapToSet({}, (x) => x), isEmpty);
     expect([].mapToSet({2}, (x) => x), equals({2}));
   });
 
   test('map a collection into a list with index', () {
-    expect([3, 2, 1].mapToListIndexed(['10'], (i, x) => '$i$x'), equals(['10', '03', '12', '21']));
+    expect([3, 2, 1].mapToListIndexed(['10'], (i, x) => '$i$x'),
+        equals(['10', '03', '12', '21']));
     expect([].mapToListIndexed([], (i, _) => i), isEmpty);
     expect([].mapToListIndexed([2], (i, _) => i), equals([2]));
   });
 
   test('map a collection into a set with index', () {
-    expect([3, 2, 1].mapToSetIndexed({'10'}, (i, x) => '$i$x'), equals(['10', '03', '12', '21']));
+    expect([3, 2, 1].mapToSetIndexed({'10'}, (i, x) => '$i$x'),
+        equals(['10', '03', '12', '21']));
     expect([].mapToSetIndexed({}, (i, _) => i), isEmpty);
     expect([].mapToSetIndexed({2}, (i, _) => i), isA<Set<int>>());
     expect([].mapToSetIndexed({2}, (i, _) => i), equals({2}));
@@ -182,7 +186,9 @@ void main() {
   });
 
   test('flatten indexed transformations, and appends the result to a list', () {
-    expect([3, 2, 1].flatMapToListIndexed(['10'], (i, x) => ['$i$x', '$i${2 * x}']),
+    expect(
+        [3, 2, 1]
+            .flatMapToListIndexed(['10'], (i, x) => ['$i$x', '$i${2 * x}']),
         equals(['10', '03', '06', '12', '14', '21', '22']));
     expect([].flatMapToListIndexed([], (i, x) => x), isEmpty);
     expect([].flatMapToListIndexed([2], (i, x) => x), equals([2]));
@@ -191,13 +197,17 @@ void main() {
   test('flatten transformations, and appends the result to a set', () {
     final result = [3, 2, 1].flatMapToSet({'10'}, (x) => ['$x', '${2 * x}']);
     expect(result, isA<Set<String>>());
-    expect(result, equals(['10', '3', '6', '2', '4', '1'])); // except one duplicated element
+    expect(
+        result,
+        equals(
+            ['10', '3', '6', '2', '4', '1'])); // except one duplicated element
     expect([].flatMapToSet({}, (x) => x), isEmpty);
     expect([].flatMapToSet({2}, (x) => x), equals([2]));
   });
 
   test('flatten indexed transformations, and appends the result to a set', () {
-    expect([3, 2, 1].flatMapToSetIndexed({'10'}, (i, x) => ['$i$x', '$i${2 * x}']),
+    expect(
+        [3, 2, 1].flatMapToSetIndexed({'10'}, (i, x) => ['$i$x', '$i${2 * x}']),
         equals(['10', '03', '06', '12', '14', '21', '22']));
     expect([].flatMapToSetIndexed({}, (i, x) => x), isEmpty);
     expect([].flatMapToSetIndexed({2}, (i, x) => x), equals([2]));

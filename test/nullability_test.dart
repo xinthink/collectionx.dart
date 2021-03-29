@@ -4,11 +4,11 @@ import 'package:test/test.dart';
 /// Extension methods should work properly with nullable receivers.
 void main() {
   test('treats null iterables as empty', () {
-    Iterable<num> itr;
-    expect(itr.all((x) => x.isNaN), isTrue);
-    expect(itr.all((x) => !x.isNaN), isTrue);
-    expect(itr.none((x) => x.isNaN), isTrue);
-    expect(itr.none((x) => !x.isNaN), isTrue);
+    Iterable<num>? itr;
+    expect(itr.all((x) => x.isNaN), isFalse);
+    expect(itr.all((x) => !x.isNaN), isFalse);
+    expect(itr.none((x) => x.isNaN), isFalse);
+    expect(itr.none((x) => !x.isNaN), isFalse);
     expect(itr.chunked(2), isEmpty);
     expect(itr.sum(), equals(0));
     expect(itr.sumBy((_, x) => x), equals(0));
@@ -21,7 +21,7 @@ void main() {
   });
 
   test('null iterables yield nulls', () {
-    Iterable itr;
+    Iterable? itr;
     expect(itr.asList(), isNull);
     expect(itr.whereIndexed((_, x) => x.isNaN), isNull);
     expect(itr.whereNot((x) => x.isNaN), isNull);
@@ -55,7 +55,6 @@ void main() {
     expect(map.any((_, __) => true), isFalse);
     expect(map.none((_, __) => false), isTrue);
   });
-
 
   test('null maps yield nulls', () {
     Map map;

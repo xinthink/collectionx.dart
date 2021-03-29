@@ -1,15 +1,15 @@
 name: collection_ext
 description: A set of useful extension methods for Dart collections, designed for the purpose of making it easier to write functional-programming-styled, concise Dart code.
 
-version: 0.3.0
+version: 1.0.0
 homepage: https://github.com/xinthink/dart_collection_ext/
 repository: https://github.com/xinthink/dart_collection_ext/
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  tuple: ^1.0.3
+  tuple: ">=2.0.0"
 
 dev_dependencies:
   test: ^1.9.4
