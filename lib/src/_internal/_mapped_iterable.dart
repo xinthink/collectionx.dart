@@ -6,18 +6,23 @@ class _IndexedMappedIterable<S, T> extends Iterable<T> {
   final Iterable<S> _iterable;
   final IndexedTransform<S, T> _f;
 
-  factory _IndexedMappedIterable(Iterable<S> iterable, IndexedTransform<S, T> f) =>
-      _IndexedMappedIterable<S, T>._(iterable, f);
+  factory _IndexedMappedIterable(
+    Iterable<S> iterable,
+    IndexedTransform<S, T> f,
+  ) {
+    return _IndexedMappedIterable<S, T>._(iterable, f);
+  }
 
   _IndexedMappedIterable._(this._iterable, this._f);
 
   @override
-  Iterator<T> get iterator => _IndexedMappedIterator<S, T>(_iterable.iterator, _f);
+  Iterator<T> get iterator =>
+      _IndexedMappedIterator<S, T>(_iterable.iterator, _f);
 }
 
 /// [Iterator] for [_IndexedMappedIterator].
 class _IndexedMappedIterator<S, T> extends Iterator<T> {
-  T _current;
+  T? _current;
   int _index = 0;
   final Iterator<S> _iterator;
   final IndexedTransform<S, T> _f;
@@ -35,7 +40,7 @@ class _IndexedMappedIterator<S, T> extends Iterator<T> {
   }
 
   @override
-  T get current => _current;
+  T get current => _current!;
 }
 
 /// A lazy [Iterable] can flatten its' child iterables, to form a single flatten collection.
@@ -43,7 +48,8 @@ class _FlatMappedIterable<E> extends Iterable<E> {
   final Iterable<Iterable<E>> _iterables;
 
   /// Create a [_FlatMappedIterable] given the original [iterable].
-  factory _FlatMappedIterable(Iterable<Iterable<E>> iterable) => _FlatMappedIterable._(iterable);
+  factory _FlatMappedIterable(Iterable<Iterable<E>> iterable) =>
+      _FlatMappedIterable._(iterable);
 
   _FlatMappedIterable._(this._iterables);
 
@@ -57,12 +63,12 @@ class _FlatMappedIterator<E> extends Iterator<E> {
   final Iterator<Iterable<E>> _iterables;
 
   /// Current iterator
-  Iterator<E> _iterator;
+  Iterator<E>? _iterator;
 
   _FlatMappedIterator(this._iterables);
 
   @override
-  E get current => _iterator?.current;
+  E get current => _iterator!.current;
 
   @override
   bool moveNext() {
@@ -70,8 +76,9 @@ class _FlatMappedIterator<E> extends Iterator<E> {
 
     // current iterator is null or ended
     if (_iterables.moveNext()) {
-      _iterator = _iterables.current.iterator;
-      return _iterator.moveNext() == true;
+      final currIterator = _iterables.current.iterator;
+      _iterator = currIterator;
+      return currIterator.moveNext() == true;
     }
 
     return false;

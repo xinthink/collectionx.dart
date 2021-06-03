@@ -52,17 +52,17 @@ void main() {
 
   test('fold a collection with index', () {
     final indexes = <int>[];
-    final add = (i, acc, n) {
+    final add = (int i, int acc, int n) {
       indexes.add(i);
       return acc + n;
     };
 
-    var sum = [2, 4].foldIndexed(0, add);
+    var sum = [2, 4].foldIndexed<int>(0, add);
     expect(indexes, equals([0, 1]));
     expect(sum, equals(6));
 
     indexes.clear();
-    sum = [].foldIndexed(0, add);
+    sum = <int>[].foldIndexed(0, add);
     expect(indexes, isEmpty);
     expect(sum, equals(0));
   });

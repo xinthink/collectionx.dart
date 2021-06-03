@@ -11,18 +11,22 @@ part '_internal/_where_iterable.dart';
 
 /// Extensions to [Iterable]s
 extension IterableExt<E> on Iterable<E>? {
-  /// Returns a new lazy [Iterable] with all `non-null` elements.
+  /// Returns a new lazy [Iterable] with all `non-null` elements, or an empty iterable if the receiver is `null`.
   ///
   /// See [Iterable.where]
-  Iterable<E>? get nonNull => this?.where((e) => e != null);
+  Iterable<E> get nonNull => this?.where((e) => e != null) ?? Iterable.empty();
 
   /// Creates a fixed-length [List] containing the elements of this [Iterable],
   /// equivalent to `toList(growable: false)`.
   ///
+  /// Returns an empty list if the receiver is `null`.
+  ///
   /// See [Iterable.toList]
-  List<E>? asList() => this?.toList(growable: false);
+  List<E> asList() => this?.toList(growable: false) ?? List.empty();
 
   /// Returns `true` if all elements match the given predicate [test].
+  ///
+  /// The result will be `false`, if the receiver is `null`.
   bool all(Predicate<E> test) {
     final self = this;
     if (self == null || self.isEmpty) return false;
@@ -34,6 +38,8 @@ extension IterableExt<E> on Iterable<E>? {
   }
 
   /// Returns `true` if **no** elements match the given predicate [test].
+  ///
+  /// The result will be `false`, if the receiver is `null`.
   bool none(Predicate<E> test) {
     final self = this;
     if (self == null || self.isEmpty) return false;
@@ -46,12 +52,14 @@ extension IterableExt<E> on Iterable<E>? {
 
   /// Returns a new lazy [Iterable] with all elements that satisfy the predicate [test],
   /// providing sequential index of the element.
-  Iterable<E> whereIndexed(IndexedPredicate<E> test) =>
-      this != null ? _IndexedWhereIterable(this, test) : null;
+  Iterable<E> whereIndexed(IndexedPredicate<E> test) {
+    final self = this;
+    return self != null ? _IndexedWhereIterable(self, test) : Iterable.empty();
+  }
 
   /// Returns a new lazy [Iterable] with all elements that does **NOT** satisfy the predicate [test].
   Iterable<E> whereNot(Predicate<E> test) =>
-      this != null ? where((e) => !test(e)) : null;
+      this?.where((e) => !test(e)) ?? Iterable.empty();
 
   /// Returns a new lazy [Iterable] with all elements that does **NOT** satisfy the predicate [test],
   /// providing sequential index of the element.
@@ -61,7 +69,7 @@ extension IterableExt<E> on Iterable<E>? {
   /// Applies the action [f] on each element, providing sequential index of the element.
   void forEachIndexed(IndexedAction<E> f) {
     var i = 0;
-    if (this != null) forEach((e) => f(i++, e));
+    this?.forEach((e) => f(i++, e));
   }
 
   /// Accumulates a collection to a single value of type [S], which starts from an [initial] value,
@@ -74,7 +82,7 @@ extension IterableExt<E> on Iterable<E>? {
   /// ```
   S foldIndexed<S>(S initial, IndexedAccumulate<S, E> f) {
     var i = 0;
-    return this != null ? fold(initial, (acc, e) => f(i++, acc, e)) : initial;
+    return this?.fold<S>(initial, (p, e) => f(i++, p, e)) ?? initial;
   }
 
   /// Accumulates a collection to a single value of type [S], which starts from an [initial] value,
@@ -93,9 +101,7 @@ extension IterableExt<E> on Iterable<E>? {
   /// See also: [List.reversed]
   S foldRight<S>(S initial, ReversedAccumulate<S, E> f) {
     var acc = initial;
-    asList()?.reversed?.forEach((e) {
-      acc = f(e, acc);
-    });
+    asList().reversed.forEach((e) => acc = f(e, acc));
     return acc;
   }
 
@@ -107,7 +113,7 @@ extension IterableExt<E> on Iterable<E>? {
   /// **Caution**: to reverse an [Iterable] may cause performance issue, see [sdk#26928](https://is.gd/lXPlJI)
   S foldRightIndexed<S>(S initial, IndexedReversedAccumulate<S, E> f) {
     final list = asList();
-    final len = list?.length ?? 0;
+    final len = list.length;
     var acc = initial;
     for (var i = len - 1; i >= 0; i--) {
       acc = f(i, list[i], acc);
@@ -117,27 +123,29 @@ extension IterableExt<E> on Iterable<E>? {
 
   /// Transforms each element to another object of type [T], by applying the transformer [f],
   /// providing sequential index of the element.
-  Iterable<T> mapIndexed<T>(IndexedTransform<E, T> f) =>
-      this != null ? _IndexedMappedIterable(this, f) : null;
+  Iterable<T> mapIndexed<T>(IndexedTransform<E, T> f) {
+    final self = this;
+    return self != null ? _IndexedMappedIterable(self, f) : Iterable.empty();
+  }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
   List<T> mapToList<T>(List<T> destination, Transform<E, T> f) {
-    if (this != null) map(f).forEach((e) => destination.add(e));
+    this?.map(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// providing sequential index of the element, and appends the result to the given [destination].
   List<T> mapToListIndexed<T>(List<T> destination, IndexedTransform<E, T> f) {
-    if (this != null) mapIndexed(f).forEach((e) => destination.add(e));
+    mapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Transforms elements to objects of type [T] with the transformer [f],
   /// and appends the result to the given [destination].
   Set<T> mapToSet<T>(Set<T> destination, Transform<E, T> f) {
-    if (this != null) map(f).forEach((e) => destination.add(e));
+    this?.map(f).forEach((e) => destination.add(e));
     return destination;
   }
 
@@ -155,20 +163,22 @@ extension IterableExt<E> on Iterable<E>? {
   /// ```dart
   /// [1, 2, 3].flatMap((n) => [n, n]) // => [1, 1, 2, 2, 3, 3]
   /// ```
-  Iterable<T> flatMap<T>(Transform<E, Iterable<T>> f) =>
-      this != null ? _FlatMappedIterable(map(f)) : null;
+  Iterable<T> flatMap<T>(Transform<E, Iterable<T>> f) {
+    final self = this;
+    return self != null ? _FlatMappedIterable(self.map(f)) : Iterable.empty();
+  }
 
   /// Return a new lazy [Iterable] of all elements yielded from results of transform [f] function
   /// being invoked on each element of original collection, providing sequential index of each element.
   ///
   /// It's the index-aware version of [flatMap()].
   Iterable<T> flatMapIndexed<T>(IndexedTransform<E, Iterable<T>> f) =>
-      this != null ? _FlatMappedIterable(mapIndexed(f)) : null;
+      this != null ? _FlatMappedIterable(mapIndexed(f)) : Iterable.empty();
 
   /// Appends to the give [destination] with the elements yielded from results of transform [f] function
   /// being invoked on each element of original collection.
   List<T> flatMapToList<T>(List<T> destination, Transform<E, Iterable<T>> f) {
-    flatMap(f)?.forEach((e) => destination.add(e));
+    flatMap(f).forEach((e) => destination.add(e));
     return destination;
   }
 
@@ -176,14 +186,14 @@ extension IterableExt<E> on Iterable<E>? {
   /// being invoked on each element of original collection, providing sequential index of each element.
   List<T> flatMapToListIndexed<T>(
       List<T> destination, IndexedTransform<E, Iterable<T>> f) {
-    flatMapIndexed(f)?.forEach((e) => destination.add(e));
+    flatMapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
 
   /// Appends to the give [destination] with the elements yielded from results of transform [f] function
   /// being invoked on each element of original collection.
   Set<T> flatMapToSet<T>(Set<T> destination, Transform<E, Iterable<T>> f) {
-    flatMap(f)?.forEach((e) => destination.add(e));
+    flatMap(f).forEach((e) => destination.add(e));
     return destination;
   }
 
@@ -191,7 +201,7 @@ extension IterableExt<E> on Iterable<E>? {
   /// being invoked on each element of original collection, providing sequential index of each element.
   Set<T> flatMapToSetIndexed<T>(
       Set<T> destination, IndexedTransform<E, Iterable<T>> f) {
-    flatMapIndexed(f)?.forEach((e) => destination.add(e));
+    flatMapIndexed(f).forEach((e) => destination.add(e));
     return destination;
   }
 
@@ -203,15 +213,18 @@ extension IterableExt<E> on Iterable<E>? {
   /// ```dart
   /// [1, 0, -3, 4, -6].partition((n) => n.isNegative) // => ([-3, -6], [1, 0, 4])
   /// ```
-  Tuple2<Iterable<E>, Iterable<E>> partition(Predicate<E> test) =>
-      this != null ? Tuple2(where(test), whereNot(test)) : null;
+  Tuple2<Iterable<E>, Iterable<E>> partition(Predicate<E> test) {
+    final itrPositive = this?.where(test) ?? Iterable.empty();
+    final itrNegative = whereNot(test);
+    return Tuple2(itrPositive, itrNegative);
+  }
 
   /// Splits this collection into pair ([Tuple2]) of lazy iterables,
   /// where `item1` contains elements for which [test] yields `true`,
   /// while `item2` contains elements for which [test] yields `false`,
   /// comparing to [partition], [test] will has access to the sequential index of each element.
   Tuple2<Iterable<E>, Iterable<E>> partitionIndexed(IndexedPredicate<E> test) =>
-      this != null ? Tuple2(whereIndexed(test), whereNotIndexed(test)) : null;
+      Tuple2(whereIndexed(test), whereNotIndexed(test));
 
   /// Return a new lazy iterable contains chunks of this collection each not exceeding the given [size].
   ///
@@ -219,10 +232,12 @@ extension IterableExt<E> on Iterable<E>? {
   /// ```dart
   /// [1, 0, -3, 4, -6].chunked(2) // => [[1, 0], [-3, 4], [-6]]
   /// ```
-  Iterable<Iterable<E>> chunked(int size) =>
-      this != null && size != null && size > 0
-          ? _ChunkedIterable(this, size)
-          : [];
+  Iterable<Iterable<E>> chunked(int size) {
+    final self = this;
+    return self != null && size > 0
+        ? _ChunkedIterable(self, size)
+        : Iterable.empty();
+  }
 
   /// Returns the sum of all values produced by [selector] function applied to each element in the collection.
   ///
@@ -239,13 +254,13 @@ extension IterableExt<E> on Iterable<E>? {
   /// ```dart
   /// [-3, 2].maxBy((_, x) => x * x) // => -3
   /// ```
-  E maxBy<T extends Comparable<Object>>(T Function(int index, E) selector) {
-    E maxElem;
-    T maxValue;
+  E? maxBy<T extends Comparable<Object>>(T Function(int index, E) selector) {
+    E? maxElem;
+    T? maxValue;
 
     forEachIndexed((i, e) {
       final v = selector(i, e);
-      if (maxElem == null || v.compareTo(maxValue) > 0) {
+      if (maxValue == null || v.compareTo(maxValue!) > 0) {
         maxValue = v;
         maxElem = e;
       }
@@ -260,13 +275,13 @@ extension IterableExt<E> on Iterable<E>? {
   /// ```dart
   /// [-3, 2].minBy((_, x) => x * x) // => 2
   /// ```
-  E minBy<T extends Comparable<Object>>(T Function(int index, E) selector) {
-    E minElem;
-    T minValue;
+  E? minBy<T extends Comparable<Object>>(T Function(int index, E) selector) {
+    E? minElem;
+    T? minValue;
 
     forEachIndexed((i, e) {
       final v = selector(i, e);
-      if (minElem == null || v.compareTo(minValue) < 0) {
+      if (minValue == null || v.compareTo(minValue!) < 0) {
         minValue = v;
         minElem = e;
       }
