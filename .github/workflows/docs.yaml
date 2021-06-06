@@ -18,13 +18,15 @@ jobs:
         dartdoc --output build
         touch build/.nojekyll
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v2.8.0
-      env:
-        PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./build
+      uses: peaceiris/actions-gh-pages@v3
+      # env:
+      #   PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      #   PUBLISH_BRANCH: gh-pages
+      #   PUBLISH_DIR: ./build
       with:
-        emptyCommits: false
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
+        allow_empty_commit: false
     - name: notification
       if: cancelled() == false
       uses: xinthink/action-telegram@v1.1
