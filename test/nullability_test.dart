@@ -5,67 +5,69 @@ import 'package:test/test.dart';
 void main() {
   test('treats null iterables as empty', () {
     Iterable<num>? itr;
-    expect(itr.all((x) => x.isNaN), isFalse);
-    expect(itr.all((x) => !x.isNaN), isFalse);
-    expect(itr.none((x) => x.isNaN), isFalse);
-    expect(itr.none((x) => !x.isNaN), isFalse);
+    expect(itr.all((x) => x.isNaN), isTrue);
+    expect(itr.all((x) => !x.isNaN), isTrue);
+    expect(itr.none((x) => x.isNaN), isTrue);
+    expect(itr.none((x) => !x.isNaN), isTrue);
     expect(itr.chunked(2), isEmpty);
-    expect(itr.sum(), equals(0));
-    expect(itr.sumBy((_, x) => x), equals(0));
+    expect(() => itr.sum(), throwsStateError);
+    expect(() => itr.sumBy((_, x) => x), throwsStateError);
+    expect(itr.average(), isNaN);
+    expect(itr.averageBy((_, x) => x), isNaN);
+    expect(itr.asList(), isEmpty);
+    expect(itr.whereIndexed((_, x) => x.isNaN), isEmpty);
+    expect(itr.whereNot((x) => x.isNaN), isEmpty);
+    expect(itr.whereNotIndexed((_, x) => x.isNaN), isEmpty);
+    expect(itr.mapIndexed((_, x) => x), isEmpty);
+    expect(itr.flatMap((x) => [x]), isEmpty);
+    expect(itr.flatMapIndexed((_, x) => [x]), isEmpty);
+
+    var parts = itr.partition((x) => false);
+    expect(parts.item1, isEmpty);
+    expect(parts.item2, isEmpty);
+
+    parts = itr.partitionIndexed((_, x) => false);
+    expect(parts.item1, isEmpty);
+    expect(parts.item2, isEmpty);
+  });
+
+  test('null iterables yield nulls', () {
+    Iterable<num>? itr;
     expect(itr.max(), isNull);
     expect(itr.maxBy((_, x) => x), isNull);
     expect(itr.min(), isNull);
     expect(itr.minBy((_, x) => x), isNull);
-    expect(itr.average(), isNaN);
-    expect(itr.averageBy((_, x) => x), isNaN);
-  });
-
-  test('null iterables yield nulls', () {
-    Iterable? itr;
-    expect(itr.asList(), isNull);
-    expect(itr.whereIndexed((_, x) => x.isNaN), isNull);
-    expect(itr.whereNot((x) => x.isNaN), isNull);
-    expect(itr.whereNotIndexed((_, x) => x.isNaN), isNull);
-    expect(itr.mapIndexed((_, x) => x), isNull);
-    expect(itr.flatMap((x) => x), isNull);
-    expect(itr.flatMapIndexed((_, x) => x), isNull);
-    expect(itr.partition((x) => false), isNull);
-    expect(itr.partitionIndexed((_, x) => false), isNull);
   });
 
   test('do nothing on null iterables', () {
-    Iterable itr;
+    Iterable<int>? itr;
     itr.forEachIndexed((_, x) => x.isNaN);
-    expect(itr.foldIndexed(0, (_, s, x) => s + x), equals(0));
-    expect(itr.foldRight(0, (x, s) => s + x), equals(0));
-    expect(itr.foldRightIndexed(0, (_, x, s) => s + x), equals(0));
+    expect(itr.foldIndexed<int>(0, (_, s, x) => s + x), equals(0));
+    expect(itr.foldRight<int>(0, (x, s) => s + x), equals(0));
+    expect(itr.foldRightIndexed<int>(0, (_, x, s) => s + x), equals(0));
     expect(itr.mapToList([], (x) => x), isEmpty);
     expect(itr.mapToListIndexed([], (_, x) => x), isEmpty);
     expect(itr.mapToSet({}, (x) => x), isEmpty);
     expect(itr.mapToSetIndexed({}, (i, x) => x), isEmpty);
-    expect(itr.flatMapToList([], (x) => x), isEmpty);
-    expect(itr.flatMapToListIndexed([], (_, x) => x), isEmpty);
-    expect(itr.flatMapToSet({}, (x) => x), isEmpty);
-    expect(itr.flatMapToSetIndexed({}, (i, x) => x), isEmpty);
+    expect(itr.flatMapToList(<int>[], (x) => [x]), isEmpty);
+    expect(itr.flatMapToListIndexed(<int>[], (_, x) => [x]), isEmpty);
+    expect(itr.flatMapToSet(<int>{}, (x) => {x}), isEmpty);
+    expect(itr.flatMapToSetIndexed(<int>{}, (i, x) => {x}), isEmpty);
   });
 
   test('treats null maps as empty', () {
-    Map map;
+    Map? map;
     expect(map.all((_, __) => false), isTrue);
     expect(map.any((_, __) => true), isFalse);
     expect(map.none((_, __) => false), isTrue);
-  });
-
-  test('null maps yield nulls', () {
-    Map map;
-    expect(map.where((_, __) => true), isNull);
-    expect(map.whereNot((_, __) => false), isNull);
-    expect(map.mapEntries((_, __) => 0), isNull);
-    expect(map.flatMap((_, __) => []), isNull);
+    expect(map.where((_, __) => true), isEmpty);
+    expect(map.whereNot((_, __) => false), isEmpty);
+    expect(map.mapEntries((_, __) => 0), isEmpty);
+    expect(map.flatMap((_, __) => []), isEmpty);
   });
 
   test('do nothing on null maps', () {
-    Map map;
+    Map? map;
     expect(map.mapToList([], (_, __) => 0), isEmpty);
     expect(map.mapToSet({}, (_, __) => 0), isEmpty);
     expect(map.flatMapToList([], (_, __) => []), isEmpty);

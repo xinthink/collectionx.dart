@@ -6,14 +6,14 @@ void main() {
     final isEven = (x) => x % 2 == 0;
     expect([5, 19, 2].all(isEven), isFalse);
     expect([6, 12, 2].all(isEven), isTrue);
-    expect([].all(isEven), isFalse);
+    expect([].all(isEven), isTrue);
   });
 
   test('if no elements match the predicate', () {
     final isEven = (x) => x % 2 == 0;
     expect([5, 19, 2].none(isEven), isFalse);
     expect([7, 21, 1].none(isEven), isTrue);
-    expect([].none(isEven), isFalse);
+    expect([].none(isEven), isTrue);
   });
 
   test('filter a collection with index', () {

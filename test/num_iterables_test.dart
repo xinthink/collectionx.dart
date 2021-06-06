@@ -15,9 +15,9 @@ void main() {
   });
 
   test('sum of empty iterables', () {
-    expect(<num>[].sum(), equals(0));
-    expect(<double>[].sum(), equals(0.0));
-    expect([].sumBy((i, _) => i), equals(0));
+    expect(() => <num>[].sum(), throwsStateError);
+    expect(() => <double>[].sum(), throwsStateError);
+    expect(() => [].sumBy((i, _) => i), throwsStateError);
   });
 
   test('finds maximum of numeric iterables', () {
@@ -59,7 +59,8 @@ void main() {
 
   test('calculates average of iterables using selectors', () {
     expect(['a', 'abc', 'ab'].averageBy((_, s) => s.length), equals(2));
-    expect(['a', 'abc', 'cd'].averageBy((i, s) => i.toDouble() * s.length), equals(7 / 3));
+    expect(['a', 'abc', 'cd'].averageBy((i, s) => i.toDouble() * s.length),
+        equals(7 / 3));
   });
 
   test('calculates average of empty iterables', () {

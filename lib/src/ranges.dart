@@ -32,7 +32,8 @@ class Range<T extends num> {
   /// Range.upTo(2) // => 0, 1, 2
   /// Range.upTo(5, from: 1, step: 2) // => 1, 3, 5
   /// ```
-  static IntRange upTo(int to, {int from = 0, int step = 1}) => IntRange(from, to, step: step);
+  static IntRange upTo(int to, {int from = 0, int step = 1}) =>
+      IntRange(from, to, step: step);
 
   /// Create an arithmetic progression from [first] to [last] inclusively,
   /// with common difference of [step] which defaults to `1`.
@@ -55,7 +56,7 @@ class Range<T extends num> {
   static Range<double> range(double from, double to) => Range._(from, to);
 
   /// Checks if the given value [n] is within this range.
-  bool contains(T n) => n.within(from, to);
+  bool contains(num n) => n.within(from, to);
 
   @override
   String toString() => '$from..$to';
@@ -73,7 +74,8 @@ class Range<T extends num> {
 class IntRange extends Progression implements Range<int> {
   /// Creates an arithmetic progression from [first] to [last] inclusively,
   /// with common difference of [step] which defaults to `1`.
-  const IntRange(int first, int last, {int step = 1}) : super(first, last, step: step);
+  const IntRange(int first, int last, {int step = 1})
+      : super(first, last, step: step);
 
   @override
   int get from => _first;
@@ -82,7 +84,7 @@ class IntRange extends Progression implements Range<int> {
   int get to => _last;
 
   @override
-  bool contains(Object n) => n is int && n.within(_first, _last);
+  bool contains(Object? n) => n is int && n.within(_first, _last);
 }
 
 /// An empty [IntRange], which contains no value.
@@ -98,27 +100,29 @@ class IntRange extends Progression implements Range<int> {
 /// An [UnsupportedError] will be raised when you try to access
 /// the `from`/`to`/`first`/`last` property of an [EmptyIntRange].
 class EmptyIntRange extends IntRange {
-  const EmptyIntRange() : super(null, null);
+  const EmptyIntRange() : super(-1, -1);
 
   @override
-  int get from =>
-      throw UnsupportedError('`from` property is unavailable for an empty progression.');
+  int get from => throw UnsupportedError(
+      '`from` property is unavailable for an empty progression.');
 
   @override
-  int get to => throw UnsupportedError('`to` property is unavailable for an empty progression.');
+  int get to => throw UnsupportedError(
+      '`to` property is unavailable for an empty progression.');
 
   @override
-  int get first =>
-      throw UnsupportedError('`first` element is unavailable for an empty progression.');
+  int get first => throw UnsupportedError(
+      '`first` element is unavailable for an empty progression.');
 
   @override
-  int get last => throw UnsupportedError('`last` element is unavailable for an empty progression.');
+  int get last => throw UnsupportedError(
+      '`last` element is unavailable for an empty progression.');
 
   @override
   Iterator<int> get iterator => _EmptyProgressionIterator();
 
   @override
-  bool contains(Object n) => false;
+  bool contains(Object? n) => false;
 
   @override
   String toString() => '[]';

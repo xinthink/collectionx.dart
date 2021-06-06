@@ -20,7 +20,8 @@ void main() {
   });
 
   test('build a map from a list in invalid order', () {
-    expect(() => mapFromList<int, String>(['1', 2]), throwsA(TypeMatcher<CastError>()));
+    expect(() => mapFromList<int, String>(['1', 2]),
+        throwsA(TypeMatcher<TypeError>()));
   });
 
   test('build a map from key/value pairs', () {

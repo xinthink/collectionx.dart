@@ -54,6 +54,5 @@ void main() {
   test('chunk a collection with invalid batch size', () {
     expect([1, 2].chunked(0), isEmpty);
     expect([1, 2].chunked(-1), isEmpty);
-    expect([1, 2].chunked(null), isEmpty);
   });
 }

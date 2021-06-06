@@ -26,26 +26,26 @@ extension IterableExt<E> on Iterable<E>? {
 
   /// Returns `true` if all elements match the given predicate [test].
   ///
-  /// The result will be `false`, if the receiver is `null`.
+  /// Also returns `true`, if the receiver is `null` or empty.
   bool all(Predicate<E> test) {
     final self = this;
-    if (self == null || self.isEmpty) return false;
-
-    for (var element in self) {
-      if (!test(element)) return false;
+    if (self != null && self.isNotEmpty) {
+      for (var element in self) {
+        if (!test(element)) return false;
+      }
     }
     return true;
   }
 
   /// Returns `true` if **no** elements match the given predicate [test].
   ///
-  /// The result will be `false`, if the receiver is `null`.
+  /// Also returns `true`, if the receiver is `null` or empty.
   bool none(Predicate<E> test) {
     final self = this;
-    if (self == null || self.isEmpty) return false;
-
-    for (var element in self) {
-      if (test(element)) return false;
+    if (self != null && self.isNotEmpty) {
+      for (var element in self) {
+        if (test(element)) return false;
+      }
     }
     return true;
   }

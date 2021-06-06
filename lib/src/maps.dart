@@ -8,16 +8,22 @@ part 'map_factories.dart';
 /// Extensions to [Map]s
 extension MapExt<K, V> on Map<K, V>? {
   /// Returns `true` if at least one entry matches the given predicate [test].
+  ///
+  /// Returns `false` if the receiver is `null` or empty.
   bool any(EntryPredicate<K, V> test) =>
       this?.entries.any((e) => test(e.key, e.value)) ?? false;
 
   /// Returns `true` if all entries match the given predicate [test].
+  ///
+  /// Also returns `true` if the receiver is `null` or empty.
   bool all(EntryPredicate<K, V> test) =>
-      this?.entries.all((e) => test(e.key, e.value)) ?? false;
+      this?.entries.all((e) => test(e.key, e.value)) ?? true;
 
   /// Returns `true` if **no** entries match the given predicate [test].
+  ///
+  /// Also returns `true` if the receiver is `null` or empty.
   bool none(EntryPredicate<K, V> test) =>
-      this?.entries.none((e) => test(e.key, e.value)) ?? false;
+      this?.entries.none((e) => test(e.key, e.value)) ?? true;
 
   /// Returns a new lazy [Iterable] with all entries that satisfy the predicate [test],
   /// providing sequential index of the element.

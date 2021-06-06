@@ -8,10 +8,16 @@ extension NumericIterableExt<E extends num> on Iterable<E>? {
   E sum() => (this ?? Iterable.empty()).reduce(add);
 
   /// Returns the largest element or `null` if there are no elements.
-  E? max() => this?.reduce(math.max);
+  E? max() {
+    final self = this;
+    return self != null && self.isNotEmpty ? self.reduce(math.max) : null;
+  }
 
   /// Returns the smallest element or `null` if there are no elements.
-  E? min() => this?.reduce(math.min);
+  E? min() {
+    final self = this;
+    return self != null && self.isNotEmpty ? self.reduce(math.min) : null;
+  }
 
   /// Returns an average value of elements in the collection, [double.nan] if empty.
   double average() {
