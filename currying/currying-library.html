@@ -7,14 +7,19 @@
   <meta name="description" content="currying library API docs, for the Dart programming language.">
   <title>currying library - Dart API</title>
 
-  
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="../static-assets/github.css">
-  <link rel="stylesheet" href="../static-assets/styles.css">
-  <link rel="icon" href="../static-assets/favicon.png">
 
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
 </head>
+
 
 <body data-base-href="../"
       data-using-base-href="false">
@@ -35,34 +40,17 @@
 
 <main>
 
-  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
-      <form class="search-sidebar" role="search">
-        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
-      </form>
-    </header>
-    
-    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-      <li><a href="../index.html">collection_ext</a></li>
-      <li class="self-crumb">currying library</li>
-    </ol>
-    
-    <h5><span class="package-name">collection_ext</span> <span class="package-kind">package</span></h5>
-    <ol>
-          <li class="section-title">Libraries</li>
-          <li><a href="../collection_ext/collection_ext-library.html">collection_ext</a></li>
-          <li><a href="../currying/currying-library.html">currying</a></li>
-          <li><a href="../iterables/iterables-library.html">iterables</a></li>
-          <li><a href="../maps/maps-library.html">maps</a></li>
-          <li><a href="../numbers/numbers-library.html">numbers</a></li>
-          <li><a href="../ranges/ranges-library.html">ranges</a></li>
-    </ol>
-  </div>
 
-  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-library">currying</span> library </h1></div>
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-library">currying</span> library 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
 
     
+
+
 
 
 
@@ -73,23 +61,31 @@
 
       <dl class="callables">
         <dt id="partial" class="callable">
-          <span class="name"><a href="../currying/partial.html">partial</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="partial-param-f"><span class="type-annotation">BinaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">f</span>, </span><wbr><span class="parameter" id="partial-param-a"><span class="type-annotation">T1</span> <span class="parameter-name">a</span></span><wbr>)
-            <span class="returntype parameter">&#8594; UnaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          Returns a partial applied version of function <code>f</code>. <a href="../currying/partial.html">[...]</a>
-                  
+  <span class="name"><a href="../currying/partial.html">partial</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="partial-param-f"><span class="type-annotation">BinaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">f</span>, </span><span class="parameter" id="partial-param-a"><span class="type-annotation">T1</span> <span class="parameter-name">a</span></span>)
+    <span class="returntype parameter">&#8594; UnaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns a partial applied version of function <code>f</code>. <a href="../currying/partial.html">[...]</a>
+  
+
 </dd>
+
         <dt id="partialRight" class="callable">
-          <span class="name"><a href="../currying/partialRight.html">partialRight</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="partialRight-param-f"><span class="type-annotation">BinaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">f</span>, </span><wbr><span class="parameter" id="partialRight-param-b"><span class="type-annotation">T2</span> <span class="parameter-name">b</span></span><wbr>)
-            <span class="returntype parameter">&#8594; UnaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">R</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          Returns a partial applied version of function <code>f</code>, in a right-to-left manner. <a href="../currying/partialRight.html">[...]</a>
-                  
+  <span class="name"><a href="../currying/partialRight.html">partialRight</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="partialRight-param-f"><span class="type-annotation">BinaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">f</span>, </span><span class="parameter" id="partialRight-param-b"><span class="type-annotation">T2</span> <span class="parameter-name">b</span></span>)
+    <span class="returntype parameter">&#8594; UnaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">R</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns a partial applied version of function <code>f</code>, in a right-to-left manner. <a href="../currying/partialRight.html">[...]</a>
+  
+
 </dd>
+
       </dl>
     </section>
 
@@ -98,21 +94,48 @@
 
   </div> <!-- /.main-content -->
 
-  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">collection_ext</a></li>
+  <li class="self-crumb">currying library</li>
+</ol>
+
+
+    <h5><span class="package-name">collection_ext</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../collection_ext/collection_ext-library.html">collection_ext</a></li>
+      <li><a href="../currying/currying-library.html">currying</a></li>
+      <li><a href="../iterables/iterables-library.html">iterables</a></li>
+      <li><a href="../maps/maps-library.html">maps</a></li>
+      <li><a href="../numbers/numbers-library.html">numbers</a></li>
+      <li><a href="../ranges/ranges-library.html">ranges</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <h5>currying library</h5>
     <ol>
-    
-    
-    
-    
-    
-      <li class="section-title"><a href="../currying/currying-library.html#functions">Functions</a></li>
-      <li><a href="../currying/partial.html">partial</a></li>
-      <li><a href="../currying/partialRight.html">partialRight</a></li>
-    
-    
-    
-    </ol>
+
+
+
+
+
+  <li class="section-title"><a href="../currying/currying-library.html#functions">Functions</a></li>
+  <li><a href="../currying/partial.html">partial</a></li>
+  <li><a href="../currying/partialRight.html">partialRight</a></li>
+
+
+
+</ol>
+
   </div><!--/sidebar-offcanvas-right-->
 
 </main>
@@ -120,18 +143,20 @@
 <footer>
   <span class="no-break">
     collection_ext
-      0.3.0
+      1.0.0
   </span>
 
+  
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../static-assets/typeahead.bundle.min.js"></script>
-<script src="../static-assets/highlight.pack.js"></script>
-<script src="../static-assets/URI.js"></script>
-<script src="../static-assets/script.js"></script>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/script.js?v1"></script>
+
 
 
 </body>
 
 </html>
+

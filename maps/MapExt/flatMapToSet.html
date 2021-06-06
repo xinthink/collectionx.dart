@@ -7,14 +7,19 @@
   <meta name="description" content="API docs for the flatMapToSet method from the MapExt extension, for the Dart programming language.">
   <title>flatMapToSet method - MapExt extension - maps library - Dart API</title>
 
-  
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="../../static-assets/github.css">
-  <link rel="stylesheet" href="../../static-assets/styles.css">
-  <link rel="icon" href="../../static-assets/favicon.png">
 
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
 </head>
+
 
 <body data-base-href="../../"
       data-using-base-href="false">
@@ -37,72 +42,87 @@
 
 <main>
 
-  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
-      <form class="search-sidebar" role="search">
-        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
-      </form>
-    </header>
-    
-    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-      <li><a href="../../index.html">collection_ext</a></li>
-      <li><a href="../../maps/maps-library.html">maps</a></li>
-      <li><a href="../../maps/MapExt.html">MapExt<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></a></li>
-      <li class="self-crumb">flatMapToSet&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
-    </ol>
-    
-    <h5>MapExt extension</h5>
-    <ol>
-    
-    
-    
-        <li class="section-title"><a href="../../maps/MapExt.html#instance-methods">Methods</a></li>
-        <li><a href="../../maps/MapExt/all.html">all</a></li>
-        <li><a href="../../maps/MapExt/any.html">any</a></li>
-        <li><a href="../../maps/MapExt/flatMap.html">flatMap</a></li>
-        <li><a href="../../maps/MapExt/flatMapToList.html">flatMapToList</a></li>
-        <li><a href="../../maps/MapExt/flatMapToSet.html">flatMapToSet</a></li>
-        <li><a href="../../maps/MapExt/mapEntries.html">mapEntries</a></li>
-        <li><a href="../../maps/MapExt/mapToList.html">mapToList</a></li>
-        <li><a href="../../maps/MapExt/mapToSet.html">mapToSet</a></li>
-        <li><a href="../../maps/MapExt/none.html">none</a></li>
-        <li><a href="../../maps/MapExt/where.html">where</a></li>
-        <li><a href="../../maps/MapExt/whereNot.html">whereNot</a></li>
-    
-    
-    
-    
-    
-    </ol>
-  </div><!--/.sidebar-offcanvas-->
 
-  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-method">flatMapToSet&lt;<wbr><span class="type-parameter">T</span>&gt;</span> method</h1></div>
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">flatMapToSet&lt;<wbr><span class="type-parameter">T</span>&gt;</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
-            <span class="name ">flatMapToSet</span>
-&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="flatMapToSet-param-destination"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span></li>
-<li><span class="parameter" id="flatMapToSet-param-f"><span class="type-annotation">EntryTransform<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
-</ol>)
       
-    </section>
-    <section class="desc markdown">
-      <p>Appends to the give <code>destination</code> with the elements yielded from results of transform <code>f</code> function
-being invoked on each element of original entries.</p>
+
+<span class="returntype"><a href="https://api.dart.dev/dev/2.14.0-176.0.dev/dart-core/Set-class.html">Set</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+<span class="name ">flatMapToSet</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="flatMapToSet-param-destination"><span class="type-annotation"><a href="https://api.dart.dev/dev/2.14.0-176.0.dev/dart-core/Set-class.html">Set</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">destination</span>, </span></li>
+<li><span class="parameter" id="flatMapToSet-param-f"><span class="type-annotation">EntryTransform<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>, <span class="type-parameter"><a href="https://api.dart.dev/dev/2.14.0-176.0.dev/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">f</span></span></li>
+</ol>)
+
+      
+
     </section>
     
-    <section class="summary source-code" id="source">
-      <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Set&lt;T&gt; flatMapToSet&lt;T&gt;(Set&lt;T&gt; destination, EntryTransform&lt;K, V, Iterable&lt;T&gt;&gt; f) {
-  flatMap(f)?.forEach((e) =&gt; destination.add(e));
+<section class="desc markdown">
+  <p>Appends to the give <code>destination</code> with the elements yielded from results of transform <code>f</code> function
+being invoked on each element of original entries.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Set&lt;T&gt; flatMapToSet&lt;T&gt;(
+    Set&lt;T&gt; destination, EntryTransform&lt;K, V, Iterable&lt;T&gt;&gt; f) {
+  flatMap(f).forEach((e) =&gt; destination.add(e));
   return destination;
 }</code></pre>
-    </section>
+</section>
+
 
   </div> <!-- /.main-content -->
 
-  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">collection_ext</a></li>
+  <li><a href="../../maps/maps-library.html">maps</a></li>
+  <li><a href="../../maps/MapExt.html">MapExt<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></a></li>
+  <li class="self-crumb">flatMapToSet&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
+</ol>
+
+
+    <h5>MapExt extension</h5>
+    <ol>
+
+
+
+
+
+    <li class="section-title"><a href="../../maps/MapExt.html#instance-methods">Methods</a></li>
+    <li><a href="../../maps/MapExt/all.html">all</a></li>
+    <li><a href="../../maps/MapExt/any.html">any</a></li>
+    <li><a href="../../maps/MapExt/flatMap.html">flatMap</a></li>
+    <li><a href="../../maps/MapExt/flatMapToList.html">flatMapToList</a></li>
+    <li><a href="../../maps/MapExt/flatMapToSet.html">flatMapToSet</a></li>
+    <li><a href="../../maps/MapExt/mapEntries.html">mapEntries</a></li>
+    <li><a href="../../maps/MapExt/mapToList.html">mapToList</a></li>
+    <li><a href="../../maps/MapExt/mapToSet.html">mapToSet</a></li>
+    <li><a href="../../maps/MapExt/none.html">none</a></li>
+    <li><a href="../../maps/MapExt/where.html">where</a></li>
+    <li><a href="../../maps/MapExt/whereNot.html">whereNot</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
   </div><!--/.sidebar-offcanvas-->
 
 </main>
@@ -110,18 +130,20 @@ being invoked on each element of original entries.</p>
 <footer>
   <span class="no-break">
     collection_ext
-      0.3.0
+      1.0.0
   </span>
 
+  
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../../static-assets/typeahead.bundle.min.js"></script>
-<script src="../../static-assets/highlight.pack.js"></script>
-<script src="../../static-assets/URI.js"></script>
-<script src="../../static-assets/script.js"></script>
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/script.js?v1"></script>
+
 
 
 </body>
 
 </html>
+

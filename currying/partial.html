@@ -7,14 +7,19 @@
   <meta name="description" content="API docs for the partial function from the currying library, for the Dart programming language.">
   <title>partial function - currying library - Dart API</title>
 
-  
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="../static-assets/github.css">
-  <link rel="stylesheet" href="../static-assets/styles.css">
-  <link rel="icon" href="../static-assets/favicon.png">
 
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
 </head>
+
 
 <body data-base-href="../"
       data-using-base-href="false">
@@ -36,47 +41,26 @@
 
 <main>
 
-  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
-      <form class="search-sidebar" role="search">
-        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
-      </form>
-    </header>
-    
-    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-      <li><a href="../index.html">collection_ext</a></li>
-      <li><a href="../currying/currying-library.html">currying</a></li>
-      <li class="self-crumb">partial&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt; function</li>
-    </ol>
-    
-    <h5>currying library</h5>
-    <ol>
-    
-    
-    
-    
-    
-      <li class="section-title"><a href="../currying/currying-library.html#functions">Functions</a></li>
-      <li><a href="../currying/partial.html">partial</a></li>
-      <li><a href="../currying/partialRight.html">partialRight</a></li>
-    
-    
-    
-    </ol>
-  </div><!--/.sidebar-offcanvas-left-->
 
-  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div><h1><span class="kind-function">partial&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span> function </h1></div>
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-function">partial&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span> function 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
 
     <section class="multi-line-signature">
-        <span class="returntype">UnaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span>
-                <span class="name ">partial</span>
-&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="partial-param-f"><span class="type-annotation">BinaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">f</span>, </span></li>
+        
+
+<span class="returntype">UnaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span>
+<span class="name ">partial</span>&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="partial-param-f"><span class="type-annotation">BinaryFun<span class="signature">&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">f</span>, </span></li>
 <li><span class="parameter" id="partial-param-a"><span class="type-annotation">T1</span> <span class="parameter-name">a</span></span></li>
 </ol>)
+
     </section>
-    <section class="desc markdown">
-      <p>Returns a partial applied version of function <code>f</code>.</p>
+    
+<section class="desc markdown">
+  <p>Returns a partial applied version of function <code>f</code>.</p>
 <p>It holds the function <code>f</code> and an argument <code>a</code>, returns a new function,
 which accepts an argument <code>b</code>, when applied, it returns the result of <code>f(a, b)</code>. For example:</p>
 <pre class="language-dart"><code class="language-dart">final multiply = (num a, num b) =&gt; a * b;
@@ -85,16 +69,50 @@ multiply2(3); // =&gt; 6
 </code></pre>
 <p>See <a href="https://en.wikipedia.org/wiki/Partial_application">Parital Application</a> &amp;
 <a href="https://en.wikipedia.org/wiki/Currying">Currying</a></p>
-    </section>
+</section>
+
+
     
-    <section class="summary source-code" id="source">
-      <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">UnaryFun&lt;T2, R&gt; partial&lt;T1, T2, R&gt;(BinaryFun&lt;T1, T2, R&gt; f, T1 a) =&gt; (b) =&gt; f(a, b);</code></pre>
-    </section>
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">UnaryFun&lt;T2, R&gt; partial&lt;T1, T2, R&gt;(BinaryFun&lt;T1, T2, R&gt; f, T1 a) =&gt; (b) =&gt; f(a, b);</code></pre>
+</section>
+
 
   </div> <!-- /.main-content -->
 
-  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">collection_ext</a></li>
+  <li><a href="../currying/currying-library.html">currying</a></li>
+  <li class="self-crumb">partial&lt;<wbr><span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>, <span class="type-parameter">R</span>&gt; function</li>
+</ol>
+
+
+    <h5>currying library</h5>
+    <ol>
+
+
+
+
+
+  <li class="section-title"><a href="../currying/currying-library.html#functions">Functions</a></li>
+  <li><a href="../currying/partial.html">partial</a></li>
+  <li><a href="../currying/partialRight.html">partialRight</a></li>
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
   </div><!--/.sidebar-offcanvas-->
 
 </main>
@@ -102,18 +120,20 @@ multiply2(3); // =&gt; 6
 <footer>
   <span class="no-break">
     collection_ext
-      0.3.0
+      1.0.0
   </span>
 
+  
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../static-assets/typeahead.bundle.min.js"></script>
-<script src="../static-assets/highlight.pack.js"></script>
-<script src="../static-assets/URI.js"></script>
-<script src="../static-assets/script.js"></script>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/script.js?v1"></script>
+
 
 
 </body>
 
 </html>
+
