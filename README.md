@@ -72,16 +72,16 @@ I'm working on more useful extensions, PRs are welcome! :beers:🖖
 
 
 [Dart]: https://dart.dev
-[github-runs]: https://github.com/xinthink/dart_collection_ext/actions
-[check-badge]: https://github.com/xinthink/dart_collection_ext/workflows/check/badge.svg
-[codecov-badge]: https://codecov.io/gh/xinthink/dart_collection_ext/branch/master/graph/badge.svg
-[codecov]: https://codecov.io/gh/xinthink/dart_collection_ext
-[license-badge]: https://img.shields.io/github/license/xinthink/dart_collection_ext
-[license]: https://raw.githubusercontent.com/xinthink/dart_collection_ext/master/LICENSE
+[github-runs]: https://github.com/xinthink/collectionx.dart/actions
+[check-badge]: https://github.com/xinthink/collectionx.dart/workflows/check/badge.svg
+[codecov-badge]: https://codecov.io/gh/xinthink/collectionx.dart/branch/master/graph/badge.svg
+[codecov]: https://codecov.io/gh/xinthink/collectionx.dart
+[license-badge]: https://img.shields.io/github/license/xinthink/collectionx.dart
+[license]: https://raw.githubusercontent.com/xinthink/collectionx.dart/master/LICENSE
 [pub]: https://pub.dev/packages/collection_ext
 [pub-badge]: https://img.shields.io/pub/v/collection_ext.svg
-[API Docs]: https://xinthink.github.io/dart_collection_ext/index.html
-[Iterables]: https://xinthink.github.io/dart_collection_ext/iterables/iterables-library.html
-[Maps]: https://xinthink.github.io/dart_collection_ext/maps/maps-library.html
-[Ranges]: https://xinthink.github.io/dart_collection_ext/ranges/ranges-library.html
-[nullability tests]: https://github.com/xinthink/dart_collection_ext/blob/master/test/nullability_test.dart
+[API Docs]: https://xinthink.github.io/collectionx.dart/index.html
+[Iterables]: https://xinthink.github.io/collectionx.dart/iterables/iterables-library.html
+[Maps]: https://xinthink.github.io/collectionx.dart/maps/maps-library.html
+[Ranges]: https://xinthink.github.io/collectionx.dart/ranges/ranges-library.html
+[nullability tests]: https://github.com/xinthink/collectionx.dart/blob/master/test/nullability_test.dart

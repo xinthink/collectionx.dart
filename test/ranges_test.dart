@@ -32,6 +32,7 @@ void main() {
   test('invalid progressions', () {
     // all values are excluded
     expect(0.until(0), isEmpty);
+    expect(() => 0.until(0).iterator.current, throwsUnsupportedError);
     expect(0.downUntil(0), isEmpty);
     expect(0.withinRange(0.downUntil(0)), isFalse);
     expect(0.downUntil(0).contains(0), isFalse);
